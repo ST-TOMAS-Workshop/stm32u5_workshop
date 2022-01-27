@@ -1,0 +1,22 @@
+{
+    "title": "STM32U5 Workshop",
+    "githubLoc": "https://raw.githubusercontent.com/RRISTM/stm32u5_workshop/master/",
+    "options": {
+      "allowMenu": true,
+      "allowTagSelect": false
+    },
+    "filesToLoadArr": [
+      {
+        "name": "File 1",
+        "path": "/folder1",
+        "file": "file1.md"
+      }
+    ],
+    "menuStructure": [
+      {
+        "type": "File",
+        "name": "File 1",
+        "file": "file1.md"
+      }
+    ]
+  }
