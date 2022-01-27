@@ -7,16 +7,36 @@
     },
     "filesToLoadArr": [
       {
-        "name": "File 1",
-        "path": "/folder1",
-        "file": "file1.md"
+        "name": "GPDMA handson",
+        "path": "/gpdma",
+        "file": "gpdma_handson_copy.md"
+      },
+      {
+        "name": "LPBAM handson",
+        "path": "/lpbam",
+        "file": "lpbam_handson_copy.md"
+      },
+      {
+        "name": "LP modes handson",
+        "path": "/lpmodes",
+        "file": "lpmodes_handson_copy.md"
       }
     ],
     "menuStructure": [
       {
         "type": "File",
-        "name": "File 1",
-        "file": "file1.md"
+        "name": "GPDMA handson",
+        "file": "gpdma_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "LPBAM handson",
+        "file": "lpbam_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "LP modes handson",
+        "file": "lpmodes_handson_copy.md"
       }
     ]
   }
