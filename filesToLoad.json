@@ -20,6 +20,26 @@
         "name": "LP modes handson",
         "path": "/lpmodes",
         "file": "lpmodes_handson_copy.md"
+      },
+      {
+        "name": "CubeIDE debug",
+        "path": "/utility_config",
+        "file": "ide_debug.md"
+      },
+      {
+        "name": "CubeIDE import",
+        "path": "/utility_config",
+        "file": "ide_import_project.md"
+      },
+      {
+        "name": "CubeMX create project",
+        "path": "/utility_config",
+        "file": "mx_create_project.md"
+      },
+      {
+        "name": "CubeMX generate code",
+        "path": "/utility_config",
+        "file": "mx_generate_code.md"
       }
     ],
     "menuStructure": [
