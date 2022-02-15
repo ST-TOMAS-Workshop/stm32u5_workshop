@@ -2,7 +2,8 @@
 
 ## Low Power Background Autonomous mode
 
-#### this below is a c code example
+#### brief description
+
 
 we need to add `while(1)`
 
