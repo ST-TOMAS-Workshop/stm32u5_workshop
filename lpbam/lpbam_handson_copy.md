@@ -5,7 +5,7 @@
 #### brief description
 
 
-we need to add `while(1)`
+WE need to add `while(1)`
 
 
 ```c
