@@ -131,4 +131,3 @@ HAL_FLASHEx_EnablePowerDown(FLASH_BANK_2);
 ```
 <!-- check if we need to add debug mx or some macros as well -->
 
-![lpbam config](./img/08.png)
