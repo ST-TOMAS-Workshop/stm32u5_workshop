@@ -22,6 +22,6 @@ int main()
 ```
 # immagini 
 image shows something interesting on power monitor
-![image1](./img/image1.PNG)
+![image1](./img/image1.png)
 
 [Link](www.st.com)
