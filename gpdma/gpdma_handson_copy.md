@@ -1,6 +1,6 @@
-<!-- ----!
+----!
 Presentation
-----! -->
+----!
 
 # GPDMA handson copcopysheet 
 
@@ -88,8 +88,79 @@ Each rank will have assing one ADC channel to convert. It is possible to select 
 
 ![configure GPDMA ch15 2](./img/22_01_28_77.gif)
 
-# Set project name and Generate project
+# Set project name and Generate project and Import to CubeIDE
 
 1. How to generate project is described here [Link](./../utility_config/mx_generate_code.md)
 2. Import project to CubeIDE [Link](./../utility_config/ide_import_project.md)
-   
+
+<ainfo>
+When used CubeIDE instead of CubeMX to create project no import is needed
+</ainfo>
+
+# Create buffer where to store ADC values
+
+We create array `data` of 16bit elements wuth size as `SIZE`which is 64 elements
+
+Like this
+
+```c
+#define SIZE 64
+uint16_t data[SIZE];
+```
+
+Put the array and size to section ` USER CODE BEGIN PV` like bellow
+
+```nc
+/* USER CODE BEGIN PV */
+#define SIZE 64
+uint16_t data[SIZE];
+/* USER CODE END PV */
+```
+
+# Start ADC and DMA
+
+To start ADC+DMA we can use HAL function `HAL_ADC_Start_DMA`
+We use it like this:
+
+```c
+  HAL_ADC_Start_DMA(&hadc1, data, SIZE);
+```
+
+we put it into section `USER CODE BEGIN 2` like bellow
+
+```nc
+  /* USER CODE BEGIN 2 */
+  HAL_ADC_Start_DMA(&hadc1, data, SIZE);
+  /* USER CODE END 2 */
+```
+
+`&hadc1` - is ADC handle which contains information about ADC1 and related DMA channel
+
+`data` - buffer where to store data from ADC
+`SIZE` - `data` buffer size 
+
+# Compile code and run debug
+
+1. Run debug [Link](./../utility_config/ide_debug.md)
+
+# In debuuger ope Liwe Expression
+
+Live expression showing changes in watched variables
+
+![Open Live expression](./img/22_02_03_83.gif)
+
+# Add variable to live watch
+
+![Add to live watch](./img/22_02_03_85.gif)
+
+# Run code and check changing content
+
+Fun code by pressing `F8` or press Run 
+
+![Run code](./img/22_02_03_89.gif)
+
+
+
+
+
+
