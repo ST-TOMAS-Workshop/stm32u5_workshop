@@ -115,10 +115,10 @@ Let's see how it looks like <!-- here need to be added some nice screenshot with
 1. Click on PWR
 2. Verify that Low Power is set on the upper tab and SMPS is selected as Power Regulator
 3. Channel_1_Active
-4. Enable power down of all SRAM pages in Stop1,2,
+4. Disable power down of all SRAM pages in Stop1,2,
  <!-- need to check if we can also power down other elements-->
 
- *NOTE*: SRAM4 16KB will not be disabled as it's the only porting available in Stop2
+ *NOTE*: SRAM4 16KB will not be disabled as it's the only portion available in Stop2
 
   <!-- once defined, add related .gif-->
 
