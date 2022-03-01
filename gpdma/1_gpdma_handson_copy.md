@@ -1,6 +1,6 @@
-----!
+<!-- ----!
 Presentation
-----!
+----! -->
 
 # GPDMA handson copcopysheet 
 
@@ -26,6 +26,7 @@ At the end we modify GPDMA again to get data from ADC and when finished to trans
 ![select ADC](./img/22_01_28_57.gif)
 
 # Enable 4 adc channels
+Enable channels IN1 to IN4
 
 ![select 4 channels](./img/22_01_28_59.gif)
 
@@ -41,7 +42,7 @@ This option will stop ADC until the DATA are read form it. It is good to prevent
 
 3. Set `Enable Regular Conversions` to **Enable**
 
-![configure adc 1](img/22_01_28_61.gif)
+![configure adc 1](./img/22_01_28_61.gif)
 
 # Configure ADC 2/4
 
@@ -49,21 +50,21 @@ This option will stop ADC until the DATA are read form it. It is good to prevent
 
 After ADC convert value it will create request for DMA. Curcular mode here means that after ADC finish all regular channels it will continue generate DMA request in next run too.
 
-![configure adc 2](img/22_01_28_81.png)
+![configure adc 2](./img/22_01_28_81.png)
 # Configure the ADC 3/4
 
 1. Set `number of conversion` to **4**
 
 This will set ADC to do 4 ADC conversion which we can set.
 
-![configure adc 3](img/22_01_28_69.gif)
+![configure adc 3](./img/22_01_28_69.gif)
 # Configure the ADC 4/4
 
 1. You can set ADC channel for each `Rank`
 
 Each rank will have assing one ADC channel to convert. It is possible to select same chanel each time.
 
-![configure adc 4](img/22_01_28_65.gif)
+![configure adc 4](./img/22_01_28_65.gif)
 
 # Select GPDMA1
 
@@ -143,7 +144,7 @@ we put it into section `USER CODE BEGIN 2` like bellow
 
 1. Run debug [Link](./../utility_config/ide_debug.md)
 
-# In debuuger ope Liwe Expression
+# In debuuger ope Live Expression
 
 Live expression showing changes in watched variables
 
