@@ -144,7 +144,7 @@ we put it into section `USER CODE BEGIN 2` like bellow
 
 1. Run debug [Link](./../utility_config/ide_debug.md)
 
-# In debuuger ope Live Expression
+# In debug open Live Expression
 
 Live expression showing changes in watched variables
 
@@ -160,6 +160,7 @@ Fun code by pressing `F8` or press Run
 
 ![Run code](./img/22_02_03_89.gif)
 
+# How the GPDMA works
 
 
 
