@@ -2,29 +2,34 @@
 
 ## Steps to initialize the peripherals
 
-*NOTE* In order to start from a clean situation select Pinout and Clear Pinouts
-Shortcut is CTRL+P
+*NOTE* 
 
+### 0. **Put in reset state LED RED and LED GREEN,UCPD_DBn and UCPD_FLT from Pinout View**
+This will help us to keep low power consumption
+We will only use Blue LED to know the power state of MCU
+
+![Cubemx start](./img/0101.gif)
 
 ### 1. **ICACHE**
 
-*Enabled to optimize power consumption*
+*Enabled to optimize power consumption. The instruction cache tends to reduce the number of accesses to the memory thus reducing the overall current
+consumption*
 
  First thing we need to do is to Initialize Cache in 1-way (direct mapped cache).
    
-Note: Skipping this step will cause a warning later one. Cache initialization is needed to achieve best low power consumption performance
+`Note`: Skipping this step will cause a warning later one. 
 
 ![Cubemx start](./img/02.gif)
 
 ---
 
 ### 2. **LPDMA**
-
+<!-- check if this can be performed in LPBAM scenario config tab !-->
 *Two channels will be used respectively for ADC4 sampling and Timer ARR register update*
 
 1. Initialize CH0 and CH1 in Linked List Mode
-2. Set CH1 as circular
-3. Enable interrupts for both channels in NVIC settings
+2. Enable interrupts for both channels in NVIC settings
+3. Keep all default setting for the other fields <!-- i do not think this is needed for LPTIM !-->
 
 ![Cubemx start](./img/03.gif)
 
@@ -32,12 +37,12 @@ Note: Skipping this step will cause a warning later one. Cache initialization is
 
 ### 3. **PWR**
 
-*SMPS will be enabled here to achieve best power consumption performance. Smart Run Domain Debug pins will also be selected*
+*SMPS will be enabled here to achieve best power consumption performance even in run mode. Smart Run Domain Debug pins will also be selected*
 
 1. From Debug Pins tab flag the three options note that PA5,PA6,PA7 appears in GPIO Settings tab 
 2. Select SMPS as Power Regulator from Power Saving tab
 
-Note: Role of PA5,PA6,PA7 will be understood later in this session
+`Note`: Role of PA5,PA6,PA7 will be understood later in this session
 
 ![Cubemx pwm](./img/04.gif)
 
@@ -47,42 +52,40 @@ Note: Role of PA5,PA6,PA7 will be understood later in this session
 
   *We will use Systick as system timer*
 
-1. Modify default Timebase Source to Systick
+1. Modify default Timebase Source from TIM17 to Systick
 
+Note: This is not absolutely mandatory but goood practice
 
 ![Cubemx sys](./img/05.gif)
 
+---
 
-### 5. **GPIO**
+### 5. **USART**
 
-  *External ISR on PC13 mapped to User Button will be used to enter in STOP2 mode*
+  *Usart will be used to display ADC data buffer values*
 
-1. Go to pinout view, type PC13
-2. Assign GPIO_EXT13 to PC13
-3. Right Click on PC13 select Enter User Label and name it USER_BUTTON
+1. Click on USART1
+2. Mode=Asyncronous
+3. Check that by default GPIOs are PA9,PA10 
 
-![Cubemx sys](./img/06.gif)
+![Cubemx sys](./img/0202.gif)
 
 ---
 
-### 6. **NVIC**
+### 6. **Debug**
 
-  *Enable EXT ISR on PC13 and double check interrupt vector setting*
+  *Set SWD debug pins*
 
-1. Select NVIC Tab
-2. Enable EXTI Line13 interrupt
-3. Double check that LPDMA ch1 and ch0  ISRs are enabled
+Add SWD debug port from debug tab to avoid need for decommenting every time we need to go in low power.
 
-![Cubemx sys](./img/07.gif)
+Selected pins by default are PA13, PA14 mapped on STLINK
 
----
+<!-- this also does not seems to be mandatory we can keep 4Mhz we have by deafult as HCLK !-->
+
+![Cubemx sys](./img/0303.gif)
 
 ### 7. **Clock Configuration**
 
-  *Set SysClock @160Mhz*
+We can keep default value with MSIS selected and HCLK @4MHz
 
-1. On top tab select Clock COnfiguration
-2. Chose PLLCLK from System Clock Mux
-3. Write 160Mhz in HCLK
-
-![Cubemx sys](./img/08.gif)
+----

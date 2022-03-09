@@ -1,8 +1,6 @@
----- !
+<!-- ----!
 Presentation
-----! 
-
-
+----! -->
 
 # 1 - LPBAM 
 ## Low Power Background Autonomous Mode
@@ -103,3 +101,36 @@ When temp reaches a certain threshold, we send data on SPI to an external host m
 Analog WDT from ADC can be used as trigger as well and can be used to trigger a data to be sent to a peripheral via SPI
 
 ![theory1](./img/08.png)
+
+
+# System Architecture and DMA Overview
+LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP called version3 or DMAv3 replacing all DMA that were in other STM32 series. Even if it integrated all previous DMA features Trigger, DMAMUX MDMA etc.  We have now a single DMA driver with two HW instances which are GPDMA and LPDMA.
+Both can be used in Linked list mode.
+GPDMA is on the CPU domain with 2 ports port 0 and port 1 LPDMA has a single port,
+
+![theory1](./img/09.png)
+
+
+# Smart Run Domain(SRD)
+This is a zoom on smartun domain which is a clock domain with 2 masters AHB and LPDMAq and 2XSLave AHB3periph and internal SRAM2 - we can see the peripherals which is possible to use in STOP2 mode via LPDMA
+AHB master is bidirectional and has 4 channels 
+One thing to note is that LPDMA can only access smart run peripherals meaning that it can only access to SRAM4  and AHB3 peripherals not to others
+
+![theory1](./img/10.png)
+
+# 4 - SRD and clock distribution
+
+## New DMA IP
+![theory1](./img/13.png)
+
+## GPDMA vs LPDMA
+Below main difference between GPDMA and LPDMA
+
+![theory1](./img/11.png)
+
+## SRD Architecture
+![theory1](./img/14.png)
+
+## Clock gating
+![theory1](./img/15.png)
+![theory1](./img/16.png)
