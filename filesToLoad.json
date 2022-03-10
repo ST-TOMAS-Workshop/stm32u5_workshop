@@ -9,8 +9,23 @@
       {
         "name": "Theory",
         "path": "/lpbam/theory",
-        "file": "theory.md"
+        "file": "linked list.md"
       },
+
+      {
+        "name": "Theory",
+        "path": "/lpbam/theory",
+        "file": "theory.md"
+      }
+,
+
+{
+  "name": " Exercize",
+  "path": "/lpbam/handson/step1",
+  "file": "handson0.md"
+}
+,
+
       {
         "name": " Exercize",
         "path": "/lpbam/handson/step1",
@@ -34,6 +49,20 @@
         "name": " Exercize",
         "path": "/lpbam/handson/step3",
         "file": "handson4.md"
+      }
+
+,
+      {
+        "name": " Exercize",
+        "path": "/lpbam/handson/step4",
+        "file": "handson5.md"
+      }
+
+,
+      {
+        "name": " Exercize",
+        "path": "/lpbam/handson/step5",
+        "file": "handson6.md"
       }
 
       
@@ -66,7 +95,7 @@
             "type": "File",
             "name": "Principles",
             "path": "lpbam/theory",
-            "file": "theory2.md"
+            "file": "linked list.md"
           }
 
 
@@ -77,32 +106,57 @@
             "type": "Folder",
             "name": "LPBAM Handson",
             "children":[
+
               {
                 "type": "File",
-                "name": "1.Nucleo Board Selection",
+                "name": "1.Hands-on Overview",
+                "path": "lpbam/handson/step1",
+                "file": "handson0.md"
+              }
+
+,
+              {
+                "type": "File",
+                "name": "2.Nucleo Board Selection",
                 "path": "lpbam/handson/step1",
                 "file": "handson.md"
               }
 ,
               {
                 "type": "File",
-                "name": "2.Peripherals configuration CubeMx",
+                "name": "3.Peripherals configuration CubeMx",
                 "path": "lpbam/handson/step1",
                 "file": "handson2.md"
               }
              ,
               {
                 "type": "File",
-                "name": "3.LPBAM Scenario & Configuration",
+                "name": "4.LPBAM Scenario & Configuration",
                 "path": "lpbam/handson/step2",
                 "file": "handson3.md"
               }
 ,
               {
                 "type": "File",
-                "name": "4.Cube IDE",
+                "name": "5.Cube IDE",
                 "path": "lpbam/handson/step3",
                 "file": "handson4.md"
+              }
+,
+              {
+                "type": "File",
+                "name": "6.Debug",
+                "path": "lpbam/handson/step4",
+                "file": "handson5.md"
+              }
+
+
+              ,
+              {
+                "type": "File",
+                "name": "7.Power consumption",
+                "path": "lpbam/handson/step5",
+                "file": "handson6.md"
               }
 
           
