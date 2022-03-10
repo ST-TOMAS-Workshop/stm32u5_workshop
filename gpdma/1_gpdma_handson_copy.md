@@ -8,6 +8,8 @@ Presentation
 
  We create simple example where first GPDMA transfersdata from ADC. 
 
+![adc dma description](./img/adc_dma_desc.json)
+
 ## 2. TIM + GPDMA + ADC
 
 Then we modify the example that GPDMA is triggered from TIM to start transfering data from ADC

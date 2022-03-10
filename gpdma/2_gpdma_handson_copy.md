@@ -235,4 +235,8 @@ To section `/* USER CODE BEGIN 2 */` like
   /* USER CODE END 2 */
 ```
 
-# Compile code and run debug
+## Compile code and run debug
+
+# What we created
+
+We have similar application like in handson 1 but now based directly on linked list, where we can more elements
