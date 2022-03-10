@@ -64,7 +64,13 @@
         "path": "/lpbam/handson/step5",
         "file": "handson6.md"
       }
+,
 
+{
+  "name": " Exercize",
+  "path": "/lpbam/handson/step6",
+  "file": "handson7.md"
+}
       
     ],
   
@@ -158,6 +164,17 @@
                 "path": "lpbam/handson/step5",
                 "file": "handson6.md"
               }
+
+
+              ,
+              {
+                "type": "File",
+                "name": "8.Benchmark",
+                "path": "lpbam/handson/step6",
+                "file": "handson7.md"
+              }
+
+
 
           
         ]
