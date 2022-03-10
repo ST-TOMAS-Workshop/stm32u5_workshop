@@ -1,8 +1,10 @@
 # LPBAM Scenario & Configuration
 
-`Note` in this chapter we will talk about peripherals nodes for the sake of semplicity.
+<ainfo>
+In this chapter we will talk about peripherals nodes for the sake of semplicity.
 More correct vocabulary would be `LPBAM Function`
-Each block added to the Queue is actually handling more than a single DMA transfer to it's actually a collection of nodes = LPBAM Function
+Each block added to the Queue is actually handling more than a single DMA transfer.  Collection of nodes = LPBAM Function
+</ainfo>
 
 ## Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
 
@@ -11,11 +13,13 @@ Each block added to the Queue is actually handling more than a single DMA transf
 
    2.Click on + simbol on top left
 
-Let's see how it looks like <!-- here need to be added some nice screenshot with graphic to explain the various sections  -->:
+Let's see how it looks like:
 
 ![lpbam config](./img/01.png)
 
-## IMPORTANT LPBAM Scenario and Configurator is intened to be a tool to configure peripherals which are available for LPDMA independently from the power state we select
+<ainfo>
+LPBAM Scenario and Configurator is intened to be a tool to configure peripherals which are available for LPDMA independently from the power state we select
+</ainfo>
 ---
 
 # LPBAM Managment #
@@ -53,11 +57,13 @@ Let's see how it looks like <!-- here need to be added some nice screenshot with
 1. Make sure to be on Conversion Queue and not on adc one
 2. Select LPTIM1:Start_1 and change Start mode to continuos Mode
 3. Select LPTIM1:PWM_2 and enable period and pulse update state: We used 127 for period and 64 for pulse with repetition counter of 255.
-   *NOTE*: Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. After 255 repetition an update event is generated with the possibility to change PWM value
-
+  <ainfo>
+  Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. After 255 repetition an update event is generated with the possibility to change PWM value
+  </ainfo>
 4. Click LPTIM1:PWM_3 and enable period and pulse update state. We used 511 for period and 255 for pulse value and put repetition value =63
-   *NOTE*: Idea is to have 64 repetitions of a square wave at 64Hz meaning 1 second
-
+ <ainfo>
+ Idea is to have 64 repetitions of a square wave at 64Hz meaning 1 second
+ </ainfo>
 ![lpbam config](./img/04.gif)
 
 # LPbamAp1/Scenario/ADC #
@@ -70,9 +76,10 @@ Let's see how it looks like <!-- here need to be added some nice screenshot with
 4. Provide Data Buffer Name, in our case it will be Data_Sequence
 5. Data Buffer Offset=0
 6. Number of Data=320
-   
-   *NOTE*: Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
-   
+   <ainfo>
+   Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
+   </ainfo>
+
    ![lpbam config](./img/05.gif)
 <!-- need to check if trigger is needed at this stage -->
 
@@ -89,16 +96,17 @@ Let's see how it looks like <!-- here need to be added some nice screenshot with
 5. Scan Conversio Mode = Forward
 6. DMA Continuous Request = Enabled
 7. Low Power Auto Wait = Enable
-8. SamplingTimeCommon1 = 19.5Cycles <!-- actually we have tried with 160_5 clk cycles but it seems no more an option-->
+8. SamplingTimeCommon1 = 1.5Cycles <!-- actually we have tried with 160_5 clk cycles but it seems no more an option-->
 9. NVIC Settings - Enable ADC4 Global Interrupt
    
    ![lpbam config](./img/06.gif)
 
    ---
 
-
+<awarning>
 ## Check LPBAM DESIGN
 By clicking on related button we should get a reminder mentioning that LPTIM is not configured
+</awarning>
 <!--add picture here -->
 
 ---
@@ -130,8 +138,9 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 5. We keep fast wakup disabled to save power
  <!-- need to check if we can also power down other elements-->
 
- *NOTE*: SRAM4 16KB will not be disabled as it's the only portion available in Stop2
-
+<ainfo>
+SRAM4 16KB will not be disabled as it's the only portion available in Stop2
+</ainfo>
 
 
 ![lpbam config](./img/02.png)
@@ -147,7 +156,9 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 2. Verify that ADC4 is clocked with MISK
 
 
-  *NOTE* RC are powered off in STOP2 and this is visible from the configurator. PLL is also disabled. Cube MX is helping us to limit the number wrong selections
+<ainfo>
+RC are powered off in STOP2 and this is visible from the configurator. PLL is also disabled. Cube MX is helping us to limit the number wrong selections
+</ainfo>
 <!-- not sure makes sense adding a dedicated .gif here -->
 
  ![lpbam config](./img/07.png)
@@ -162,8 +173,10 @@ and enter the following projects settings
 3. Click on generate code
 4. Open Project and switch to Cube IDE
 
-`Note` at this stage we get a warnign mentioning we need to run consistency check on LPBAM, we can anyway proceed with project generation without any further action
-
+<awarning>
+At this stage we get a warning mentioning we need to run consistency check on LPBAM, we can anyway proceed with project generation without any further action
+</awarning>
 <!-- maybe we should add here a .gif -->
+
 
 ![lpbam config](./img/08.png)
