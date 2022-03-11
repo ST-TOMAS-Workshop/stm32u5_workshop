@@ -167,10 +167,6 @@ the function to Enable/Disable the debug in STOP mode and to enter in STOP2 Mode
 ```
 <!-- check if we need to add debug mx or some macros as well -->
 
-<ainfo>
- `HAL_DBGMCU_DisableDBGStopMode` is the function contributing the most to low power, it stops clock from being distributed over the debug interface
-</ainfo>
-
 ---
 
 ## 3- LPBAM 
