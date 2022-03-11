@@ -1,14 +1,10 @@
-----!
-Presentation
-----!
-
 # **Cube MX Peripherals Configuration**
 
 ## Steps to initialize the peripherals
 
 **NOTE** 
 
-## 0. **Put in reset state LED RED and LED GREEN,UCPD_DBn and UCPD_FLT from Pinout View**
+## 0- Put in reset state LED RED and LED GREEN,UCPD_DBn and UCPD_FLT from Pinout View ##
 This will help us to keep lowest power consumption
 We will only use Blue LED to know the power state of MCU
 
@@ -16,12 +12,10 @@ We will only use Blue LED to know the power state of MCU
 
 ---
 
-## 1. **ICACHE**
+## 1- ICACHE ##
 
-*Enabled to optimize power consumption. The instruction cache tends to reduce the number of accesses to the memory thus reducing the overall current
-consumption*
-
- First thing we need to do is to Initialize Cache in 1-way (direct mapped cache).
+We have to Initialize Cache in 1-way (direct mapped cache).
+The instruction cache tends to reduce the number of accesses to the memory thus reducing the overall current consumption
 
 <awarning>   
 Skipping this step will cause a warning later one. 
@@ -32,9 +26,9 @@ Skipping this step will cause a warning later one.
 
 ---
 
-## 2. **LPDMA**
+## 2 - LPDMA ##
 <!-- check if this can be performed in LPBAM scenario config tab !-->
-**Two channels will be used respectively for ADC4 sampling and Timer ARR register update**
+**Two channels will be used respectively for ADC4 sampling and Timer ARR&CNT register updates**
 
 1. Initialize CH0 and CH1 in Linked List Mode
 2. Enable interrupts CH1 in NVIC settings
@@ -44,9 +38,9 @@ Skipping this step will cause a warning later one.
 
 ---
 
-## 3. **PWR**
+## 3 -PWR ##
 
-*SMPS will be enabled here to achieve best power consumption performance even in run mode. Smart Run Domain Debug pins will also be selected*
+**SMPS will be enabled here to achieve best power consumption performance even in run mode. Smart Run Domain Debug pins will also be selected**
 
 1. From Debug Pins tab flag select the three options note that PA5,PA6,PA7 appears in GPIO Settings tab 
 2. Select SMPS as Power Regulator from Power Saving tab
@@ -60,9 +54,9 @@ Role of PA5,PA6,PA7 will be understood later in this session
 
 ---
 
-## 4. **SYS**
+## 4 - SYS ##
 
-  *We will use Systick as system timer*
+  **We will use Systick as system timer**
 
 1. Modify default Timebase Source from TIM17 to Systick
 
@@ -72,9 +66,9 @@ Note: This is not absolutely mandatory but goood practice
 
 ---
 
-## 5. **USART**
+## 5 -USART ##
 
-  *Usart will be used to display ADC data buffer values*
+  **Usart will be used to display ADC data buffer values**
 
 1. Click on USART1
 2. Mode=Asyncronous
@@ -84,9 +78,9 @@ Note: This is not absolutely mandatory but goood practice
 
 ---
 
-## 6. **Debug**
+## 6-DEBUG ##
 
-  *Set SWD debug pins*
+  **Set SWD debug pins**
 
 Add SWD debug port from debug tab to avoid need for uncommenting GPIO_Init every time we need to go in low power.
 
@@ -96,7 +90,7 @@ Selected pins by default are PA13, PA14 mapped on STLINK
 
 ![Cubemx sys](./img/0303.gif)
 
-## 7. **Clock Configuration**
+## 7- CLOCK CONFIGURATION ##
 
 We can keep default value with MSIS selected and HCLK @4MHz
 

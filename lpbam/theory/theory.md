@@ -1,9 +1,5 @@
-----!
-Presentation
-----! 
-
-# 1 - LPBAM 
-## Low Power Background Autonomous Mode
+# 1 - Definition 
+## LPBAM = Low Power Background Autonomous Mode
 
 *LPBAM* is an operating mode that allows peripherals to be functional and autonomous independently from power modes and without any software running.
 It is performed thanks to a dedicated hardware subsystem embedded in the STM32U5 microcontroller.
@@ -103,34 +99,63 @@ Analog WDT from ADC can be used as trigger as well and can be used to trigger a 
 ![theory1](./img/08.png)
 
 
-# System Architecture and DMA Overview
-LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP called version3 or DMAv3 replacing all DMA that were in other STM32 series. Even if it integrated all previous DMA features Trigger, DMAMUX MDMA etc.  We have now a single DMA driver with two HW instances which are GPDMA and LPDMA.
+# 3- System Architecture and DMA Overview
+LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP called version3 or DMAv3 replacing all DMA that were in other STM32 series. It integrates all previous DMA features Trigger, DMAMUX MDMA etc.
+
+We have now a single DMA driver with two HW instances which are GPDMA and LPDMA.
 Both can be used in Linked list mode.
+
 GPDMA is on the CPU domain with 2 ports port 0 and port 1 LPDMA has a single port,
 
-![theory1](./img/09.png)
+![theory1](./img/13.png)
 
+# 4- LPDMA Architecture
+![theory1](./img/17.png)
 
-# Smart Run Domain(SRD)
-This is a zoom on smartun domain which is a clock domain with 2 masters AHB and LPDMAq and 2XSLave AHB3periph and internal SRAM2 - we can see the peripherals which is possible to use in STOP2 mode via LPDMA
+# 5- Smart Run Domain(SRD)
+This is a zoom on smartun domain which is a clock domain with 2 masters AHB and LPDMA and slaves which are  AHB3Peripehral and internal SRAM2.
+
 AHB master is bidirectional and has 4 channels 
-One thing to note is that LPDMA can only access smart run peripherals meaning that it can only access to SRAM4  and AHB3 peripherals not to others
+<ainfo>
+LPDMA can only access smart run peripherals meaning that it can only access to SRAM4  and AHB3 peripherals not to others
+</ainfo>
 
 ![theory1](./img/10.png)
 
-# 4 - SRD and clock distribution
-
-## New DMA IP
-![theory1](./img/13.png)
-
-## GPDMA vs LPDMA
+# 6- GPDMA vs LPDMA
 Below main difference between GPDMA and LPDMA
 
 ![theory1](./img/11.png)
 
-## SRD Architecture
-![theory1](./img/14.png)
+# 7- AHB/APB Ditribution over domains
+![theory1](./img/20.png)
 
-## Clock gating
+# 8- Clock gating
+
+In LPBAM Peripherals work down to STOP2 mode thanks to their own independent clock request capability. 
+This is one of the key aspects of LPBAM subsystem mechanism which enables remarkable power saving.
+
+In other MCU we would had to wake up at every DMA transfer complete flag, with LPBAM subsystem this does not happen.
+
+LPDMA HW automatically manages its own clock gating, so bus and kernel clocks are requested to RCC only when needed
+This gives great contribution to achieve best optimization of dynamic clock and results into enormous power saving of the overall system
+
 ![theory1](./img/15.png)
 ![theory1](./img/16.png)
+
+
+# 9- Clock Distribution in Stop2
+
+![theory1](./img/18.png)
+
+# 10- Pheriperals supporting LPBAM
+
+![theory1](./img/19.png)
+
+# 11- SRD State transitions
+
+![theory1](./img/21.png)
+
+# 12- How to Debug LPBAM Scenario
+
+![theory1](./img/22.png)
