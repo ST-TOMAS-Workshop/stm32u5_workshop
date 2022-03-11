@@ -20,56 +20,77 @@
 ,
 
 {
-  "name": " Exercize",
+  "name": " Exercise",
   "path": "/lpbam/handson/step1",
   "file": "handson0.md"
 }
 ,
 
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step1",
         "file": "handson.md"
       }
 ,
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step1",
         "file": "handson2.md"
       }
 ,
 
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step2",
         "file": "handson3.md"
       }
 ,
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step3",
         "file": "handson4.md"
       }
 
 ,
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step4",
         "file": "handson5.md"
       }
 
 ,
       {
-        "name": " Exercize",
+        "name": " Exercise",
         "path": "/lpbam/handson/step5",
         "file": "handson6.md"
       }
 ,
 
 {
-  "name": " Exercize",
+  "name": " Exercise",
   "path": "/lpbam/handson/step6",
   "file": "handson7.md"
+}
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step7",
+  "file": "handson8.md"
+}
+
+,
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step8",
+  "file": "handson9.md"
+}
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step9",
+  "file": "handson10.md"
 }
       
     ],
@@ -160,7 +181,17 @@
               ,
               {
                 "type": "File",
-                "name": "7.Power consumption",
+                "name": "7.Generated code",
+                "path": "lpbam/handson/step9",
+                "file": "handson10.md"
+              }
+
+
+,
+
+              {
+                "type": "File",
+                "name": "8.Power consumption",
                 "path": "lpbam/handson/step5",
                 "file": "handson6.md"
               }
@@ -169,11 +200,26 @@
               ,
               {
                 "type": "File",
-                "name": "8.Benchmark",
+                "name": "9.Benchmark",
                 "path": "lpbam/handson/step6",
                 "file": "handson7.md"
               }
+,
 
+
+             {
+                  "type": "File",
+                  "name": "10.Results discussion",
+                  "path": "lpbam/handson/step7",
+                  "file": "handson8.md"
+             }
+,           
+              {
+                  "type": "File",
+                  "name": "11.Wrap up",
+                  "path": "lpbam/handson/step8",
+                  "file": "handson9.md"
+                }
 
 
           
@@ -181,4 +227,7 @@
       }
     ]
   }
+  
+
+  
   
