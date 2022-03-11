@@ -169,7 +169,7 @@ the function to Enable/Disable the debug in STOP mode and to enter in STOP2 Mode
 
 ---
 
-## 3- LPBAM 
+# 3- LPBAM 
 
 Let's move now to the LPBAM folder
  in `lpbam_lpbamp1_scenario_build` let's add buffer declaration under `/* USER CODE BEGIN EV */`. This will contain the ADC buffer.
@@ -188,7 +188,7 @@ in function `MX_ADC4_MspInit` please add the below
   /* USER CODE END ADC4_MspInit 0 */
 ```
 
-  ## 4- Linker
+  # 4- Linker
 
   Linker file should be modified as follows.
   
@@ -217,7 +217,7 @@ The LPBAM utility includes two types of variables:
 </ainfo>
 ---
 
-## 5 - Extra
+# 5 - Extra
 
 NOTE: Next step is only for debug purposes of the Smart Run Domain.
   If we want to see timer output on an IO we can add the below code inside `MX_LPTIM1_MspInit`
