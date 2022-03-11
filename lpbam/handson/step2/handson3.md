@@ -26,7 +26,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 </ainfo>
 ---
 
-# LPBAM Managment #
+3- # LPBAM Managment #
 
 1. Change name of Queue1 to TIMER
 2. Click on Add Queue, create new queue and name it ADC
@@ -35,7 +35,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 
 ---
 
-# LPBAM Function Toolbox #
+4- # LPBAM Function Toolbox #
 
 *we will add LPTIM and ADC nodes in LPBAM configuration*
 
@@ -54,7 +54,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 ---
 
 
-# LpbaAp1/Scenario/Conversion/TIMER #
+5-# LpbaAp1/Scenario/Conversion/TIMER #
 
 *Queue tab remains unchanged*
 
@@ -70,7 +70,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
  </ainfo>
 ![lpbam config](./img/04.gif)
 
-# LPbamAp1/Scenario/ADC #
+6-# LPbamAp1/Scenario/ADC #
 
 *On the right panel we set parameters for the ADC4 sampling*
 
@@ -87,7 +87,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
    ![lpbam config](./img/05.gif)
 <!-- need to check if trigger is needed at this stage -->
 
-# Pinout & Configuration #
+7-# Pinout & Configuration #
 
 ## ADC4 ##
 
@@ -115,7 +115,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
 ---
 
-   ## LPTIM1 ##
+8- ## LPTIM1 ##
 
 *In this step we configure the LPTIM which is available in Smart Run Domain*
 
@@ -130,7 +130,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
  ---
 
-  ## PWR ##
+ 9-## PWR ##
 
 *We will enable SRAM Power down in Stopmode 1,2,3*
 
@@ -152,7 +152,7 @@ SRAM4 16KB will not be disabled as it's the only portion available in Stop2
 
  ---
 
- # Clock Configuration #
+ 10-# Clock Configuration #
 
 *In this step we configure the clock for LPTIM and ADC4 peripherals*
 
@@ -167,7 +167,7 @@ RC are powered off in STOP2 and this is visible from the configurator. PLL is al
 
  ![lpbam config](./img/07.png)
 
- # Project Manager #
+ 11-# Project Manager #
 
 Let's come back to the Cube MX Project Manager Tab
 and enter the following projects settings
