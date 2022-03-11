@@ -2,15 +2,12 @@
 Presentation
 ----!
 
-# **Debug** #
+## 1- Led Blinking
 
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
 
 During code development, we have added different features that will make up able to understand if the application is running correctly and will also enable us to verify that we are getting the expected behaviour of the Smart Run Domain.
 
----
-
-## 1- Led Blinking
 
 In our code we forced BLUE LED to be on after reset with fast blinking.
 If the application is running correctly you should be able to see:
