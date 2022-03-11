@@ -112,8 +112,6 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 </awarning>
 <!--add picture here -->
 
----
-
 # 8- LPTIM1 #
 
 *In this step we configure the LPTIM which is available in Smart Run Domain*
@@ -126,8 +124,6 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 5. Give Period = 128 and Pulse=64 <!-- need to check the impact that this number has-->
 
  ![lpbam config](./img/07.gif)
-
- ---
 
 # 9- PWR #
 
