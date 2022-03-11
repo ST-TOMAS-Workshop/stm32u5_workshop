@@ -2,7 +2,7 @@
 Presentation
 ----!
 
-1- # LPBAM Scenario & Configuration
+# 1- LPBAM Scenario & Configuration
 
 <ainfo>
 In this chapter we will talk about peripherals nodes for the sake of semplicity.
@@ -10,7 +10,7 @@ More correct vocabulary would be `LPBAM Function`
 Each block added to the Queue is actually handling more than a single DMA transfer.  Collection of nodes = LPBAM Function
 </ainfo>
 
-2- ## Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
+## 2- Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
 
 
    1.Click on the upper tab named 'LPBAM Scenario and Configuration'
@@ -25,8 +25,7 @@ Let's see how it looks like:
 LPBAM Scenario and Configurator is intened to be a tool to configure peripherals which are available for LPDMA independently from the power state we select
 </ainfo>
 ---
-
-3- # LPBAM Managment #
+# 3- LPBAM Managment #
 
 1. Change name of Queue1 to TIMER
 2. Click on Add Queue, create new queue and name it ADC
@@ -35,7 +34,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 
 ---
 
-4- # LPBAM Function Toolbox #
+# 4- LPBAM Function Toolbox #
 
 *we will add LPTIM and ADC nodes in LPBAM configuration*
 
@@ -54,7 +53,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 ---
 
 
-5-# LpbaAp1/Scenario/Conversion/TIMER #
+# 5- LpbaAp1/Scenario/Conversion/TIMER #
 
 *Queue tab remains unchanged*
 
@@ -70,7 +69,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
  </ainfo>
 ![lpbam config](./img/04.gif)
 
-6-# LPbamAp1/Scenario/ADC #
+# 6- LPbamAp1/Scenario/ADC #
 
 *On the right panel we set parameters for the ADC4 sampling*
 
@@ -87,7 +86,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
    ![lpbam config](./img/05.gif)
 <!-- need to check if trigger is needed at this stage -->
 
-7-# Pinout & Configuration #
+# 7- Pinout & Configuration #
 
 ## ADC4 ##
 
@@ -115,7 +114,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
 ---
 
-8- ## LPTIM1 ##
+## 8- LPTIM1 ##
 
 *In this step we configure the LPTIM which is available in Smart Run Domain*
 
@@ -130,7 +129,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
  ---
 
- 9-## PWR ##
+## 9- PWR ##
 
 *We will enable SRAM Power down in Stopmode 1,2,3*
 
@@ -152,7 +151,7 @@ SRAM4 16KB will not be disabled as it's the only portion available in Stop2
 
  ---
 
- 10-# Clock Configuration #
+# 10- Clock Configuration #
 
 *In this step we configure the clock for LPTIM and ADC4 peripherals*
 
