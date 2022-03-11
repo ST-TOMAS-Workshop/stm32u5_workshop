@@ -115,7 +115,7 @@
 
               {
                 "type": "File",
-                "name": "Hands-on Overview",
+                "name": "1.Hands-on Overview",
                 "path": "lpbam/handson/step1",
                 "file": "handson0.md"
               }
@@ -123,14 +123,14 @@
 ,
               {
                 "type": "File",
-                "name": "Nucleo Board Selection",
+                "name": "2.Nucleo Board Selection",
                 "path": "lpbam/handson/step1",
                 "file": "handson.md"
               }
 ,
               {
                 "type": "File",
-                "name": "Peripherals configuration CubeMx",
+                "name": "3.Peripherals configuration CubeMx",
                 "path": "lpbam/handson/step1",
                 "file": "handson2.md"
               }
