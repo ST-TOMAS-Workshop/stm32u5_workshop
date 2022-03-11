@@ -105,12 +105,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
    ![lpbam config](./img/06.gif)
 
    ---
-
-<awarning>
-## Check LPBAM DESIGN
-By clicking on related button we should get a reminder mentioning that LPTIM is not configured
-</awarning>
-<!--add picture here -->
+<!--add picture here --> 
 
 # 8- LPTIM1 #
 
