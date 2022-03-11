@@ -6,7 +6,7 @@ Presentation
 
 <!--this whole chapter can be turned in presentation mode  -->
 
-## 1- File structure ##
+# 1- File structure #
 
 ## Project Explorer
 
@@ -56,7 +56,7 @@ void MX_LpbamAp1_Scenario_Start(DMA_HandleTypeDef *hdma);
 void MX_LpbamAp1_Scenario_Stop(DMA_HandleTypeDef *hdma);
 
 ```
-## 2- main.c ##
+# 2- main.c #
 
 Let's start by including the LPBAM Library header file
 * Note is named after the Scenario, might change if you provided a different name to it
