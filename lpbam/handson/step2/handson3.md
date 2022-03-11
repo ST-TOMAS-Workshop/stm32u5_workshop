@@ -107,6 +107,11 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
    ---
 <!--add picture here --> 
 
+<awarning>
+By clicking on Check LPBAM DESIGN button we should get a reminder mentioning that LPTIM is not configured
+</awarning>
+
+
 # 8- LPTIM1 #
 
 *In this step we configure the LPTIM which is available in Smart Run Domain*
@@ -157,7 +162,7 @@ RC are powered off in STOP2 and this is visible from the configurator. PLL is al
 
  ![lpbam config](./img/07.png)
 
- 11-# Project Manager #
+#11- Project Manager #
 
 Let's come back to the Cube MX Project Manager Tab
 and enter the following projects settings
