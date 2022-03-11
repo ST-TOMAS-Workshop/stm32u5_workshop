@@ -1,42 +1,52 @@
 {
-    "title": "STM32U5 Workshop",
-    "githubLoc": "https://raw.githubusercontent.com/RRISTM/stm32u5_workshop/master/",
-    "options": {
-      "allowMenu": true,
-      "allowTagSelect": false
+  "title": "STM32U5 Workshop",
+  "githubLoc": "https://raw.githubusercontent.com/RRISTM/stm32u5_workshop/master/",
+  "options": {
+    "allowMenu": true,
+    "allowTagSelect": false
+  },
+  "filesToLoadArr": [
+    {
+      "name": "GPDMA handson",
+      "path": "/gpdma",
+      "file": "gpdma_handson_copy.md"
     },
-    "filesToLoadArr": [
-      {
-        "name": "GPDMA handson",
-        "path": "/gpdma",
-        "file": "gpdma_handson_copy.md"
-      },
-      {
-        "name": "LPBAM handson",
-        "path": "/lpbam",
-        "file": "lpbam_handson_copy.md"
-      },
-      {
-        "name": "LP modes handson",
-        "path": "/lpmodes",
-        "file": "lpmodes_handson_copy.md"
-      }
-    ],
-    "menuStructure": [
-      {
-        "type": "File",
-        "name": "GPDMA handson",
-        "file": "gpdma_handson_copy.md"
-      },
-      {
-        "type": "File",
-        "name": "LPBAM handson",
-        "file": "lpbam_handson_copy.md"
-      },
-      {
-        "type": "File",
-        "name": "LP modes handson",
-        "file": "lpmodes_handson_copy.md"
-      }
-    ]
-  }
+    {
+      "name": "LP modes handson",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson.md"
+    },
+    {
+      "name": "LP modes handson",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_powmon.md"
+    },
+    {
+      "name": "Test",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_test.md"
+    }
+  ],
+  "menuStructure": [
+    {
+      "type": "File",
+      "name": "GPDMA handson",
+      "file": "gpdma_handson_copy.md"
+    },
+    {
+      "type": "File",
+      "name": "LP Mode handson",
+      "file": "lpmodes_handson.md"
+    },
+    {
+      "type": "File",
+      "name": "LP modes handson - PowMon",
+      "file": "lpmodes_handson_powmon.md"
+    },
+    {
+      "type": "File",
+      "name": "Test",
+      "file": "lpmodes_handson_test.md"
+    }
+  ]
+}
