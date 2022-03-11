@@ -124,6 +124,10 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 5. Give Period = 128 and Pulse=64 <!-- need to check the impact that this number has-->
 
  ![lpbam config](./img/07.gif)
+ 
+<awarning>
+By clicking on Check LPBAM DESIGN button we should get a reminder mentioning that LPTIM is not configured
+</awarning>
 
 # 9- PWR #
 
@@ -162,7 +166,7 @@ RC are powered off in STOP2 and this is visible from the configurator. PLL is al
 
  ![lpbam config](./img/07.png)
 
-#11- Project Manager #
+# 11- Project Manager #
 
 Let's come back to the Cube MX Project Manager Tab
 and enter the following projects settings
