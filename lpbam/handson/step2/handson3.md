@@ -114,7 +114,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
 ---
 
-## 8- LPTIM1 ##
+# 8- LPTIM1 #
 
 *In this step we configure the LPTIM which is available in Smart Run Domain*
 
@@ -129,7 +129,7 @@ By clicking on related button we should get a reminder mentioning that LPTIM is 
 
  ---
 
-## 9- PWR ##
+# 9- PWR #
 
 *We will enable SRAM Power down in Stopmode 1,2,3*
 
