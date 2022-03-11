@@ -1,0 +1,230 @@
+{
+    "title": "STM32U5 Workshop",
+    "githubLoc": "https://raw.githubusercontent.com/RRISTM/stm32u5_workshop/master/",
+    "options": {
+      "allowMenu": true,
+      "allowTagSelect": false
+    },
+    "filesToLoadArr": [
+      {
+        "name": "Theory",
+        "path": "/lpbam/theory",
+        "file": "linked list.md"
+      },
+
+      {
+        "name": "Theory",
+        "path": "/lpbam/theory",
+        "file": "theory.md"
+      }
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step1",
+  "file": "handson0.md"
+}
+,
+
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step1",
+        "file": "handson.md"
+      }
+,
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step1",
+        "file": "handson2.md"
+      }
+,
+
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step2",
+        "file": "handson3.md"
+      }
+,
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step3",
+        "file": "handson4.md"
+      }
+
+,
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step4",
+        "file": "handson5.md"
+      }
+
+,
+      {
+        "name": " Exercise",
+        "path": "/lpbam/handson/step5",
+        "file": "handson6.md"
+      }
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step6",
+  "file": "handson7.md"
+}
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step7",
+  "file": "handson8.md"
+}
+
+,
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step8",
+  "file": "handson9.md"
+}
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step9",
+  "file": "handson10.md"
+}
+      
+    ],
+  
+    "menuStructure": [
+      {
+        "type": "File",
+        "name": "GPDMA handson",
+        "file": "gpdma_handson_copy.md"
+      }
+
+      ,
+      {
+        "type": "File",
+        "name": "LP modes handson",
+        "file": "lpmodes_handson_copy.md"
+      },
+      {
+        "type": "Folder",
+        "name": "LPBAM Theory",
+        "children":[
+          {
+            "type": "File",
+            "name": "Overview",
+            "path": "lpbam/theory",
+            "file": "theory.md"
+          },
+          {
+            "type": "File",
+            "name": "Principles",
+            "path": "lpbam/theory",
+            "file": "linked list.md"
+          }
+
+
+
+        ]
+      },
+          {
+            "type": "Folder",
+            "name": "LPBAM Handson",
+            "children":[
+
+              {
+                "type": "File",
+                "name": "1.Hands-on Overview",
+                "path": "lpbam/handson/step1",
+                "file": "handson0.md"
+              }
+
+,
+              {
+                "type": "File",
+                "name": "2.Nucleo Board Selection",
+                "path": "lpbam/handson/step1",
+                "file": "handson.md"
+              }
+,
+              {
+                "type": "File",
+                "name": "3.Peripherals configuration CubeMx",
+                "path": "lpbam/handson/step1",
+                "file": "handson2.md"
+              }
+             ,
+              {
+                "type": "File",
+                "name": "4.LPBAM Scenario & Configuration",
+                "path": "lpbam/handson/step2",
+                "file": "handson3.md"
+              }
+,
+              {
+                "type": "File",
+                "name": "5.Cube IDE",
+                "path": "lpbam/handson/step3",
+                "file": "handson4.md"
+              }
+,
+              {
+                "type": "File",
+                "name": "6.Debug",
+                "path": "lpbam/handson/step4",
+                "file": "handson5.md"
+              }
+
+
+              ,
+              {
+                "type": "File",
+                "name": "7.Generated code",
+                "path": "lpbam/handson/step9",
+                "file": "handson10.md"
+              }
+
+
+,
+
+              {
+                "type": "File",
+                "name": "8.Power consumption",
+                "path": "lpbam/handson/step5",
+                "file": "handson6.md"
+              }
+
+
+              ,
+              {
+                "type": "File",
+                "name": "9.Benchmark",
+                "path": "lpbam/handson/step6",
+                "file": "handson7.md"
+              }
+,
+
+
+             {
+                  "type": "File",
+                  "name": "10.Results discussion",
+                  "path": "lpbam/handson/step7",
+                  "file": "handson8.md"
+             }
+,           
+              {
+                  "type": "File",
+                  "name": "11.Wrap up",
+                  "path": "lpbam/handson/step8",
+                  "file": "handson9.md"
+                }
+
+
+          
+        ]
+      }
+    ]
+  }
+  
