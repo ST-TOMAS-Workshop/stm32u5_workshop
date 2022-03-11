@@ -8,19 +8,19 @@ We will now measure power consumption using STM32L562E-DK and `STM32 Cube Monito
 
 Please follow the below steps
 
-## 1 Board Switch and jumper config settings
+# 1 Board Switch and jumper config settings
 ![lpbam config](./img/0501.png)
 
-## 2 Board connection to Nucleo-U575ZIQ
+# 2 Board connection to Nucleo-U575ZIQ
 CN20 is on the reverse side of the board
 
 ![lpbam config](./img/0502.png)
 
-## 3 STM32CubeMonitor-Power settings
+# 3 STM32CubeMonitor-Power settings
 
 ![lpbam config](./img/0503.png)
 
-## 4  Power measurement
+# 4  Power measurement
 
 <awarning>
 If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 and run a new power cycle
@@ -29,12 +29,12 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 
 ![lpbam config](./img/0504.png)
 
-## 5 Power sequence
+# 5 Power sequence
 
 ![lpbam config](./img/0505.png)
 
 
-## 6 LPBAM Power consumption result
+# 6 LPBAM Power consumption result
 
 ![lpbam config](./img/0506.png)
 
@@ -44,7 +44,7 @@ This power consumption is already remarkable but can be firtherly optimized by d
 
 ---
 
-## 7 MSIK Frequency change
+# 7 MSIK Frequency change
 
  In lpbam_lpbamp1_config.c go to function `MX_SystemClock_Config` and modify both MSIX and MISC Clock ranges assigning Range 1 which means 24MHz
 
@@ -66,7 +66,7 @@ This is truly remarkable: we have changed clock speed by a factor twelve for but
 This happens because SRD is adjusting clock gating so DMA transfer will become longer in time but less frequent
 </ainfo>
 
-## 8 ADC Sampling Frequency change
+# 8 ADC Sampling Frequency change
 
 We now try to modify ADC sampling frequency to check power consumption changes when sampling frequency is increased bya  factor 10x
 
