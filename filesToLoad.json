@@ -130,7 +130,7 @@
 ,
               {
                 "type": "File",
-                "name": "3.Peripherals configuration CubeMx",
+                "name": "Peripherals configuration CubeMx",
                 "path": "lpbam/handson/step1",
                 "file": "handson2.md"
               }
