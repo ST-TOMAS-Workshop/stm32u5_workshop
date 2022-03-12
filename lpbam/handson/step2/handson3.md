@@ -1,7 +1,3 @@
-----!
-Presentation
-----!
-
 ## 1- Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
 
 
