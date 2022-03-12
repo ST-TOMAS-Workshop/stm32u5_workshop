@@ -1,4 +1,8 @@
-## 1- Led Blinking
+----!
+Presentation
+----!
+
+# 1- Led Blinking
 
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
 
@@ -15,7 +19,7 @@ If you achieved this it means that the system is waking up autonomously from STO
 
 ---
 
-## 2- UART
+# 2- UART
 
 In code we added a printf to show content of the ADC data buffer.
 You can open your preferred terminal use baud 115200, 8N1 no flow control, and check if there something similar to 1500
@@ -25,7 +29,7 @@ This is equivalent to Vref=1.2V by ADC4 which is 12bit and powered at 3.3V
 
 ---
 
-## 3- Debug PINS
+# 3- Debug PINS
 
 <awarning>
 This step will require logic analyzer, if attendees do not have, this part will be performed by instructor only 
@@ -39,7 +43,7 @@ It's important to note that SRD is an active low signal
 
 ---
 
-## 4- Logic Analyzer view
+# 4- Logic Analyzer view
 LPTIM output was enabled for this step following the optional code modification presented in Cube IDE chapter. Assigned IO is PC1.
 
 ![lpbam config](./img/0403.png)
