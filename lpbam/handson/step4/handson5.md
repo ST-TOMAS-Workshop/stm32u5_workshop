@@ -1,7 +1,3 @@
-----!
-Presentation
-----!
-
 ## 1- Led Blinking
 
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
