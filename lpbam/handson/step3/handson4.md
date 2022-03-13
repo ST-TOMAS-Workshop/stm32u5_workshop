@@ -188,6 +188,7 @@ in function `MX_ADC4_MspInit` please add the below
   /* USER CODE END ADC4_MspInit 0 */
 ```
 ---
+
   # 4- Linker
 
   Linker file should be modified as follows.
