@@ -155,23 +155,30 @@ He will not generate half word configuration for us
 To file `linked_list.c` add
  
 ```c
-  pNodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_HALFWORD;
-  pNodeConfig.Init.DestDataWidth = DMA_DEST_DATAWIDTH_HALFWORD;
+  pNodeConfig.RepeatBlockConfig.RepeatCount = 1;
+  pNodeConfig.RepeatBlockConfig.SrcAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.DestAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.BlkSrcAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.BlkDestAddrOffset = 0;
 ```
 
 like
 
 ```c-nc
   /* Set node configuration ################################################*/
-  pNodeConfig.Init.Request = DMA_REQUEST_SW;
-  pNodeConfig.Init.Direction = DMA_MEMORY_TO_MEMORY;
-  pNodeConfig.RepeatBlockConfig.RepeatCount = 16;
-  pNodeConfig.RepeatBlockConfig.DestAddrOffset = 32;
-  pNodeConfig.RepeatBlockConfig.BlkDestAddrOffset = -126;
-  pNodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_HALFWORD;
-  pNodeConfig.Init.DestDataWidth = DMA_DEST_DATAWIDTH_HALFWORD;
-  pNodeConfig.SrcAddress = data;
-  pNodeConfig.DstAddress = data2;
-  pNodeConfig.DataSize = 8;
+  pNodeConfig.Init.Request = GPDMA1_REQUEST_USART1_TX;
+  pNodeConfig.Init.Direction = DMA_MEMORY_TO_PERIPH;
+  pNodeConfig.Init.DestInc = DMA_DINC_FIXED;
+  pNodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_BYTE;
+  pNodeConfig.Init.DestDataWidth = DMA_DEST_DATAWIDTH_BYTE;
+  pNodeConfig.Init.TransferEventMode = DMA_TCEM_BLOCK_TRANSFER;
+  pNodeConfig.RepeatBlockConfig.RepeatCount = 1;
+  pNodeConfig.RepeatBlockConfig.SrcAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.DestAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.BlkSrcAddrOffset = 0;
+  pNodeConfig.RepeatBlockConfig.BlkDestAddrOffset = 0;
+  pNodeConfig.SrcAddress = data2;
+  pNodeConfig.DstAddress = &(USART1->TDR);
+  pNodeConfig.DataSize = (64*2);
   ```
 
