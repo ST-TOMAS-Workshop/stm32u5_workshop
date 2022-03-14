@@ -22,9 +22,9 @@
       "file": "lpmodes_handson_powmon.md"
     },
     {
-      "name": "Test",
+      "name": "LP modes Theory",
       "path": "/lpmodes",
-      "file": "lpmodes_handson_test.md"
+      "file": "lpmodes_theory.md"
     }
   ],
   "menuStructure": [
@@ -45,8 +45,8 @@
     },
     {
       "type": "File",
-      "name": "Test",
-      "file": "lpmodes_handson_test.md"
+      "name": "LP modes Theory",
+      "file": "lpmodes_theory.md"
     }
   ]
 }
