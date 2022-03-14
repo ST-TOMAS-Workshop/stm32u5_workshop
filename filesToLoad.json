@@ -17,6 +17,26 @@
         "file": "2_gpdma_handson_copy.md"
       },
       {
+        "name": "GPDMA handson 3",
+        "path": "/gpdma",
+        "file": "3_gpdma_handson_copy.md"
+      },
+      {
+        "name": "GPDMA handson 4",
+        "path": "/gpdma",
+        "file": "4_gpdma_handson_copy.md"
+      },
+      {
+        "name": "GPDMA handson 5",
+        "path": "/gpdma",
+        "file": "5_gpdma_handson_copy.md"
+      },
+      {
+        "name": "GPDMA handson 6",
+        "path": "/gpdma",
+        "file": "6_gpdma_handson_copy.md"
+      },
+      {
         "name": "LPBAM handson",
         "path": "/lpbam",
         "file": "lpbam_handson_copy.md"
@@ -57,6 +77,26 @@
         "type": "File",
         "name": "GPDMA handson 2",
         "file": "2_gpdma_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "GPDMA handson 3",
+        "file": "3_gpdma_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "GPDMA handson 4",
+        "file": "4_gpdma_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "GPDMA handson 5",
+        "file": "5_gpdma_handson_copy.md"
+      },
+      {
+        "type": "File",
+        "name": "GPDMA handson 6",
+        "file": "6_gpdma_handson_copy.md"
       },
       {
         "type": "File",

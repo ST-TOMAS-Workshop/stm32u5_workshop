@@ -1,4 +1,4 @@
-# Lxtending our list
+# Extending our list
 
 In this part we will extend our example. By adding UART to send received `data` buffer.
 
