@@ -2,6 +2,12 @@
 Presentation
 ----!
 
+# Power Measurement
+
+We will now measure power consumption using STM32L562E-DK and `STM32 Cube Monitor Power`
+
+Please follow the below steps
+
 # 1 Board Switch and jumper config settings
 ![lpbam config](./img/0501.png)
 
@@ -64,34 +70,33 @@ This happens because SRD is adjusting clock gating so DMA transfer will become l
 
 We now try to modify ADC sampling frequency to check power consumption changes when sampling frequency is increased bya  factor 10x
 
-In lpbam_lpbamp1_scenario_build.c go to function `MX_TIMER_Q_Build` modify sampling  `TIMER queue PWM_2 build` and `TIMER queue PWM_3 build` as follows
+In lpbam_lpbamp1_scenario_build.c go to function `MX_TIMER_Q_Build` modify sampling  `TIMER queue PWM_2 build` as follows
 
 ```c
- /**
-    * TIMER queue PWM_2 build
-    */
-  pPWMFull_LPTIM.UpdatePeriod = ENABLE;
-  pPWMFull_LPTIM.PeriodValue = 51;
+pPWMFull_LPTIM.UpdatePeriod = ENABLE;
+  pPWMFull_LPTIM.PeriodValue = 12;
   pPWMFull_LPTIM.UpdatePulse = ENABLE;
-  pPWMFull_LPTIM.PulseValue = 25;
+  pPWMFull_LPTIM.PulseValue = 6;
   pPWMFull_LPTIM.UpdateRepetition = ENABLE;
   pPWMFull_LPTIM.RepetitionValue = 255;
   if (ADV_LPBAM_LPTIM_PWM_SetFullQ(LPTIM1, LPBAM_LPTIM_CHANNEL_1, &pDMAListInfo_LPTIM, &pPWMFull_LPTIM, &PWM_2_Desc, &TIMER_Q) != LPBAM_OK)
   {
     Error_Handler();
   }
+```
 
-    /**
-    * TIMER queue PWM_3 build
-    */
-  pPWMFull_LPTIM.PeriodValue = 12;
-  pPWMFull_LPTIM.PulseValue = 6;
+and `TIMER queue PWM_3 build` in the following way:
+
+```c
+  pPWMFull_LPTIM.PeriodValue = 51;
+  pPWMFull_LPTIM.PulseValue = 25;
   pPWMFull_LPTIM.RepetitionValue = 63;
   if (ADV_LPBAM_LPTIM_PWM_SetFullQ(LPTIM1, LPBAM_LPTIM_CHANNEL_1, &pDMAListInfo_LPTIM, &pPWMFull_LPTIM, &PWM_3_Desc, &TIMER_Q) != LPBAM_OK)
   {
     Error_Handler();
   }
 ```
+
 
 ![lpbam config](./img/0508.png)
 
