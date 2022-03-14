@@ -42,7 +42,7 @@ YourNodeName3
 # Set 2D addresing
 
 1. In section **2D addressing** set **Configuration** to `Enabled`
-2. In section **2D addressing** set **Destination Address Offset** to `32` (16halfwords = 2*16bytes)
+2. In section **2D addressing** set **Destination Address Offset** to `30` (16halfwords = 2*16bytes minus 2bytes)
 
 ```c
 32
