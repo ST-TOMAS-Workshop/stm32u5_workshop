@@ -13,5 +13,17 @@ An LPBAM task is a seried of elementary DMA node linked between them in a specif
 ![theory1](./img/23.png)
 
 # 3- Linked List Mode
+
+Each DMA transfer has its own configuration stored in an SRAM area. In case of LPDMA it is SRAM4. Each of this stored configurations is named node.
+
+- Each node is linked to another node in order to define the next transfer configuration.
+- A set of DMA transfer nodes linked to each other builds a queue.
+When started, the DMA channel fetches the first linked-list node from SRAM (known as head node).
+- After that, the next linked list node is fetched and executed.
+- This operation is repeated until the last queue node (known as tail node) is executed.
+  
+The linked-list queue can also be configured in circular mode, the DMA repeats node execution in an infinite loop (from the first circular nodes to tail node).
+
+
 ![theory1](./img/24.png)
 

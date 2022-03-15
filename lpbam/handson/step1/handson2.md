@@ -64,7 +64,7 @@ Role of PA5,PA6,PA7 will be understood later in this session
 
 ---
 
-## 5 -USART ##
+# 5 -USART #
 
 **Usart will be used to display ADC data buffer values**
 

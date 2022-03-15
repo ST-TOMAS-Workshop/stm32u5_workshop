@@ -1,4 +1,8 @@
-<!--#  **LPBAM Scenario & Configuration** -->
+----!
+Presentation
+----!
+
+# 1- Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
 
 <ainfo>
 In this chapter we will talk about peripherals nodes for the sake of semplicity.
@@ -6,8 +10,9 @@ More correct vocabulary would be `LPBAM Function`
 Each block added to the Queue is actually handling more than a single DMA transfer.  Collection of nodes = LPBAM Function
 </ainfo>
 
-# 1- Cube Mx 6.5 integrates new tab to easily configure LPBAM peripherals and functions
+<p>
 
+</p>
 
    1.Click on the upper tab named 'LPBAM Scenario and Configuration'
 

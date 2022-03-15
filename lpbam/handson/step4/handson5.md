@@ -28,7 +28,7 @@ If you achieved this it means that the system is waking up autonomously from STO
 ## 2- UART
 
 In code we added a printf to show content of the ADC data buffer.
-You can open your preferred terminal use baud 115200, 8N1 no flow control, and check if there something similar to 1456.
+You can open your preferred terminal use baud 115200, 8N1 no flow control, and check if there something similar to 1590.
 
 <ainfo>
 This is equivalent to Vref=1.2V by ADC4 which is 12bit and powered at 3.3V
