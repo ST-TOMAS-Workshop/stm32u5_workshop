@@ -2,6 +2,9 @@
 
 We will use GPDAM to automatically send data over UART1. 
 When the buffer is full it will trigger the GPDMA which automatically transfer all data. 
+This will be used in last handson
+
+![preparation for pldma](./img/lpbam_preparation.json)
 
 # Enable UART1
 

@@ -4,6 +4,8 @@ The ADC+UART are now working in loop. This can be wery fast and can also cause a
 But we can slow down the GPDMA by adding trigger.
 Then the GPDMA transfer will be conditioned by this trigger event. 
 
+![adc dma uart tim](./img/adc_dma_uart_tim.json)
+
 # Trigger source
 
 As trigger source in our case we will use a timer
@@ -77,6 +79,10 @@ at the end of `/* USER CODE BEGIN 2 */` section
 1. Compile project
 2. Run project in debugger
 
+# What we have
 
+we start GPDMA by TIM event. Then GPDMA transfer data from ADC and sent them over UART
+
+![adc dma uart tim](./img/adc_dma_uart_tim.json)
 
 

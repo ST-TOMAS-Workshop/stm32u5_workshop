@@ -15,6 +15,19 @@ Presentation
 * Now we do the same but with **LLI list**.
 * Which allow us later add more lists in later steps
 
+# Classic DMA circular mode
+
+Classical DMA had bit which allow repeat the configuration
+
+![old circular](./img/old_dma_circular.json)
+
+# GPDMA list mode
+
+The GPDMA have different approach
+It have **lists** containing **configuration** which is used by **GPDMA**
+
+![gpdma list](./img/gpdma_list.json)
+
 # Return back to CubeMX
 
 In MX the ADC configuration will be the same 
@@ -240,3 +253,21 @@ To section `/* USER CODE BEGIN 2 */` like
 # What we created
 
 We have similar application like in handson 1 but now based directly on linked list, where we can more elements
+
+# Created Node
+
+MX created node for use by `HAL_DMAEx_List_BuildNode`
+
+![build node](./img/build_node.json)
+
+# Add node into Queue
+
+MX added this node to queue with `HAL_DMAEx_List_InsertNode_Tail`
+
+![add node](./img/insert_node.json)
+
+# Add link to GPDMA
+
+We lined node to our GPDMA channel with `HAL_DMAEx_List_LinkQ`
+
+![link queue](./img/link_queue.json)

@@ -1,24 +1,13 @@
 <!-- ----!
 Presentation
 ----! -->
-
-# GPDMA handson copcopysheet 
-
-## 1. GPDMA + ADC
+# 1. GPDMA + ADC
 
  We create simple example where first GPDMA transfersdata from ADC. 
 
 ![adc dma description](./img/adc_dma_desc.json)
 
-## 2. TIM + GPDMA + ADC
-
-Then we modify the example that GPDMA is triggered from TIM to start transfering data from ADC
-
-## 3. TIM + GPDMA + ADC + UART
-
-At the end we modify GPDMA again to get data from ADC and when finished to transfer them over UART. 
-
-# GPDMA + ADC
+# Create new project
 
 1. Start new project. For STM32U575ZIT
    Description can be found on this [Link](./../utility_config/mx_create_project.md)
@@ -162,9 +151,9 @@ Fun code by pressing `F8` or press Run
 
 ![Run code](./img/22_02_03_89.gif)
 
-# How the GPDMA works
+# What we created
 
-
+![adc dma description](./img/adc_dma_desc.json)
 
 
 

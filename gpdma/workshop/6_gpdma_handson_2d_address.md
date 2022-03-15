@@ -9,6 +9,13 @@ CH1_a, CH1_b, CH2_a, CH2_b, CH3_a, CH3_b, CH4_a, CH4_b
 
 For this we will use 2D addressing feature of GPDMA
 
+# How the 2D addresing can looks like
+
+![2d addresing](./img/2d_addresing_offsets.json)
+
+# How it will work for us
+
+![2d addresing in our app](./img/2d_addresing.json)
 
 # Select LINKEDLIST & Add new node
 
@@ -183,3 +190,12 @@ like
   pNodeConfig.DataSize = (64*2);
   ```
 
+# Now compile and run application
+
+Compile code and run debug we can check content of `data` and `data2`
+
+# What we created
+
+We added new node which can sort the content before is sent over by UART
+
+![2d addresing](./img/2d_addresing.json)

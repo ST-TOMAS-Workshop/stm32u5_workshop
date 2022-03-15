@@ -7,7 +7,9 @@ How to do it:
 1. We add **UART** and configure it.
 2. We add new node to our **GPDMA**
 
-ow return back to MX
+![adc dma uart](./img/adc_dma_uart.json)
+
+Now return back to MX
 
 # Selecting UART1
 
@@ -134,3 +136,9 @@ like
   HAL_ADC_Start(&hadc1);
   /* USER CODE END 2 */
 ```
+
+# What we have
+
+We added uart and use GPDMA to aquire data from ADC and send them over UART
+
+![adc dma uart](./img/adc_dma_uart.json)
