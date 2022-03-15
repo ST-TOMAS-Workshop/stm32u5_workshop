@@ -1,5 +1,9 @@
 # Use D2D addressing
 
+<aerror>
+Currenlty under construction
+</aerror>
+
 Now we exten our example even more. 
 
 In current setup the channels from adc are stored in buffer like 

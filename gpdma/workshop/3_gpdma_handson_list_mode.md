@@ -1,6 +1,6 @@
-<!-- ----!
+----!
 Presentation
-----! -->
+----!
 
 # GPDMA handson adding features
 
