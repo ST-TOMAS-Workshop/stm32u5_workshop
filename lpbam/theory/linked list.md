@@ -1,8 +1,11 @@
-# Quick Summary Linked List
+----!
+Presentation
+----!
+
+# 1-Quick Summary Linked List
 
 We saw linked list in previous section so this will be just a quick recap
 
-# 1-Main Principle
 ![theory1](./img/12.png)
 
 # 2- LPBAM Bases
