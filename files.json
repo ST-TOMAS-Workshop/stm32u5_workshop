@@ -1,0 +1,234 @@
+{
+    "files": [
+        {
+            "name": "1. Modes",
+            "path": "/gpdma/theory",
+            "file": "1_gpdma_modes.md"
+        },
+        {
+            "name": "2. Circular mode",
+            "path": "/gpdma/theory",
+            "file": "2_gpdma_circular.md"
+        },
+        {
+            "name": "3. Requests",
+            "path": "/gpdma/theory",
+            "file": "3_gpdma_requests.md"
+        },
+        {
+            "name": "4. Priority",
+            "path": "/gpdma/theory",
+            "file": "4_gpdma_priority.md"
+        },
+        {
+            "name": "5. Direction",
+            "path": "/gpdma/theory",
+            "file": "5_gpdma_direction.md"
+        },
+        {
+            "name": "6. Src & Dest Config",
+            "path": "/gpdma/theory",
+            "file": "6_gpdma_src_dest_configuration.md"
+        },
+        {
+            "name": "7. Data handling",
+            "path": "/gpdma/theory",
+            "file": "7_gpdma_data_handling.md"
+        },
+        {
+            "name": "8. Trigger",
+            "path": "/gpdma/theory",
+            "file": "8_gpdma_trigger.md"
+        },
+        {
+            "name": "9. Transfer events",
+            "path": "/gpdma/theory",
+            "file": "9_gpdma_transfer_events.md"
+        },
+        {
+            "name": "10. 2D addressing",
+            "path": "/gpdma/theory",
+            "file": "10_gpdma_2d_addressing.md"
+        },
+        {
+            "name": "11. Linked list",
+            "path": "/gpdma/theory",
+            "file": "11_gpdma_linked_list.md"
+        },
+        {
+            "name": "1. Introduction",
+            "path": "/gpdma/workshop",
+            "file": "1_gpdma_handson_introduction.md"
+        },
+        {
+            "name": "2. Basic DMA",
+            "path": "/gpdma/workshop",
+            "file": "2_gpdma_handson_basic_gpdma.md"
+        },
+        {
+            "name": "3. Linked list",
+            "path": "/gpdma/workshop",
+            "file": "3_gpdma_handson_list_mode.md"
+        },
+        {
+            "name": "4. UART node",
+            "path": "/gpdma/workshop",
+            "file": "4_gpdma_handson_uart_node.md"
+        },
+        {
+            "name": "5. TIM trigger",
+            "path": "/gpdma/workshop",
+            "file": "5_gpdma_handson_tim_trigger.md"
+        },
+        {
+            "name": "6. 2D addressing",
+            "path": "/gpdma/workshop",
+            "file": "6_gpdma_handson_2d_address.md"
+        },
+        {
+            "name": "6b. 2D addressing",
+            "path": "/gpdma/workshop",
+            "file": "6b_gpdma_handson_2d_address.md"
+        },
+        {
+            "name": "7. Events",
+            "path": "/gpdma/workshop",
+            "file": "7_gpdma_handson_events.md"
+        },
+        {
+            "name": "8. Conclusion",
+            "path": "/gpdma/workshop",
+            "file": "8_conclusion.md"
+        },
+        {
+            "name": "9. LPBAM preparation",
+            "path": "/gpdma/workshop",
+            "file": "9_preparation_for_lpbam.md"
+        }
+    ],
+    "structure": [
+        {
+            "type": "Folder",
+            "name": "GPDMA",
+            "children": [
+                {
+                    "type": "Folder",
+                    "name": "Workshop",
+                    "children": [
+                        {
+                            "name": "1. Introduction",
+                            "type": "File",
+                            "file": "1_gpdma_handson_introduction.md"
+                        },
+                        {
+                            "name": "2. Basic DMA",
+                            "type": "File",
+                            "file": "2_gpdma_handson_basic_gpdma.md"
+                        },
+                        {
+                            "name": "3. Linked list",
+                            "type": "File",
+                            "file": "3_gpdma_handson_list_mode.md"
+                        },
+                        {
+                            "name": "4. UART node",
+                            "type": "File",
+                            "file": "4_gpdma_handson_uart_node.md"
+                        },
+                        {
+                            "name": "5. TIM trigger",
+                            "type": "File",
+                            "file": "5_gpdma_handson_tim_trigger.md"
+                        },
+                        {
+                            "name": "6. 2D addressing",
+                            "type": "File",
+                            "file": "6_gpdma_handson_2d_address.md"
+                        },
+                        {
+                            "name": "6b. 2D addressing",
+                            "type": "File",
+                            "file": "6b_gpdma_handson_2d_address.md"
+                        },
+                        {
+                            "name": "7. Events",
+                            "type": "File",
+                            "file": "7_gpdma_handson_events.md"
+                        },
+                        {
+                            "name": "8. Conclusion",
+                            "type": "File",
+                            "file": "8_conclusion.md"
+                        },
+                        {
+                            "name": "9. LPBAM preparation",
+                            "type": "File",
+                            "file": "9_preparation_for_lpbam.md"
+                        }
+                    ]
+                },
+                {
+                    "type": "Folder",
+                    "name": "Theory",
+                    "children": [
+                        {
+                            "name": "1. Modes",
+                            "type": "File",
+                            "file": "1_gpdma_modes.md"
+                        },
+                        {
+                            "name": "2. Circular mode",
+                            "type": "File",
+                            "file": "2_gpdma_circular.md"
+                        },
+                        {
+                            "name": "3. Requests",
+                            "type": "File",
+                            "file": "3_gpdma_requests.md"
+                        },
+                        {
+                            "name": "4. Priority",
+                            "type": "File",
+                            "file": "4_gpdma_priority.md"
+                        },
+                        {
+                            "name": "5. Direction",
+                            "type": "File",
+                            "file": "5_gpdma_direction.md"
+                        },
+                        {
+                            "name": "6. Src & Dest Config",
+                            "type": "File",
+                            "file": "6_gpdma_src_dest_configuration.md"
+                        },
+                        {
+                            "name": "7. Data handling",
+                            "type": "File",
+                            "file": "7_gpdma_data_handling.md"
+                        },
+                        {
+                            "name": "8. Trigger",
+                            "type": "File",
+                            "file": "8_gpdma_trigger.md"
+                        },
+                        {
+                            "name": "9. Transfer events",
+                            "type": "File",
+                            "file": "9_gpdma_transfer_events.md"
+                        },
+                        {
+                            "name": "10. 2D addressing",
+                            "type": "File",
+                            "file": "10_gpdma_2d_addressing.md"
+                        },
+                        {
+                            "name": "11. Linked list",
+                            "type": "File",
+                            "file": "11_gpdma_linked_list.md"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
