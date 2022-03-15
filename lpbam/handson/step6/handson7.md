@@ -70,7 +70,6 @@ Build and Run the application then connect Power Monitor and start measurement
 
 ![Cubemx start](./img/0705.gif)
 
-![Cubemx start](./img/0703.png)
 
 
 <ainfo>
