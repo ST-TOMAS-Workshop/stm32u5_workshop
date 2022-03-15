@@ -173,7 +173,7 @@ LPDMA can only access smart run peripherals meaning that it can only access to S
 # 6- GPDMA vs LPDMA
 Below main differences between GPDMA and LPDMA:
 
-![theory1](./img/11.png)
+![theory1](./img/27.png)
 
 # 7- AHB/APB Distribution over domains
 ![theory1](./img/20.png)
