@@ -1,8 +1,11 @@
+----!
+Presentation
+----!
+
 # Power Measurement
 
 We will now measure power consumption using STM32L562E-DK and `STM32 Cube Monitor Power`
 
-Please follow the below steps:
 
 # 1 Board Switch and jumper config settings
 ![lpbam config](./img/0501.png)

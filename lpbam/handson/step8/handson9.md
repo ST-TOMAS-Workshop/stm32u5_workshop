@@ -17,7 +17,7 @@
 ![Cubemx start](./img/0900.png)
 
 
-![Cubemx start](./img/0903.png)
+![Cubemx start](./img/0906.png)
 
 
 ![Cubemx start](./img/0904.png)

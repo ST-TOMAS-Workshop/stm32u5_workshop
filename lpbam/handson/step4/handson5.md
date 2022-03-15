@@ -2,11 +2,15 @@
 Presentation
 ----!
 
-# 0- Debug*
+# 0- Debug
 
 <awarning>
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
 </awarning>
+
+<p>
+
+</p>
 
 During code development, we have added different features that will make us able to understand if the application is running correctly and will also enable us to verify that we are getting the expected behaviour of the Smart Run Domain.
 

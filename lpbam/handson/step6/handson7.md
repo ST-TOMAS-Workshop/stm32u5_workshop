@@ -1,3 +1,7 @@
+----!
+Presentation
+----!
+
 # Benchmark
 ## Application used for benckmar can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2Fdry%5Frun%5Fworkshop%5Finterrupt%5Fbenchmark%2Ezip&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
 
@@ -7,7 +11,9 @@
 
 </p>
 
-We now need to compare low power result vs standard approach. 
+# 1- Standard application w/o LPBAM
+
+We now need to compare low power result of LPBAM application vs standard approach interrupt based. 
 
 Here below you can see the example of an application which is performing same task without LPBAM.
 
@@ -24,20 +30,20 @@ We will extend the applicabilty of our findings in next chaper on results discus
 
 ---
 
-# Standard application w/o LPBAM
+
 
 
 ![Cubemx start](./img/0700.png)
 
 
-## Cube IDE Project Build
+# 2- Cube IDE Project Build
 
 Open the project included in webinar folder pack.
 Build and program it into NUCLEO-U575ZIQ
 
 ![Cubemx start](./img/0701.png)
 
-## Power Measurement
+# 3- Power Measurement
 
 Follow the steps showed in the previous chapter
 
@@ -51,7 +57,7 @@ Follow the steps showed in the previous chapter
 
 ![Cubemx start](./img/0702.png)
 
-## Sampling frequency change
+# 4- Sampling frequency change
 We are going to test how this power consumption value changes when sampling frequency increases by a factor 10x
 
 in 'private define' section add
