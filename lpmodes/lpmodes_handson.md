@@ -2,7 +2,7 @@
 Presentation
 ----!
 
-# Let test all tips - Low power HandsOn Scenario
+# Let's test all tips - Low power HandsOn Scenario
 - Tips and tricks how to reducing consumption step by step 
 
 - Enter in Stop mode and periodically wake up by RTC unit
@@ -12,10 +12,12 @@ Presentation
 ![gif](./img/introsmall.gif)
 
 # CubeMX
-1. Open CubeMx
-2. Select STM32U575ZI
-3. Create New project without TrustZone activated
-4. Configure PC7 (Green LED) as Output Push-Pull. Right click on `PC7` and set as `GPIO_Output`
+1. Open CubeMx or CubeMX plugin in CubeIDE
+2. **Access to MCU selector**
+3. Select STM32U575ZI
+4. Create New project without TrustZone activated
+5. Enable **ICACHE 1-way (direct mapped cache)**
+6. Configure PC7 (Green LED) as Output Push-Pull. Right click on `PC7` and set as `GPIO_Output`
    
 ![gif3](./img/GPIO.gif)
 
@@ -23,7 +25,7 @@ Presentation
 Application periodically wakeups from Stop mode.
 
 - To do that Wakeup counter of RTC unit is enabled. Keep default LSI as clock source.
-   
+
 ![gif4](./img/RTC_1.gif)
 
 LP Stop mode is entered by ` WFI()` instruction. For this reason:
@@ -36,6 +38,7 @@ LP Stop mode is entered by ` WFI()` instruction. For this reason:
 
 ## Project Manager
 - Select CubeIDE Toolchain
+
 - Write project name and `Generate Code`
   
 ![gif6](./img/XM_generation.gif)
@@ -54,7 +57,14 @@ MEMORY
   FLASH	(rx)	: ORIGIN = 0x08000000,	LENGTH = 1024K
 }
 ```
+## Comment part of code
+In a first part of hands on we don't need GPIO and RTC unit to be activated.
+- Commnet following lines:
 
+```c
+//MX_GPIO_Init();
+//MX_RTC_Init();
+```
 
 ## Vcore range
 <ainfo>
@@ -69,8 +79,9 @@ Use adequate voltage scaling vs. System clock frequency. Vcore Range 4 replaces 
 (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE4)
 ```
 
-### Measure consumption given by Vcore range
-- Consumption is reduced to aprrox. 2.12 mA.
+**Measure consumption given by Vcore range in LDO mode**
+
+- Consumption is reduced to aprrox. 470 uA.
 
 
 ## SMPS Vcore supply  
@@ -78,12 +89,12 @@ Use adequate voltage scaling vs. System clock frequency. Vcore Range 4 replaces 
 
 ```c
 /*The SMPS regulator supplies the Vcore Power Domains.*/
-__HAL_RCC_PWR_CLK_ENABLE();
 HAL_PWREx_ConfigSupply(PWR_SMPS_SUPPLY);
 ```
 
-### Measure consumption given by SMPS Vcore supply
-- Consumption is reduced to aprrox. 595 uA.
+**Measure consumption given by SMPS Vcore supply**
+
+- Consumption is reduced to aprrox. 250 uA.
 
 ## Power Down Flash Bank 2
 - Enable the Power-down Mode for Flash Bank 2. Copy paste following code in `Begin 2` user section.
@@ -93,8 +104,9 @@ HAL_PWREx_ConfigSupply(PWR_SMPS_SUPPLY);
 HAL_FLASHEx_EnablePowerDown(FLASH_BANK_2);
 ```
 
-### Measure consumption given by Power Down Flash Bank 2
-- Consumption is reduced to aprrox. 555 uA.
+**Measure consumption given by Power Down Flash Bank 2**
+
+- Consumption is reduced to aprrox. 175 uA.
 
 
 ## STOP2 mode
@@ -108,8 +120,9 @@ Copy paste following code in `While(1)` user section.
 HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 ```
 
-### Measure consumption given by Stop 2 mode
-- Consumption is reduced to aprrox. 7.7 uA.
+**Measure consumption given by Stop 2 mode**
+
+- Consumption is reduced to aprrox. 7.5 uA.
 
 ## SRAM retention
 - Disable RAM page(s) and caches retention. A content is lost in Stop mode (Stop 0, 1, 2, 3). Copy paste following code in `Begin 2` user section.
@@ -126,7 +139,8 @@ HAL_PWREx_DisableRAMsContentStopRetention(PWR_PERIPHRAM_FULL_STOP_RETENTION);
 HAL_PWREx_DisableRAMsContentStopRetention(PWR_PKA32RAM_FULL_STOP_RETENTION);
 ```
 
-### Measure consumption given by Disbale SRAM Retention in Stop 2 mode
+**Measure consumption given by Disbale SRAM Retention in Stop 2 mode**
+
 - Consumption is reduced to aprrox. 4 uA.
 
 ## Ultra low power mode
@@ -137,8 +151,18 @@ HAL_PWREx_DisableRAMsContentStopRetention(PWR_PKA32RAM_FULL_STOP_RETENTION);
 HAL_PWREx_EnableUltraLowPowerMode();
 ```
 
-### Measure consumption given by Ultra low power mode
+**Measure consumption given by Ultra low power mode**
+
 - Consumption should be reduced to aprrox. 4 uA.
+
+## Uncomment part of code
+In a first part of hands on we don't need GPIO and RTC unit to be activated.
+- Commnet following lines:
+
+```c
+MX_RTC_Init();
+MX_GPIO_Init();
+```
 
 ## RTC Autonomous mode
 - Enable the Autonomous Mode for the RTC Stop0/1/2. RTC is part of Smart Run Domain and dedicated clock enable bit must be set otherwise RTC would not wakeup device from STOP modes. Now device periodically wakeup from Stop2 mode. Copy paste following code in `Begin 2` user section.
@@ -149,6 +173,7 @@ __HAL_RCC_RTCAPB_CLKAM_ENABLE();
 ```
 
 ## STOP2 mode with RTC periodic wakeup
+
 - Add Systick delay 3s to be able to measure consumption difference by A-meter
 
 - Set `RTC WakeUp timer` for 3s
@@ -165,5 +190,5 @@ HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
 HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 ```
 
-### Measure consumption given by STOP2 mode with RTC periodic wakeup
+**Measure consumption given by STOP2 mode with RTC periodic wakeup**
   

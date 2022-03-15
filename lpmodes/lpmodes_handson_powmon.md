@@ -12,7 +12,7 @@ A small modification of L562 Discovery is needed to be able to measure external 
 
 - Connect USB Micro cable to connector below LCD display.
 
-![image1](./img/L5Disco_Top_view.png) 
+![image1](./img/L5_top.png) 
 
 ## L562 DK Bottom view
 - Connect **two wires in position 3 & 1 in CN20** as shown in picture below. 
@@ -21,22 +21,27 @@ A small modification of L562 Discovery is needed to be able to measure external 
 Wires can be optionally twisted to reduce noise.
 </ainfo> 
 <p> </p>
-![image2](./img/L5Disco_Bottom_view.png) 
+![image2](./img/L5_bot.png) 
 
-## Wiring diagram
+## Wiring diagram to Nucleo-U575
+- **Remove JP5** on Nucleo
+
+- Connect wires to **GND** and **Pin 2** of **JP5**
+
+![image2](./img/wiring.png) 
 
 ## Measuring feature of L562 DK
 - **Tap on Measurements** icon on LCD 
+
 - No other task is needed for external power measuring
 
 <awarning>
-In some cases this step is not needed.
-Also ignore displayed **Warning** or **Error** message on LCD. This Warning is aplicatable only for consumption measuring of onboard L562 device.
+In some cases this step is not needed. Also ignore displayed **Warning** or **Error** message on LCD. This Warning is aplicatable only for consumption measuring of onboard L562 device.
 </awarning> 
 <p> </p>
 
 ## Connect L562-DK board
-- [Install](https://www.st.com/en/development-tools/stm32cubemonpwr.html) and launch STM32CubeMonitor-Power
+- [Install](https://www.st.com/en/development-tools/stm32cubemonpwr.html) and launch **STM32CubeMonitor-Power**
 
 - Select **Virtual Comport** associated to L562-DK Power measuring feature.
 

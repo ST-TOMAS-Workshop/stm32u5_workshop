@@ -7,9 +7,9 @@
   },
   "filesToLoadArr": [
     {
-      "name": "GPDMA handson",
-      "path": "/gpdma",
-      "file": "gpdma_handson_copy.md"
+      "name": "LP modes workflow",
+      "path": "/lpmodes",
+      "file": "lpmodes_workflow.md"
     },
     {
       "name": "LP modes handson",
@@ -30,8 +30,8 @@
   "menuStructure": [
     {
       "type": "File",
-      "name": "GPDMA handson",
-      "file": "gpdma_handson_copy.md"
+      "name": "LP modes workflow",
+      "file": "lpmodes_workflow.md"
     },
     {
       "type": "File",

@@ -45,22 +45,23 @@ DataSheet values for LP modes are Static consumption only
 - 2MB flash and 40nm technology leads to higher results vs. L4/L4+
   
 - Keep STM32U5 in ULP mode without any activity is not efficient
+
 <awarning> 
 Device selection must follow **Application demand** and NOT DataSheet comparison.
 </awarning>
 <p> </p>
 
-## Current consumption profile for example periodical ADC acqusitoin and I/C trasmit
+## Current consumption profile periodical ADC acquisition and I2C trasmit in Stop mode
 ![image2](./img/ADC_consumption_profile.png) 
 
-# STM32U5 Architecture
+# System Architecture
 Two digital domains CPU domain (CD) and Smart run domain (SRD)
 
 CD & SRD contains full feature set
 
 SRD contains only reduced peripheries (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, SRAM4,…)
 
-**In RUN, SLEEP, STOP0 and STOP1**
+**In Run, Sleep, Stop 0 and Stop 1**
 
 - CD & SRD fully powered => all peripherals are functional, thanks to GPDMA1 and LPDMA1
 
@@ -75,7 +76,7 @@ SRD contains only reduced peripheries (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, 
 ![image3](./img/CD_SRD.png)
 
 # Sleep mode
-CPU stops
+Core stops
 
 High speed clocks run
 
@@ -88,11 +89,12 @@ Sleep Range 4 replaces STM32L4/L5 Low-power sleep mode
 Lowest power mode with full retention and peripheral activity (LPBAM).
 </ainfo>
 <p> </p>
-CPU stops
+Core stops
 
-High speed clocks runs only on periphery’s demand
+High speed clocks runs only on peripheral’s demand
 
 Full retention of SRAM and peripherals registers, with capability to individually **power down** SRAM pages in Stop 0,1,2,3:
+
 - SRAM1 : 3 x 64KB-pages
 
 - SRAM2 : 8KB and 56KB pages
@@ -102,6 +104,7 @@ Full retention of SRAM and peripherals registers, with capability to individuall
 - SRAM4
 
 - ICACHE, DCACHE1, DMA2D SRAM, FMAC/FDRAM/USB SRAM, PKA SRAM
+
 Wakeup clock is HSI16 or MSI up to 24 MHz (range 4 only)
 
 Set ULPMEN to reduce consumption 
@@ -117,8 +120,6 @@ Set ULPMEN to reduce consumption
 # Tips and tricks
 Tips how to reduce power consumption in Run, Sleep, Stop modes.
 
-Let test them.
-
 ![image](./img/tips.png)
 
 # Clocks
@@ -127,7 +128,7 @@ Standard set of internal and external clock's sources
 ![image](./img/clock.png)
 
 ## New MSI (MSIK and MSIS)
-16 frequencies from 100 kHz to 48 MHz
+**16 frequencies** from 100 kHz to 48 MHz
 
 - The MSI is made of four RC oscillators
 
@@ -158,7 +159,7 @@ Depending on its need, the peripheral generates:
 
 The peripheral releases the request as soon as it does not need the clock anymore. 
 
-In Stop mode
+**In Stop mode**
 
 - Peripheral receive the requested clock after RC wakeup time (DMA request latency)
 
@@ -169,14 +170,15 @@ In Stop mode
 - When needed, the IP request the system clock to update its status register
 
 ## Core Domain
-A new clock control bits `xxSMEN` for CD peripherals requesting clock when MCU is in Sleep mode.
+A new clock control bits **xxSMEM** for CD peripherals requesting clock when MCU is in Sleep mode.
 
 ![image](./img/cd.png)
 
 ## Smart Run Domain
-Additional SRD Autonomous clock control bits `xxAMEN` to enable SRD peripherals clock when the MCU is in Stop mode with SRD in DRun mode. 
+Additional SRD Autonomous clock control bits **xxAMEN** to enable SRD peripherals clock when the MCU is in Stop mode with SRD in DRun mode. 
 
 ![image](./img/srd.png)
+
 # No more EXTI
 <ainfo>
 Almost all EXTI lines are not needed for peripheries to generate interrupt for wake up event.BEST in 
