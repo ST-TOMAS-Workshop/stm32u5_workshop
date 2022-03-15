@@ -92,6 +92,13 @@
   "path": "/lpbam/handson/step9",
   "file": "handson10.md"
 }
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step10",
+  "file": "handson11.md"
+}
       
     ],
   
@@ -219,6 +226,17 @@
                   "name": "11.Wrap up",
                   "path": "lpbam/handson/step8",
                   "file": "handson9.md"
+                }
+
+                ,
+
+
+
+                {
+                  "type": "File",
+                  "name": "12.FAQ",
+                  "path": "lpbam/handson/step10",
+                  "file": "handson11.md"
                 }
 
 

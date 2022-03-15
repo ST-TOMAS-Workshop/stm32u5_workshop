@@ -1,6 +1,8 @@
 # Benchmark
 
-We now need to compare low power result vs standard approach. Here below you can see the example of an application which is performing same task without LPBAM.
+We now need to compare low power result vs standard approach. 
+
+Here below you can see the example of an application which is performing same task without LPBAM.
 
 ADC is set at 1.5Clk cycles sampling and 4MHz MSIK.
 LPTIM is still changing frequency between 256Hz and 64Hz and it is powered by LSI
@@ -9,10 +11,13 @@ LPTIM is still changing frequency between 256Hz and 64Hz and it is powered by LS
 
 <ainfo>
 Of course there are many more possible scenario to achieve same result, this is only first example.
-We will extend the applicabilty of our findings in next chaper on result discussion
+
+We will extend the applicabilty of our findings in next chaper on results discussion.
 </ainfo>
 
-## Standard application w/o LPBAM
+---
+
+# Standard application w/o LPBAM
 
 
 ![Cubemx start](./img/0700.png)
@@ -49,3 +54,8 @@ in 'private define' section add
 Build and Run the application then connect Power Monitor and start measurement
 
 ![Cubemx start](./img/0703.png)
+
+
+<ainfo>
+We now move to result discussion in order to compare LPBAM vs interrupt based approach
+</ainfo>

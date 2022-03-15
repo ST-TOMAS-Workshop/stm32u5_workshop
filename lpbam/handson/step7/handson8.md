@@ -1,7 +1,5 @@
 # Results discussion
 
-Test Scenario:
-
 ![Cubemx start](./img/0805.png)
 
 We tested LPBAM approach vs standard approach of waking from STOP via interrupt to run the conversion obtaining the following current measurements
@@ -24,6 +22,12 @@ The below curves are showing full characterization of behaviour of our scenario 
 ![Cubemx start](./img/0802.png)
 
 Based on that we can confirm our initial finding on LPBAM functionality
+
+<p>
+
+
+</p>
+
 ![Cubemx start](./img/0803.png)
 
 On a wider picture, LPBAM brings the below saving vs Run/Stop mode
@@ -31,4 +35,6 @@ On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
 ![Cubemx start](./img/0804.png)
 
+<asuccess>
 ## These findigs are totally confirming our measurements and hypotesis ##
+</asuccess>

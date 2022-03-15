@@ -100,12 +100,13 @@ Analog WDT from ADC can be used as trigger as well and can be used to trigger a 
 
 
 # 3- System Architecture and DMA Overview
-LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP called version3 or DMAv3 replacing all DMA that were in other STM32 series. It integrates all previous DMA features Trigger, DMAMUX MDMA etc.
+LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP called version3 or DMAv3 replacing all DMA that were in other STM32 series. 
+It integrates all previous DMA features Trigger, DMAMUX MDMA etc.
 
 We have now a single DMA driver with two HW instances which are GPDMA and LPDMA.
 Both can be used in Linked list mode.
 
-GPDMA is on the CPU domain with 2 ports port 0 and port 1 LPDMA has a single port,
+GPDMA is on the CPU domain with 2 ports port 0 and port 1 LPDMA has a single port.
 
 ![theory1](./img/13.png)
 
