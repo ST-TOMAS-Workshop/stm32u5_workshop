@@ -16,6 +16,9 @@ If the application is running correctly you should be able to see:
 - fast blinking after reset
 - slow blinking after button press
 
+
+![lpbam config](./img/0402.gif)
+
 <asuccess>
 If you achieved this it means that the system is waking up autonomously from STOP2 after DMA IT TC.
 </asuccess>
@@ -26,9 +29,16 @@ If you achieved this it means that the system is waking up autonomously from STO
 
 In code we added a printf to show content of the ADC data buffer.
 You can open your preferred terminal use baud 115200, 8N1 no flow control, and check if there something similar to 1456.
-This is equivalent to Vref=1.2V by ADC4 which is 12bit and powered at 3.3V
 
-![lpbam config](./img/0401.png)
+<ainfo>
+This is equivalent to Vref=1.2V by ADC4 which is 12bit and powered at 3.3V
+</ainfo>
+
+<p>
+
+</p>
+
+![lpbam config](./img/0401.gif)
 
 ---
 
