@@ -99,6 +99,14 @@
   "path": "/lpbam/handson/step10",
   "file": "handson11.md"
 }
+,
+
+{
+  "name": " Exercise",
+  "path": "/lpbam/handson/step11",
+  "file": "handson12.md"
+}
+
       
     ],
   
@@ -127,7 +135,7 @@
           },
           {
             "type": "File",
-            "name": "Principles",
+            "name": "Linked list summary",
             "path": "lpbam/theory",
             "file": "linked list.md"
           }
@@ -237,6 +245,15 @@
                   "name": "12.FAQ",
                   "path": "lpbam/handson/step10",
                   "file": "handson11.md"
+                }
+
+
+,
+                {
+                  "type": "File",
+                  "name": "13.References",
+                  "path": "lpbam/handson/step11",
+                  "file": "handson12.md"
                 }
 
 

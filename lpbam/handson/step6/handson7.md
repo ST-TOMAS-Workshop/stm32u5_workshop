@@ -1,4 +1,11 @@
 # Benchmark
+## Application used for benckmar can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2Fdry%5Frun%5Fworkshop%5Finterrupt%5Fbenchmark%2Ezip&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
+
+<p>
+
+
+
+</p>
 
 We now need to compare low power result vs standard approach. 
 
@@ -40,6 +47,8 @@ Follow the steps showed in the previous chapter
 
 3- Start the measurement
 
+![Cubemx start](./img/0704.gif)
+
 ![Cubemx start](./img/0702.png)
 
 ## Sampling frequency change
@@ -52,6 +61,8 @@ in 'private define' section add
 
 ```
 Build and Run the application then connect Power Monitor and start measurement
+
+![Cubemx start](./img/0705.gif)
 
 ![Cubemx start](./img/0703.png)
 

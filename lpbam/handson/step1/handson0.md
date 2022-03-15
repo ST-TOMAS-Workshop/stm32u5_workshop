@@ -1,5 +1,17 @@
 # **Hands On Overview**
 
+
+## Contents for the LPBAM hands-on can be found at this link
+[sharepointlink](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial&viewid=5098bdc4%2Dc00e%2D465c%2D9b64%2Dd00de0f5947d)
+
+<awarning>
+You might be require to sign in with your ST email and password
+</awarning>
+<p>
+
+
+</p>
+
 In LPBAM Handson we will implement the following scenario making use of **two queues**.
 We will use ADC4 and LPTIM1 which are peripherals available in STOP2 into SRD.
 
@@ -24,3 +36,6 @@ Same application can also run on a single queue, our purpose it to show how to h
 
  ## Queue 2
  ![Cubemx start](./img/0003.png)
+
+
+ 

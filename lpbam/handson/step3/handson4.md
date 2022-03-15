@@ -144,7 +144,7 @@ We also added a blue led and user button to be pressed in order to enter in STOP
 }
 
 HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, GPIO_PIN_RESET);
-
+HAL_GPIO_DeInit(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
 
      MX_LpbamAp1_Init();
 /* LPBAM ADC application InSwitch init */

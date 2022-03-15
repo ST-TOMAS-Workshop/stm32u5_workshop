@@ -32,7 +32,7 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 
 </p>>
 
-![lpbam config](./img/0504.png)
+![lpbam config](./img/0504.gif)
 
 # 5 Power sequence
 
@@ -62,6 +62,13 @@ RCC_OscInitStruct.MSIKClockRange = RCC_MSIKRANGE_1;
 
 Open `Cube Monitor Power` and run again the measurement - we should notice that results is quite unchanged
 
+![lpbam config](./img/0509.gif)
+
+<p>
+
+
+</p>
+
 ![lpbam config](./img/0507.png)
 
 
@@ -73,6 +80,7 @@ This happens because SRD is adjusting clock gating so DMA transfer will become m
 <p>
 
 </p>
+
 # 8 ADC Sampling Frequency change
 
 We now try to modify ADC sampling frequency to check power consumption changes when sampling frequency is increased bya  factor 10x.
@@ -107,9 +115,46 @@ RCC_OscInitStruct.MSIKClockRange = RCC_MSIKRANGE_4;
 
 Let's now measure power consumptions:
 
+![lpbam config](./img/0510.gif)
+
+<p>
+
+
+</p>
+
 ![lpbam config](./img/0508.png)
 
 <ainfo>
 Important to note that as expected consumption variation is around 30% by increasing sampling frequency of a factor 10x.
 We will compare this number vs the application w/o LPBAM in Benachmark chapter
 </ainfo>
+
+---
+
+# 9 SMART RUN DOMAIN RUNNING MODE
+
+We would now like to see the impact of clock gating meckanism of the autonomous peripheral.
+We can enable the SRD always on in stop2.
+To do so you need to reoped .ioc file and go to **LBAM Scenario&Configuration**
+
+![lpbam config](./img/0511.gif)
+
+
+in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was changed the following function from `PWR_SRD_DOMAIN_STOP` to PWR_SRD_DOMAIN_RUN :
+
+```nc
+/*
+   * Smart Run Domain Config
+   */
+  HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
+```
+
+We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~50uA** range
+
+![lpbam config](./img/0512.gif)
+
+
+<asuccess>
+We demostrated the impact on power consumption of peripherals autonomous clock request capability
+</asuccess>
+
