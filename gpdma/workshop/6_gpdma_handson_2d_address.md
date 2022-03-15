@@ -148,8 +148,9 @@ extern uint16_t data2[];
 # Node correction because of MX
 
 <aerror>
-Mx contains an bug 
-He will not generate half word configuration for us 
+Mx contains an bug.
+
+There is a missing configuration for YourNodeName2.
 </aerror>
 
 To file `linked_list.c` add
