@@ -212,3 +212,15 @@ This gives great contribution to achieve best optimization of dynamic clock and 
 ![theory1](./img/25.png)
 
 ![theory1](./img/22.png)
+
+
+# 13- Architecture Optimization in STM32U5 vs STM32L5
+
+LPBAM is unique feature of STM32U5.
+IPs running autonomous and in STOP2 mode reduce drastically consumption.
+
+<ainfo>
+To compare with STM32L552 which does not implement LPBAM we will simulate with STM32U5757 without LPBAM in Benchmark Chapter
+</ainfo>
+
+![theory1](./img/26.png)
