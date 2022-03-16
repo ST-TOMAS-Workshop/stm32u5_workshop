@@ -113,7 +113,7 @@ Now let's add printf in `while(1)` to check if ADC is working correctly once we 
 
 		 }
  HAL_Delay(1000);
-  }
+  
 ```
 
 
