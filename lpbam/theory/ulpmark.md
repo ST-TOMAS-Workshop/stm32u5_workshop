@@ -40,6 +40,10 @@ higher since they can remain off longer.
 <ainfo>
 Thanks to LPBAM, the ULPMark-PP score of the STM32U5
 is drastically increased compared to the STM32L5:
+
 - More than three times when VDD is 3.0 volts
+  
 - More than 2.5 times when VDD is 1.8 volts.
- </ainfo> 
+</ainfo> 
+
+![theory1](./img/33.png)
