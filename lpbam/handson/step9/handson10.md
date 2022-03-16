@@ -37,26 +37,26 @@ Note that LPBAM tool is a separated layer making use of Advanced LPBAM layer to 
 
 ![Cubemx start](./img/1003.png)
 
-# 3- Utilities folder
+# 4- Utilities folder
 
 ![Cubemx start](./img/1004.png)
 
 
-# 4- LPBAM Application folder
+# 5- LPBAM Application folder
 
 ![Cubemx start](./img/1005.png)
 
 
-# 5- LPBAM User Sequence
+# 6- LPBAM User Sequence
 
 ![Cubemx start](./img/1006.png)
 
 
-# 6- Low Level LPBAM Layer
+# 7- Low Level LPBAM Layer
 This is how we move from application to the LL Layers via Advanced and Basic Layers:
 
 ![Cubemx start](./img/1007.png)
 
-# 7 - LPBAM Tool
+# 8 - LPBAM Tool
 
 ![Cubemx start](./img/1008.png)
