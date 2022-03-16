@@ -137,9 +137,9 @@ Backup domain active
 
 **For Vbat**
 
-- optionally SRAM2 BKPSRAM (2KB) can be retained
+- optionally BKPSRAM (2KB) can be retained
 
-- VBAT Brownout reset (1.58V)
+- **VBAT Brownout reset** (1.58V)
 
 # Tips and tricks
 Tips how to reduce power consumption in Run, Sleep, Stop modes.
@@ -151,7 +151,7 @@ Tips how to reduce power consumption in Run, Sleep, Stop modes.
 
 - Enter in Stop 2 mode and periodically wake up by RTC unit
 
-- LED toggling and monitor consumption profile
+- LED toggling and monitor consumption profile in **STM32CubeMonitor-Power**
 
 ![gif](./img/introsmall.gif)
 
