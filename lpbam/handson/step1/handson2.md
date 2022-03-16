@@ -76,13 +76,23 @@ Role of PA5,PA6,PA7 will be understood later in this session
 
 # 5- UART+DMA
 
-We will use GPDAM to automatically send data over UART1. 
+<aerror>
+This is not finalized it, it will be done by time of TTT, please only refere to simple UART configuration
+</aerror>
+
+<p>
+
+
+</p>
+
+We will use GPDMA to automatically send data over UART1. 
 When the buffer is full it will trigger the GPDMA which automatically transfer all data. 
-This will be used in last handson
+
 
 ![preparation for pldma](./img/lpbam_preparation.json)
 
 # Enable UART1
+
 
 1. Select `UART1`
 2. Select `Asynchronous` mode
