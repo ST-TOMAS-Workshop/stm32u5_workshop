@@ -42,15 +42,19 @@ Skipping this step will cause a warning later one.
 
 **SMPS will be enabled here to achieve best power consumption performance even in run mode**
 
-1. From Debug Pins tab flag select the three options note that PA5,PA6,PA7 appears in GPIO Settings tab 
-2. Select SMPS as Power Regulator from Power Saving tab
+1. From Debug Pins we can not we have the three options note that PA5,PA6,PA7 appears in GPIO Settings tab 
+<p>
+
+</p>
 
 <ainfo>
-Role of PA5,PA6,PA7 will be understood later in this session
+Role of PA5,PA6,PA7 will be understood later in this session we will note use the for the time being
 </ainfo>
 
+2. Select SMPS as Power Regulator from Power Saving tab
 
-![Cubemx pwm](./img/04.gif)
+
+![Cubemx pwm](./img/44.gif)
 
 ---
 
