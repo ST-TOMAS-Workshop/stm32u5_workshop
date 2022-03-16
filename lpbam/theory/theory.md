@@ -245,9 +245,9 @@ higher since they can remain off longer.
 
 ![theory1](./img/31.png)
 
-# Architecture Optimization in STM32U5 vs L5
+## Architecture Optimization in STM32U5 vs L5
 
-![theory1](./img/31.png)
+![theory1](./img/32.png)
 
 <p>
 
