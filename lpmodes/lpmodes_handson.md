@@ -183,9 +183,11 @@ __HAL_RCC_RTCAPB_CLKAM_ENABLE();
 Copy paste following code in `While(1)` user section. 
 
 ```c
+HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
 HAL_Delay(3000);
-//Set RTC wakeup timer for 3s (N+1)
-HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
+HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
+//Set RTC wakeup timer for 3s 
+HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 3, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
 /* Enter Stop 2 Mode */
 HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 ```

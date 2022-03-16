@@ -61,9 +61,13 @@ CD & SRD contains full feature set
 
 SRD contains only reduced peripheries (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, SRAM4,…)
 
-**In Run, Sleep, Stop 0 and Stop 1**
+**In Run, Sleep**
 
 - CD & SRD fully powered => all peripherals are functional, thanks to GPDMA1 and LPDMA1
+
+**Stop 0 and Stop 1**
+
+- CD partialy powered & SRD fully powered => peripherals (expect high perfomance) are functional, thanks to GPDMA1 and LPDMA1
 
 **In STOP2**
 
@@ -101,7 +105,7 @@ Full retention of SRAM and peripherals registers, with capability to individuall
 
 - SRAM3 : 8 x 64KB-pages
 
-- SRAM4
+- SRAM4 : 16KB
 
 - ICACHE, DCACHE1, DMA2D SRAM, FMAC/FDRAM/USB SRAM, PKA SRAM
 
@@ -115,7 +119,27 @@ Set ULPMEN to reduce consumption
 ![image](./img/stop.png)
 
 # Stanby, Shutdown, Vbat
-## 
+Backup domain active
+
+- RTC, LSE, LSI
+
+- TAMP event (extra Supply and Temperature monitoring for TAMP)
+
+- IWDG
+
+- Backup Register
+
+- CSS on LSE
+
+**For Standby**
+
+- optionally SRAM2 (64KB) and BKPSRAM (2KB) can be retained
+
+**For Vbat**
+
+- optionally SRAM2 BKPSRAM (2KB) can be retained
+
+- VBAT Brownout reset (1.58V)
 
 # Tips and tricks
 Tips how to reduce power consumption in Run, Sleep, Stop modes.
@@ -211,7 +235,7 @@ LP Stop mode is entered by ` WFI()` instruction. For this reason:
 
 - Enable `RTC non-secure interrupt` in NVIC Setting tab.
 
-- Set `Wake Up clock to 1Hz` base and `set counter to 2` (N-1 seconds must be set).Periodic wake up event occurs each 3 seconds. 
+- Set `Wake Up clock to 1Hz` base and `set counter to 3`.Periodic wake up event occurs each 3 seconds. 
 
 ![gif5](./img/RTC_2.gif)
 
@@ -441,11 +465,17 @@ __HAL_RCC_RTCAPB_CLKAM_ENABLE();
 Copy paste following code in `While(1)` user section. 
 
 ```c
+HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
 HAL_Delay(3000);
-//Set RTC wakeup timer for 3s (N+1)
-HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 2, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
+HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
+//Set RTC wakeup timer for 3s 
+HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 3, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
 /* Enter Stop 2 Mode */
 HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 ```
 
 **Measure consumption given by STOP2 mode with RTC periodic wakeup**
+![gif1](./img/stop_profile.gif)
+
+
+# Thank you for attention
