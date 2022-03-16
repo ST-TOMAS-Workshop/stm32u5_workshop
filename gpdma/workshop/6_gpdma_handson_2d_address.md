@@ -150,11 +150,13 @@ extern uint16_t data2[];
 
 like 
 
+```c-nc
 /* USER CODE BEGIN PM */
 #define SIZE 64
 extern uint16_t data[];
 extern uint16_t data2[];
 /* USER CODE END PM */
+```
 
 # Node correction because of MX
 
