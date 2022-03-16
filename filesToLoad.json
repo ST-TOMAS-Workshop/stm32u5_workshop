@@ -18,6 +18,13 @@
         "file": "theory.md"
       }
 ,
+      {
+        "name": "Theory",
+        "path": "/lpbam/theory",
+        "file": "ulpmark.md"
+      }
+
+,
 
 {
   "name": " Exercise",
@@ -137,8 +144,18 @@
             "type": "File",
             "name": "Linked list summary",
             "path": "lpbam/theory",
+            "file": "ulpmark.md"
+          }
+
+          ,
+
+          {
+            "type": "File",
+            "name": " EEMBC ULPMark",
+            "path": "lpbam/theory",
             "file": "linked list.md"
           }
+
 
 
 
