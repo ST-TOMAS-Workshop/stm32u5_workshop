@@ -162,26 +162,6 @@ The LPBAM utility includes two types of variables:
 => To optimize memory usage, it is recommended to place only the variables used during linked-list queue execution in SRAM4 when the LPBAM scenario is built to be executed by the LPDMA.
 
 </ainfo>
----
 
-# 6 - Extra
 
-NOTE: Next step is only for debug purposes of the Smart Run Domain.
-  If we want to see timer output on an IO we can add the below code inside `MX_LPTIM1_MspInit` in 
-  `USER CODE BEGIN LPTIM1_MspInit`
 
-```c
-GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-__HAL_RCC_GPIOC_CLK_ENABLE();
-       /**LPTIM1 GPIO Configuration
-       PC1     ------> LPTIM1_CH1
-       */
-       GPIO_InitStruct.Pin = GPIO_PIN_1;
-       GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-       GPIO_InitStruct.Pull = GPIO_NOPULL;
-       GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-       GPIO_InitStruct.Alternate = GPIO_AF1_LPTIM1;
-       HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-  /* USER CODE END LPTIM1_MspInit 1 */
-```
