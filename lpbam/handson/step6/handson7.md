@@ -70,7 +70,11 @@ Build and Run the application then connect Power Monitor and start measurement
 
 ![Cubemx start](./img/0705.gif)
 
+<p>
 
+</p>
+
+![Cubemx start](./img/0703.png)
 
 <ainfo>
 We now move to result discussion in order to compare LPBAM vs interrupt based approach
