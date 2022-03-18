@@ -62,7 +62,7 @@ Role of PA5,PA6,PA7 will be understood later in this session
 
 ![Cubemx sys](./img/05.gif)  -->
 
----
+
 
 <!--- # 5 -USART #
 
@@ -83,10 +83,7 @@ Role of PA5,PA6,PA7 will be understood later in this session
 Add SWD debug port from debug tab to avoid need for uncommenting GPIO_Init every time we need to go in low power.
 
 Selected pins by default are PA13, PA14 mapped on STLINK
-
-
-
-![Cubemx sys](./img/0303.gif)  -->
+![Cubemx sys](./img/0303.gif)  --->
 
 # 4- CLOCK CONFIGURATION 
 
