@@ -54,37 +54,6 @@ Role of PA5,PA6,PA7 will be understood later in this session
 
 ---
 
-<!---# 4 - SYS 
-
-**We will use Systick as system timer**
-
-1. Modify default Timebase Source from TIM17 to Systick
-
-![Cubemx sys](./img/05.gif)  -->
-
-
-
-<!--- # 5 -USART #
-
-**Usart will be used to display ADC data buffer values**
-
-1. Click on USART1
-2. Mode=Asyncronous
-3. Check that by default GPIOs are PA9,PA10 (these are the ones mapped on STLINK)
-
-![Cubemx sys](./img/0202.gif)
-
----
-
-# 6-DEBUG 
-
-**Set SWD debug pins**
-
-Add SWD debug port from debug tab to avoid need for uncommenting GPIO_Init every time we need to go in low power.
-
-Selected pins by default are PA13, PA14 mapped on STLINK
-![Cubemx sys](./img/0303.gif)  --->
-
 # 4- CLOCK CONFIGURATION 
 
 We can keep default value with MSIS selected and HCLK @4MHz
