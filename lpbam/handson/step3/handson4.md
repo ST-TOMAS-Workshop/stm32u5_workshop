@@ -66,57 +66,11 @@ Let's start by including the LPBAM Library header file in `
 ```c
 #include "lpbam_lpbamap1.h"
 ```
-
-We also need `stdio.h` for UART output from ADC. we place it in 
-`/* USER CODE BEGIN PTD */`
-
-```c
-#include "stdio.h"
-```
-
-we have to redirect write function to USART1. We can put in in `  /* USER CODE BEGIN 4 */` which is ~line 280. In addition we use LPTIM Event call back to disable the timer one DMA IT HC is triggered
-
-```c
-int _write(int fd, char * ptr, int len)
- {
-   HAL_UART_Transmit(&huart1,(uint8_t *)ptr,len,HAL_MAX_DELAY);
-   return len;
- }
-
-void HAL_LPTIM_UpdateEventCallback(LPTIM_HandleTypeDef *hlptim)
-{
-		__HAL_LPTIM_DISABLE(&hlptim1);
-	}
-
-```
-
 in   `/* USER CODE BEGIN 1 */` we add
 
 ```c
 	int round = 0 ;
 ```
-Now let's add printf in `while(1)` to check if ADC is working correctly once we wakeup from STOP2 in addition we add a slow 1s blinking BLUE_LED to get confirmation of STM32U5 being in running mode. This scetion will be in `/* USER CODE BEGIN 3 */`
-
-```c
-  HAL_GPIO_TogglePin (LED_BLUE_GPIO_Port, LED_BLUE_Pin);
-                HAL_Delay (1000);
-
-
- while (round == 0)
-
-		 {
-              int i;
-                for (i=0;i < (sizeof (Data_Sequence) /sizeof (Data_Sequence[0]));i++) {
-                    printf(" Data_Sequence[%d] = %d\n",i,Data_Sequence[i]);
-
-                    round = 1; }
-
-		 }
- HAL_Delay(1000);
-  }
-```
-
-
 Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */`
 
 ```c
@@ -129,25 +83,9 @@ in `/* USER CODE BEGIN 0 */`
 uint16_t Data_Sequence[320] = {0U};
 ```
 
-Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start.
-We also added a blue led and user button to be pressed in order to enter in STOP2 mode. This portion of code will be added in `/* USER CODE BEGIN 2 */ `  
-
-<!--button point should e reviewed we probably do not need interrupt on user button pin and we need to set correctly PB7 in cube MX -->
+Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start. Reference section is `/* USER CODE BEGIN 2 */ `  
 
 ```c
-
-  while (HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin) != GPIO_PIN_SET)
-
-
-{
-	  HAL_GPIO_TogglePin (LED_BLUE_GPIO_Port, LED_BLUE_Pin);
-	  HAL_Delay (100);   /* Insert delay 100 ms */
-
-}
-
-HAL_GPIO_WritePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin, GPIO_PIN_RESET);
-HAL_GPIO_DeInit(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
-
      MX_LpbamAp1_Init();
 /* LPBAM ADC application InSwitch init */
    MX_LpbamAp1_Scenario_Init();
@@ -159,7 +97,6 @@ HAL_GPIO_DeInit(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin);
    LPBAM_LpbamAp1_Scenario_DMAHandlers[1U] = &handle_LPDMA1_Channel1;
    /* LPBAM ADC application InSwitch link */
    MX_LpbamAp1_Scenario_Link(  LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
-
 
    /* LPBAM ADC application InSwitch start */
    MX_LpbamAp1_Scenario_Start(LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
@@ -182,23 +119,7 @@ Please remeber to stay inside the `/* USER CODE BEGIN 2` and `/* USER CODE END 2
 </ainfo>
 
 ---
-
-# 3- STM32u5xx_it.c
-in `/* USER CODE BEGIN EV */` add
-
-```c
-extern LPTIM_HandleTypeDef hlptim1;
-```
-
-in `/* USER CODE BEGIN LPDMA1_Channel1_IRQn 1 */` add
-
-```c
-
-HAL_LPTIM_UpdateEventCallback(&hlptim1);
-
-```
-
-# 4- LPBAM 
+# 3- LPBAM 
 
 Let's move now to the LPBAM folder
  in `lpbam_lpbamp1_scenario_build` let's add buffer declaration under `/* USER CODE BEGIN EV */`. This will contain the ADC buffer.
@@ -214,7 +135,7 @@ in function `MX_ADC4_MspInit`  in `USER CODE BEGIN ADC4_MspInit 0` please add th
    HAL_PWREx_EnableVddA();
 ```
 
-  # 5- Linker
+  # 4- Linker
 
   Linker file should be modified as follows.
   
