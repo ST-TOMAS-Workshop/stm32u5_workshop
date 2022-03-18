@@ -201,7 +201,7 @@ SRAM4 16KB will not be disabled as it's the only one available in Stop2
 
 1. Select LSI for LPTIM - lowest power option
 2. Verify that ADC4 is clocked with MISK
-3. 3Wake up clock should be MSI as default 
+3. Wake up clock should be MSI as default 
 
 
 <ainfo>

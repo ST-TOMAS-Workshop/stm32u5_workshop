@@ -154,7 +154,7 @@ in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was chan
 
 We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~50uA** range
 
-![lpbam config](./img/0512.gif)
+![lpbam config](./img/0513.gif)
 
 
 <asuccess>
