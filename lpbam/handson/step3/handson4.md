@@ -94,8 +94,6 @@ MX_LpbamAp1_Init();
 MX_LpbamAp1_Scenario_Init();
       /* LPBAM ADC application InSwitch build */
 MX_LpbamAp1_Scenario_Build();
-
-
 LPBAM_LpbamAp1_Scenario_DMAHandlers[0U] = &handle_LPDMA1_Channel0;
 LPBAM_LpbamAp1_Scenario_DMAHandlers[1U] = &handle_LPDMA1_Channel1;
 /* LPBAM ADC application InSwitch link */
