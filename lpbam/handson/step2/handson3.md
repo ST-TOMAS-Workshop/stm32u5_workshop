@@ -7,7 +7,10 @@ Presentation
 <ainfo>
 In this chapter we will talk about peripherals nodes for the sake of semplicity.
 More correct vocabulary would be `LPBAM Function`
-Each block added to the Queue is actually handling more than a single DMA transfer.  Collection of nodes = LPBAM Function
+
+Each block added to the Queue is actually handling more than a single DMA transfer. 
+
+Collection of nodes = LPBAM Function
 </ainfo>
 
 <p>
@@ -30,8 +33,8 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 
 # 2- LPBAM Managment 
 
-1. Change name of Queue1 to TIMER by right click
-2. Click on Add Queue, create new queue and name it ADC ( press enter to exit from rename)
+1. Change name of Queue1 to **TIMER** by right click
+2. Click on **Add Queue**, create new queue and name it **ADC** ( press enter to exit from rename mode)
 
 ![lpbam config](./img/01.gif)
 
@@ -42,9 +45,9 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 **we will add LPTIM and ADC nodes in LPBAM configuration**
 
 1. Make sure to be on TIMER Queue and not on ADC one
-2. Select LPTIM1 from the list
-3. Click on START and note that one node is added to the chart
-4. Click on PWM two times to add two nodes
+2. Select **LPTIM1** from the list
+3. Click on **START** and note that one function is added to the chart
+4. Click on **PWM** two times note that two new functions will appear in the central tab
 
 ![lpbam config](./img/02.gif)
 

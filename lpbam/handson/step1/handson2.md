@@ -2,13 +2,6 @@
 Presentation
 ----!
 
-# 0- Put in reset state LED RED and LED GREEN,UCPD_DBn and UCPD_FLT from Pinout View 
-This will help us to keep lowest power consumption using only essential GPIOs.
-We will only use Blue LED and Button to get a visual output and know the power state of MCU
-
-![Cubemx start](./img/0101.gif)
-
----
 
 # 1- ICACHE
 
@@ -30,9 +23,9 @@ Skipping this step will cause a warning later one.
 
 **Two channels will be used respectively for ADC4 sampling and Timer ARR&CNT register updates**
 
-1. Initialize CH0 and CH1 in Linked List Mode
-2. Enable interrupts CH1 in NVIC settings
-3. Keep all default setting for the other fields
+1. Initialize **CH0 **and **CH1** in Linked List Mode
+2. **Enable interrupts CH1** in NVIC settings
+3. **Keep all default setting** for the other fields
 
 ![Cubemx start](./img/03.gif)
 
@@ -43,10 +36,10 @@ Skipping this step will cause a warning later one.
 **SMPS will be enabled here to achieve best power consumption performance even in run mode**
 
 1. From Debug Pins tab flag select the three options note that PA5,PA6,PA7 appears in GPIO Settings tab 
-2. Select SMPS as Power Regulator from Power Saving tab
+2. Select **SMPS** as Power Regulator from Power Saving tab
 
 <ainfo>
-Role of PA5,PA6,PA7 will be understood later in this session
+Role of PA5,PA6,PA7 is detailed in Debug chapter
 </ainfo>
 
 
