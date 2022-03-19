@@ -68,6 +68,7 @@ Let's start by including the LPBAM Library header file in `
   
 ```c
 #include "lpbam_lpbamap1.h"
+```
 
 Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */`
 
