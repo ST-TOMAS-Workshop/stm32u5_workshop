@@ -136,7 +136,8 @@ in function `MX_ADC4_MspInit`  in `USER CODE BEGIN ADC4_MspInit 0` please add th
 HAL_PWREx_EnableVddA();
 ```
 ---
-  # 4- Linker
+
+# 4- Linker
 
 Linker file should be modified as follows.
   
