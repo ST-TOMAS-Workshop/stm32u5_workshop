@@ -68,16 +68,13 @@ Let's start by including the LPBAM Library header file in `
   
 ```c
 #include "lpbam_lpbamap1.h"
-```
-in   `/* USER CODE BEGIN 1 */` we add
 
-```c
-int round = 0 ;
-```
 Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */`
 
 ```c
 DMA_HandleTypeDef *LPBAM_LpbamAp1_Scenario_DMAHandlers[2];
+```
+
 ```
 We also have to place buffer for ADC
 in `/* USER CODE BEGIN 0 */`
