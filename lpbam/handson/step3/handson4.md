@@ -87,17 +87,19 @@ uint16_t Data_Sequence[320] = {0U};
 Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start. Reference section is `/* USER CODE BEGIN 2 */ `  
 
 ```c
+/* LPBAM ADC application init */
 MX_LpbamAp1_Init();
-/* LPBAM ADC application InSwitch init */
+/* LPBAM ADC application scenario init */
 MX_LpbamAp1_Scenario_Init();
-      /* LPBAM ADC application InSwitch build */
+/* LPBAM ADC application build */
 MX_LpbamAp1_Scenario_Build();
+/* LPBAM scenarios link with LPDMA handlers */
 LPBAM_LpbamAp1_Scenario_DMAHandlers[0U] = &handle_LPDMA1_Channel0;
 LPBAM_LpbamAp1_Scenario_DMAHandlers[1U] = &handle_LPDMA1_Channel1;
-/* LPBAM ADC application InSwitch link */
-MX_LpbamAp1_Scenario_Link(  LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
+/* LPBAM ADC application link */
+MX_LpbamAp1_Scenario_Link(LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
 
-/* LPBAM ADC application InSwitch start */
+/* LPBAM ADC application start */
 MX_LpbamAp1_Scenario_Start(LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
 ```
 Below `MX_LpbamAp1_Scenario_Start` let's place
@@ -161,7 +163,7 @@ The LPBAM utility includes two types of variables:
 
 These variables are LPBAM descriptors and data buffers.
 
-=> To optimize memory usage, it is recommended to place only the variables used during linked-list queue execution in SRAM4 when the LPBAM scenario is built to be executed by the LPDMA.
+**To optimize memory usage, it is recommended to place only the variables used during linked-list queue execution in SRAM4 when the LPBAM scenario is built to be executed by the LPDMA**
 
 </ainfo>
 
