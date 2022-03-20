@@ -10,7 +10,7 @@ Presentation
 
 ## Project Explorer
 
-  Apart from usual folders, we have a new LPBAM folder containing function needed to implement the functionality.
+Apart from usual folders, we have a new LPBAM folder containing function needed to implement the functionality.
   
   
 Note that we got a subfolder called **Lpbamap1** which is the name of our LPBAM Application.
