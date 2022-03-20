@@ -17,16 +17,16 @@ Collection of nodes = LPBAM Function
 
 </p>
 
-   1.Click on the upper tab named 'LPBAM Scenario and Configuration'
+   1.Click on the upper tab named **LPBAM Scenario and Configuration**
 
-   2.Click on + simbol on top left
+   2.Click on **+** simbol on top left
 
 Let's see how it looks like:
 
 ![lpbam config](./img/01.png)
 
 <ainfo>
-LPBAM Scenario and Configurator is intened to be a tool to configure peripherals which are available for LPDMA independently from the power state we select
+LPBAM Scenario and Configurator is intended to be a tool to configure peripherals which are available for LPDMA independently from the power state we select
 </ainfo>
 
 ---
@@ -52,7 +52,7 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 ![lpbam config](./img/02.gif)
 
 5. **Make sure to move to ADC queue tab** 
-6. Select ADC4 from the list and Conversion Data
+6. Select **ADC4** from the list and **Conversion Data**
 
 ![lpbam config](./img/03.gif)
 
@@ -75,11 +75,11 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 
    We assign the following values:
 
-   -Period=127
+   -Period=**127**
 
-   -Pulse=64
+   -Pulse=**63**
 
-   -Repetition Counter = 255 
+   -Repetition Counter = **255** 
 
   <ainfo>
   Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. 
@@ -92,11 +92,11 @@ LPBAM Scenario and Configurator is intened to be a tool to configure peripherals
 
 We can assign the following values:
 
-   -Period=511
+   -Period=**511**
 
-   -Pulse=255
+   -Pulse=**255**
 
-   -Repetition Counter = 63 
+   -Repetition Counter = **63** 
    
 ---
 
@@ -115,8 +115,8 @@ We can assign the following values:
 2. On ADC tab select **transfer complete interrupt Enable**
 3. Click on ADC4: **Conversion_data_4** (progressive number may vary but it does not matter) 
 4. Provide Data Buffer Name, in our case it will be **Data_Sequence**
-5. **Data Buffer Offset**=0
-6. Number of Data=320
+5. Data Buffer Offset=**0**
+6. Number of Data=**320**
 7. All other settings can be kept with default value
    <ainfo>
    Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
@@ -169,7 +169,7 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 2. Mode = **Counts internal clock events**
 3. Channel_1_Active - **no IO used**
 4. in Prametrs Settings, choose **Compare** as capture-Compare section
-5. Give Period = 128 and Pulse=64 <!-- need to check the impact that this number has-->
+5. Give Period = **128** and Pulse=**64** <!-- need to check the impact that this number has-->
 
  ![lpbam config](./img/07.gif)
  
@@ -216,7 +216,11 @@ SRAM4 16KB will not be disabled as it's the only one available in Stop2
 
 
 <ainfo>
-RC are powered off in STOP2 and this is visible from the configurator. PLL is also disabled. Cube MX is helping us to make the right choice
+RCs are powered off in STOP2 and this is visible from the configurator.
+
+PLL is also disabled.
+
+Cube MX is helping us to make the right choice
 </ainfo>
 <!-- not sure makes sense adding a dedicated .gif here -->
 
@@ -231,7 +235,7 @@ and enter the following projects settings
 2. Select **Cube IDE** as toolchain
 3. Click on **code generator** and  in **HAL Settings** select "**Set all free pins as analog**"
 4. Click on generate code
-5. Open Project and switch to Cube IDE
+5. Open Project and switch to **Cube IDE**
 
 <awarning>
 At this stage we get a warning mentioning we need to run consistency check on LPBAM, we can anyway proceed with project generation without any further action
