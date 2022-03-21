@@ -35,7 +35,7 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 
 </p>>
 
-![lpbam config](./img/0504.gif)
+![lpbam config](./img/050504.gif)
 
 # 5 Power sequence
 
@@ -118,7 +118,7 @@ RCC_OscInitStruct.MSIKClockRange = RCC_MSIKRANGE_4;
 
 Let's now measure power consumptions:
 
-![lpbam config](./img/0510.gif)
+![lpbam config](./img/050510.gif)
 
 <p>
 
