@@ -1,5 +1,5 @@
 {
-    "interval":500,
+    "interval":1500,
     "sequence":[
     {"name":"Slide21.svg"},
     {"name":"Slide22.svg"},
