@@ -2,9 +2,7 @@
 Presentation
 ----!
 
-# Benchmark
-
-# 1- Standard application w/o LPBAM
+# 1- Benchmark with standard application w/o LPBAM
 
 We now need to compare low power result of LPBAM application vs standard approach interrupt based. 
 
