@@ -39,7 +39,7 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 
 # 5 Power sequence
 
-![lpbam config](./img/050505.png)
+![lpbam config](./img/050506.png)
 
 
 # 6 LPBAM Power consumption result
