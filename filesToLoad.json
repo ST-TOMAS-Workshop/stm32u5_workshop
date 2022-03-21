@@ -145,6 +145,26 @@
       "name": "CubeMX generate code",
       "path": "/utility_config",
       "file": "mx_generate_code.md"
+    },
+    {
+      "name": "LP modes workflow",
+      "path": "/lpmodes",
+      "file": "lpmodes_workflow.md"
+    },
+    {
+      "name": "LP modes handson",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson.md"
+    },
+    {
+      "name": "LP modes handson",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_powmon.md"
+    },
+    {
+      "name": "LP modes Theory",
+      "path": "/lpmodes",
+      "file": "lpmodes_theory.md"
     }
   ],
   "menuStructure": [
@@ -157,8 +177,8 @@
       "type": "File",
       "name": "2. Before on-line sessions",
       "file": "file_online.md"
-    }
-{
+    },
+    {
       "type": "Folder",
       "name": "GPDMA",
       "children": [
@@ -280,6 +300,37 @@
           ]
         }
       ]
+    },
+    {
+      "type": "Folder",
+      "name": "4.LP modes",
+      "children": [
+        {
+          "type": "File",
+          "name": "LP modes workflow",
+          "file": "lpmodes_workflow.md"
+        },
+        {
+          "type": "File",
+          "name": "LP Mode handson",
+          "file": "lpmodes_handson.md"
+        },
+        {
+          "type": "File",
+          "name": "LP modes handson - PowMon",
+          "file": "lpmodes_handson_powmon.md"
+        },
+        {
+          "type": "File",
+          "name": "LP modes Theory",
+          "file": "lpmodes_theory.md"
+        }
+      ]
+    },
+    {
+      "type": "Folder",
+      "name": "5. LPBAM",
+      "children": []
     }
   ]
 }
