@@ -15,6 +15,8 @@ Presentation
 
 # Select ADC1 periphery
 
+Select `ADC1` in **Analog**
+
 ![select ADC](./img/22_01_28_57.gif)
 
 # Enable 4 adc channels
@@ -60,7 +62,7 @@ Each rank will have assing one ADC channel to convert. It is possible to select 
 
 # Select GPDMA1
 
-1. Sececd GPDMA1
+1. Sececd `GPDMA1` in **System Core**
 2. Enable channel with 2D addressing (12-15)
 
 ![Enable GPDMA](./img/22_01_28_71.gif)
@@ -97,17 +99,35 @@ We create array `data` of 16bit elements wuth size as `SIZE`which is 64 elements
 Like this
 
 ```c
-#define SIZE 64
-uint16_t data[SIZE];
+uint16_t data[64];
 ```
 
-Put the array and size to section ` USER CODE BEGIN PV` like bellow
+Put the array and size into `main.c` to section ` USER CODE BEGIN PV` like bellow
 
-```nc
+```c-nc
 /* USER CODE BEGIN PV */
 #define SIZE 64
 uint16_t data[SIZE];
 /* USER CODE END PV */
+```
+
+# Enable VDDA
+
+To save more power the VDDA is disabled on U5 by default. 
+We must enable it by adding 
+
+```c
+  __HAL_RCC_PWR_CLK_ENABLE();
+  HAL_PWREx_EnableVddA();
+```
+
+to `/* USER CODE BEGIN SysInit */` section in `main.c`
+
+```c-nc
+  /* USER CODE BEGIN SysInit */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  HAL_PWREx_EnableVddA();
+  /* USER CODE END SysInit */
 ```
 
 # Start ADC and DMA
@@ -121,9 +141,9 @@ We use it like this:
 
 we put it into section `USER CODE BEGIN 2` like bellow
 
-```nc
+```c-nc
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, data, SIZE);
+  HAL_ADC_Start_DMA(&hadc1, data, 64);
   /* USER CODE END 2 */
 ```
 
