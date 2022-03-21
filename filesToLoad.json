@@ -7,6 +7,21 @@
   },
   "filesToLoadArr": [
     {
+      "name": "Preparation to STM32U5 workshop",
+      "path": "/introduction_instalation",
+      "file": "start.md"
+    },
+    {
+      "name": "STM32U5 Workshop - preparation before live sessions",
+      "path": "/introduction_instalation",
+      "file": "file_live.md"
+    },
+    {
+      "name": "STM32U5 Workshop - preparation and homework before on-line sessions",
+      "path": "/introduction_instalation",
+      "file": "file_online.md"
+    },
+    {
       "name": "1. Modes",
       "path": "/gpdma/theory",
       "file": "1_gpdma_modes.md"
@@ -134,6 +149,16 @@
   ],
   "menuStructure": [
     {
+      "type": "File",
+      "name": "1. Before live sessions",
+      "file": "file_live.md"
+    },
+    {
+      "type": "File",
+      "name": "2. Before on-line sessions",
+      "file": "file_online.md"
+    }
+{
       "type": "Folder",
       "name": "GPDMA",
       "children": [
