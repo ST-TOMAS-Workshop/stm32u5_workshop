@@ -146,10 +146,8 @@ To do so you need to reoped .ioc file and go to **LBAM Scenario&Configuration**
 in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was changed the following function from `PWR_SRD_DOMAIN_STOP` to PWR_SRD_DOMAIN_RUN :
 
 ```nc
-/*
-   * Smart Run Domain Config
-   */
-  HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
+/* Smart Run Domain Config*/
+HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
 ```
 
 We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~50uA** range
