@@ -17,8 +17,8 @@ We now need to compare low power result of LPBAM application vs standard approac
 
 Here below you can see the example of an application which is performing same task without LPBAM.
 
-ADC is set at 1.5Clk cycles sampling and 4MHz MSIK.
-LPTIM is still changing frequency between 256Hz and 64Hz and it is powered by LSI
+**ADC4** is set at **1.5Clk** cycles sampling and clocked by **4MHz MSIK**.
+**LPTIM1** is still changing frequency between 256Hz and 64Hz and it is powered by **LSI**
 
 ---
 

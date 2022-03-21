@@ -52,7 +52,51 @@ This power consumption is truly remarkable we will compare it with an applicatio
 
 ---
 
-# 7 MSIK Frequency change
+# 7 ADC Sampling Frequency change
+
+We now try to modify ADC sampling frequency to check power consumption changes when sampling frequency is increased bya  factor 10x.
+
+In lpbam_lpbamp1_scenario_build.c go to function `MX_TIMER_Q_Build` modify sampling  `TIMER queue PWM_2 build` as follows.
+
+<awarning>
+We only need to modify Period and Pulse values, all remaining setting should not vary
+
+</awarning>
+
+```nc
+  pPWMFull_LPTIM.PeriodValue = 12;
+  pPWMFull_LPTIM.PulseValue = 6;
+```
+
+and `TIMER queue PWM_3 build` in the following way:
+
+```c
+  pPWMFull_LPTIM.PeriodValue = 51;
+  pPWMFull_LPTIM.PulseValue = 25;
+  pPWMFull_LPTIM.RepetitionValue = 63;
+```
+
+---
+
+Let's now measure power consumptions:
+
+![lpbam config](./img/050510.gif)
+
+<p>
+
+
+</p>
+
+![lpbam config](./img/0508.png)
+
+<ainfo>
+Important to note that as expected consumption variation is around 30% by increasing sampling frequency of a factor 10x.
+We will compare this number vs the application w/o LPBAM in Benachmark chapter
+</ainfo>
+
+---
+
+# 8 MSIK Frequency change
 
  In lpbam_lpbamp1_config.c go to function `MX_SystemClock_Config` and modify both MSI and MISK Clock ranges assigning Range 1 which means 24MHz
 
@@ -77,60 +121,12 @@ Open `Cube Monitor Power` and run again the measurement - we should notice that 
 
 <ainfo>
 This is truly remarkable: we have changed clock speed by a factor x6 for but power consumption has not changed.
-This happens because SRD is adjusting clock gating so DMA transfer will become more frequent but shorter in time
+This happens because ADC gets clocked faster but anyway DMA transfer will depend on trigger frequency
 </ainfo>
 
 <p>
 
 </p>
-
-# 8 ADC Sampling Frequency change
-
-We now try to modify ADC sampling frequency to check power consumption changes when sampling frequency is increased bya  factor 10x.
-
-In lpbam_lpbamp1_scenario_build.c go to function `MX_TIMER_Q_Build` modify sampling  `TIMER queue PWM_2 build` as follows.
-
-<awarning>
-We only need to modify Period and Pulse values, all remaining setting should not vary
-
-</awarning>
-
-```nc
-  pPWMFull_LPTIM.PeriodValue = 12;
-  pPWMFull_LPTIM.PulseValue = 6;
-```
-
-and `TIMER queue PWM_3 build` in the following way:
-
-```c
-  pPWMFull_LPTIM.PeriodValue = 51;
-  pPWMFull_LPTIM.PulseValue = 25;
-  pPWMFull_LPTIM.RepetitionValue = 63;
-```
-We also want to come back to initial setting with MSIK=4Mhz
-
-In lpbam_lpbamp1_config.c go to function `MX_SystemClock_Config` and modify both MSI and MISK Clock ranges assigning Range 1 which means 24MHz
-
- ```c
-RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_4;
-RCC_OscInitStruct.MSIKClockRange = RCC_MSIKRANGE_4;
- ```
-
-Let's now measure power consumptions:
-
-![lpbam config](./img/050510.gif)
-
-<p>
-
-
-</p>
-
-![lpbam config](./img/0508.png)
-
-<ainfo>
-Important to note that as expected consumption variation is around 30% by increasing sampling frequency of a factor 10x.
-We will compare this number vs the application w/o LPBAM in Benachmark chapter
-</ainfo>
 
 ---
 

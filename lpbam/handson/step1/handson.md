@@ -16,5 +16,5 @@
 </p>
 
 <ainfo>
-We will configure only basic peripherals to get lowest power consumption. If you are interested in getting debug features linke User button, UART or more advanced IOs alternate function for SRD debug, please refer to **Debug chapter**
+We will configure only basic peripherals to get lowest power consumption. If you are interested in getting debug features like User button, UART or more advanced IOs alternate function for SRD debug, please refer to **Debug chapter**
 </ainfo>
