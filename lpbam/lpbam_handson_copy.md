@@ -1,5 +1,0 @@
-----!
-Presentation
-----!
-
-# LPBAM handson copysheet 

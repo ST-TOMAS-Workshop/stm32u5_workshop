@@ -1,5 +1,0 @@
-----!
-Presentation
-----!
-
-# LPMODES handson copysheet
