@@ -38,7 +38,7 @@ Skipping this step will cause a warning later one.
 1. Select **SMPS** as Power Regulator from Power Saving tab
 
 <ainfo>
-Role of PA5,PA6,PA7 is detailed in Debug chapter
+Role of debug pins is detailed in Debug chapter
 </ainfo>
 
 

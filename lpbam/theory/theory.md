@@ -12,35 +12,6 @@ Presentation
 - It's a **subsystem mechanism** that makes use of DMA to configure features for several pheriperals and transfer data
 
 
-<!--  
-We just saw that STM32U5 enables disruptive innovation to achieve the best in class ultra low power performance,  but how is this achieved?
-The answer is depicted in this slide and it is represented by LPBAM which is the main innovation introduced to reduce power consumption IN stm32u5
-LPBAM is the Acronym of low power batch acquisition mode
-It was Named previously smart DMA
-Until now you have to switch between STOP mode and active mode for example waking up on an interrupt. With LPBAM you have now peripheral functional and autonomous in stop mode
-With this metod you can cut power consumption by 10x
-In simplw words LPBAM is a subsystems that enables one task to operate independently of power mode and SW running 
-It is a subsystem mechanism that uses DMA instances that we will define later to configure features for several IP and transfer data to communication peripherals if needed
-Let’s jump into the various use cases which we hope will trigger some discussion on you customer’s design challenges and related opportunities
--->
-
-<!-- The DMA operations can be:
-- Autonomous peripheral configuration
-- Data transfer from / to autonomous peripherals
-
-
-Benefits
-Two major advantages result from using LPBAM subsystem mechanisms:
-- Power consumption is optimized:
-Bus and kernel clocks are distributed only when needed.
--Most of the product can be shut down.
-
-Analog peripherals / oscillators are powered on only when necessary.
-- CPU bandwidth is offloaded:
-Peripheral configurations are done by DMA instead of CPU.
-
-Data transfers are done by DMA instead of CPU -->
-
 ![theory1](./img/01.png)
 
 # 2 - LPBAM Basics 
@@ -133,7 +104,7 @@ Analog WDT from ADC can be used as trigger as well and can be used to trigger a 
 
 - We have now a single DMA driver with **two HW instances** which are GPDMA and LPDMA.
   
-  Both can be used in **Linked list mode**.
+- GPDMA and LPDMA can be used in **Linked list mode**.
 
 - GPDMA is on the CPU domain with 2 ports port 0 and port 1, LPDMA is on the Smart Run Domain and has a single port.
 
