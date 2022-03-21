@@ -110,7 +110,7 @@ Analog WDT from ADC can be used as trigger as well and can be used to trigger a 
 
 ![theory1](./img/13.png)
 
-# 6- LPDMA Architecture
+# 5- LPDMA Architecture
 
 - The LPDMA controller is a bus master and system peripheral. 
 
@@ -121,7 +121,7 @@ During the hands on we will see how LPDMA is configured via CubeMX and LPBAM Sce
 </p>
 ![theory1](./img/17.png)
 
-# 7- Smart Run Domain(SRD)
+# 6- Smart Run Domain(SRD)
 This is a zoom on smartun domain which is a clock domain with 2 masters AHB and LPDMA and 2 slaves which are AHB3Peripehral and internal SRAM4.
 
 <p>
@@ -141,15 +141,15 @@ LPDMA can only access smart run peripherals meaning that it can only access to S
 
 ![theory1](./img/10.png)
 
-# 8- GPDMA vs LPDMA
+# 7- GPDMA vs LPDMA
 Below main differences between GPDMA and LPDMA:
 
 ![theory1](./img/27.png)
 
-# 9- AHB/APB Distribution over domains
+# 8- AHB/APB Distribution over domains
 ![theory1](./img/20.png)
 
-# 10- Clock gating
+# 9- Clock gating
 
 In LPBAM Peripherals work down to STOP2 mode thanks to their own **independent clock request capability**. 
 
@@ -165,19 +165,19 @@ This gives great contribution to achieve best optimization of dynamic clock and 
 ![theory1](./img/16.png)
 
 
-# 11- Clock Distribution in Stop2
+# 10- Clock Distribution in Stop2
 
 ![theory1](./img/18.png)
 
-# 12- Pheriperals supporting LPBAM
+# 11- Pheriperals supporting LPBAM
 
 ![theory1](./img/19.png)
 
-# 13- SRD State transitions
+# 12- SRD State transitions
 
 ![theory1](./img/21.png)
 
-# 12- How to Debug LPBAM Scenario
+# 13- How to Debug LPBAM Scenario
 
 
 ![theory1](./img/25.png)
