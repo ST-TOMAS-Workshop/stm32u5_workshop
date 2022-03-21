@@ -64,7 +64,6 @@ in 'private define' section add
 
 ```c
 #define FREQUENCY_TEST
-
 ```
 Build and Run the application then connect Power Monitor and start measurement
 
