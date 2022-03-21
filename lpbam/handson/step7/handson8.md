@@ -32,9 +32,6 @@ Based on that we can confirm our initial finding on LPBAM functionality
 
 On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
-
-![Cubemx start](./img/080400.png)
-
 <asuccess>
 ## These findigs are totally confirming our measurements and hypotesis ##
 </asuccess>
