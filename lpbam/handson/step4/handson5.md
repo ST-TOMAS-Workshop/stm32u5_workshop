@@ -23,7 +23,7 @@ It's important to note that SRD is an active low signal which shows that LPDMA t
 
 ---
 
-# 4- Logic Analyzer view
+# 2- Logic Analyzer view
 LPTIM output was enabled for this step following the optional code modification presented in Cube IDE chapter. Assigned IO is PC1.
 
 ![lpbam config](./img/0403.png)
