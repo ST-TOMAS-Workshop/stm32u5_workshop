@@ -2,16 +2,7 @@
 Presentation
 ----!
 
-# Benchmark
-## Application used for benchmark can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2Fdry%5Frun%5Fworkshop%5Finterrupt%5Fbenchmark%2Ezip&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
-
-<p>
-
-
-
-</p>
-
-# 1- Standard application w/o LPBAM
+# 1- Benchmark with standard application w/o LPBAM
 
 We now need to compare low power result of LPBAM application vs standard approach interrupt based. 
 
@@ -38,10 +29,12 @@ We will extend the applicabilty of our findings in next chaper on results discus
 
 # 2- Cube IDE Project Build
 
-Open the project included in webinar folder pack.
-Build and program it into NUCLEO-U575ZIQ
+## .bin of Application used for benchmark can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2FINTERRUPT%5FADC%5FSamplingFrequencyUpdate%2Ebin&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
 
-![Cubemx start](./img/0701.png)
+Once downloaded .bin and file it can be dragged and dropped in NUCLEO-U575 as mass storage:
+
+
+![Cubemx start](./img/0701.gif)
 
 # 3- Power Measurement
 
@@ -60,12 +53,12 @@ Follow the steps showed in the previous chapter
 # 4- Sampling frequency change
 We are going to test how this power consumption value changes when sampling frequency increases by a factor 10x
 
-in 'private define' section add
+## .bin of Application used for benchmark can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2FINTERRUPT%5FADC%5FSamplingFrequencyUpdate%5F10xsampling%2Ebin&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
 
-```c
-#define FREQUENCY_TEST
-```
-Build and Run the application then connect Power Monitor and start measurement
+
+- Drag and drop it into NUCLEO-STM32U575 as seen previously
+
+- Connect Power Monitor and start measurement
 
 ![Cubemx start](./img/0705.gif)
 

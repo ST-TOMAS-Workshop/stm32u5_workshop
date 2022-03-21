@@ -75,14 +75,16 @@ Let's also add the array containing adresses for the two DMA handlers in `/* USE
 ```c
 DMA_HandleTypeDef *LPBAM_LpbamAp1_Scenario_DMAHandlers[2];
 ```
+---
 
-```
 We also have to place buffer for ADC
 in `/* USER CODE BEGIN 0 */`
 
 ```c
 uint16_t Data_Sequence[320] = {0U};
 ```
+
+---
 
 Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start. Reference section is `/* USER CODE BEGIN 2 */ `  
 

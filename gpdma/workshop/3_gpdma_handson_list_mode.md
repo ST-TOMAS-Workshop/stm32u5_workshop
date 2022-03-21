@@ -17,14 +17,18 @@ Presentation
 
 # Classic DMA circular mode
 
-Classical DMA had bit which allow repeat the configuration
+Classical DMA had bit which allow repeat the configuration.
+When DMA finished it automatically reload previous configuration.
 
 ![old circular](./img/old_dma_circular.json)
 
 # GPDMA list mode
 
 The GPDMA have different approach
-It have **lists** containing **configuration** which is used by **GPDMA**
+It have **lists** containing **configuration** which is used by **GPDMA**.
+
+When GPDMA ends it looking for new configuration based on LLR register. If is found it reload own registrs with it also with new LLR.
+This configuration is called **NODE**. Multiple nodes are **queue** making list. 
 
 ![gpdma list](./img/gpdma_list.json)
 
@@ -34,39 +38,47 @@ In MX the ADC configuration will be the same
 
 # Change GPDMA mode
 
-1. Change GPDMA mode from `Standard Request Mode` to `Linked-List Mode`
+1. Change **GPDMA** mode from `Standard Request Mode` to `Linked-List Mode`
 
 ![set list mode](./img/22_03_08_103.png)
 
-# Configure CH15
+# Configure CH15 1/2
 
-1. Got to CH15 Configuration
+1. Got to **CH15** Configuration
 
 ![set list mode](./img/22_03_08_105.png)
+
+# Configure CH15 2/2
 
 2. Set **Execution Mode of Linked List** to `Circular`
 
 ![set circular mode](./img/22_03_08_107.png)
 
-# Linked List configuration
+# Linked List configuration 1/2
 
-1. Go to `LINKEDLIST` periphery
+1. Go to `LINKEDLIST` periphery in **Utilities**
 
 ![LINKEDLIST periphery](./img/22_03_08_109.gif)
+
+# Linked List configuration 2/2
 
 2. Add List by click on `Add List` button
 
 ![Add list](./img/22_03_08_111.png)
 
-# Configue List/Queue
+# Configue List/Queue 1/3
 
 1. Click on Queue to be able configure it. Default name is `YourQueueName`
 
 ![select queue](./img/22_03_08_113.png)
 
+# Configue List/Queue 2/3
+
 2. Set **Linear or cicrular LinkedList setting** to `Circular`
 
 ![select circular mode](./img/22_03_08_115.png)
+
+# Configue List/Queue 3/3
 
 3. Set first node in loop in our case put `YourNodeName`
 
@@ -76,6 +88,14 @@ YourNodeName
 
 ![select first node name](./img/22_03_08_117.png)
 
+# Node loop
+
+The first node in loop is where LLR from last node in queue will be pointed.
+You can select any node in queue.
+In our case when YourNodeName finishes he will reload same configuration. Because he is pointing on himself.
+
+![node loop](./img/node_loops.json)
+
 # Node configuration
 
 1. Select Node
@@ -83,11 +103,13 @@ YourNodeName
 ![select first node name](./img/22_03_08_119.png)
 
 
-# Set node parameters same as in previous configuration
+# Set node parameters same as in previous configuration 1/4
 
 1. In **Request configuration ** set **Request as a patameter** to `GPDMA_REQUEST_ADC1`
    
 ![request](./img/22_03_08_121.gif)
+
+# Set node parameters same as in previous configuration 2/4
 
 2. In **Destination Data Setting** set **Destination Address Increment After transfer** to `Enabled`
 
@@ -95,14 +117,18 @@ YourNodeName
 
 ![destination configuration](./img/22_03_08_123.gif)
 
+# Set node parameters same as in previous configuration 3/4
+
 4. In **Source Data Setting** set **Data Width** to `Half Word`
 
 ![source configuration](./img/22_03_08_129.gif)
 
+# Set node parameters same as in previous configuration 4/4
+
 5. In **Runtime configuration** set **Source Address** to `ADC1->DR`
 
 ```c
-&(ADC1->DR)
+(uint32_t)&(ADC1->DR)
 ```
 
 6. In **Runtime configuration** set **Destination Address** to `data`
@@ -114,7 +140,7 @@ data
 7. In **Runtime configuration** set **Data Size** to `SIZE`
 
 ```c
-SIZE
+(64*2)
 ```
 
 ![Runtime configuration](./img/22_03_08_127.png)
@@ -126,7 +152,7 @@ Now generate code and switch to CubeIDE
 
 # Add linked_list.h include
 
-First add **include** of `linked_list.h`
+First add **include** of `linked_list.h` into `main.c`
 
 By adding 
 
@@ -156,8 +182,7 @@ like
 
 ```c-nc
 /* USER CODE BEGIN PV */
-#define SIZE 64
-uint16_t data[SIZE];
+uint16_t data[64];
 
 extern DMA_QListTypeDef YourQueueName;
 /* USER CODE END PV */
@@ -168,7 +193,6 @@ extern DMA_QListTypeDef YourQueueName;
 Add 
 
 ```c
-#define SIZE 64
 extern uint16_t data[];
 ```
 
@@ -176,7 +200,6 @@ to `linked_list.c` section `/* USER CODE BEGIN PM */` like
 
 ```c-nc
 /* USER CODE BEGIN PM */
-#define SIZE 64
 extern uint16_t data[];
 /* USER CODE END PM */
 ```
@@ -191,7 +214,7 @@ Add
   MX_YourQueueName_Config();
 ```
 
-to `/* USER CODE BEGIN 2 */` section like
+to `/* USER CODE BEGIN 2 */` section in `main.c` like
 
 
 ```c-nc
@@ -199,6 +222,28 @@ to `/* USER CODE BEGIN 2 */` section like
   MX_YourQueueName_Config();
   /* USER CODE END 2 */
 ```
+
+# What does MX_YourQueueName_Config? 1/3
+
+The fucntion will create our node configuration from structure by using `HAL_DMAEx_List_BuildNode`
+The node is now copy of gpdma registers. 
+But still no link between nodes. 
+
+![build node](./img/build_node.json)
+
+# What does MX_YourQueueName_Config? 2/3
+
+
+To link nodes together MX use `HAL_DMAEx_List_InsertNode_Tail`
+To create our queue.
+
+![add node](./img/insert_node.json)
+
+# What does MX_YourQueueName_Config? 3/3
+
+To put nodes into circular loo we use `HAL_DMAEx_List_SetCircularMode`
+
+![circular node](./img/set_circular.json)
 
 # Connect queue and GPDMA channel
 
@@ -254,17 +299,6 @@ To section `/* USER CODE BEGIN 2 */` like
 
 We have similar application like in handson 1 but now based directly on linked list, where we can more elements
 
-# Created Node
-
-MX created node for use by `HAL_DMAEx_List_BuildNode`
-
-![build node](./img/build_node.json)
-
-# Add node into Queue
-
-MX added this node to queue with `HAL_DMAEx_List_InsertNode_Tail`
-
-![add node](./img/insert_node.json)
 
 # Add link to GPDMA
 

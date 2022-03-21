@@ -12,35 +12,6 @@ Presentation
 - It's a **subsystem mechanism** that makes use of DMA to configure features for several pheriperals and transfer data
 
 
-<!--  
-We just saw that STM32U5 enables disruptive innovation to achieve the best in class ultra low power performance,  but how is this achieved?
-The answer is depicted in this slide and it is represented by LPBAM which is the main innovation introduced to reduce power consumption IN stm32u5
-LPBAM is the Acronym of low power batch acquisition mode
-It was Named previously smart DMA
-Until now you have to switch between STOP mode and active mode for example waking up on an interrupt. With LPBAM you have now peripheral functional and autonomous in stop mode
-With this metod you can cut power consumption by 10x
-In simplw words LPBAM is a subsystems that enables one task to operate independently of power mode and SW running 
-It is a subsystem mechanism that uses DMA instances that we will define later to configure features for several IP and transfer data to communication peripherals if needed
-Let’s jump into the various use cases which we hope will trigger some discussion on you customer’s design challenges and related opportunities
--->
-
-<!-- The DMA operations can be:
-- Autonomous peripheral configuration
-- Data transfer from / to autonomous peripherals
-
-
-Benefits
-Two major advantages result from using LPBAM subsystem mechanisms:
-- Power consumption is optimized:
-Bus and kernel clocks are distributed only when needed.
--Most of the product can be shut down.
-
-Analog peripherals / oscillators are powered on only when necessary.
-- CPU bandwidth is offloaded:
-Peripheral configurations are done by DMA instead of CPU.
-
-Data transfers are done by DMA instead of CPU -->
-
 ![theory1](./img/01.png)
 
 # 2 - LPBAM Basics 
@@ -126,20 +97,20 @@ Analog WDT from ADC can be used as trigger as well and can be used to trigger a 
 ![theory1](./img/08.png)
 
 
-# 3- System Architecture and DMA Overview
+# 4- System Architecture and DMA Overview
 - LPBAM makes use of DMA instance, STM32U5 includes a new DMA IP.
 
 - It integrates all previous DMA features Trigger, DMAMUX MDMA etc.
 
 - We have now a single DMA driver with **two HW instances** which are GPDMA and LPDMA.
   
-  Both can be used in **Linked list mode**.
+- GPDMA and LPDMA can be used in **Linked list mode**.
 
 - GPDMA is on the CPU domain with 2 ports port 0 and port 1, LPDMA is on the Smart Run Domain and has a single port.
 
 ![theory1](./img/13.png)
 
-# 4- LPDMA Architecture
+# 5- LPDMA Architecture
 
 - The LPDMA controller is a bus master and system peripheral. 
 
@@ -150,7 +121,7 @@ During the hands on we will see how LPDMA is configured via CubeMX and LPBAM Sce
 </p>
 ![theory1](./img/17.png)
 
-# 5- Smart Run Domain(SRD)
+# 6- Smart Run Domain(SRD)
 This is a zoom on smartun domain which is a clock domain with 2 masters AHB and LPDMA and 2 slaves which are AHB3Peripehral and internal SRAM4.
 
 <p>
@@ -170,15 +141,15 @@ LPDMA can only access smart run peripherals meaning that it can only access to S
 
 ![theory1](./img/10.png)
 
-# 6- GPDMA vs LPDMA
+# 7- GPDMA vs LPDMA
 Below main differences between GPDMA and LPDMA:
 
 ![theory1](./img/27.png)
 
-# 7- AHB/APB Distribution over domains
+# 8- AHB/APB Distribution over domains
 ![theory1](./img/20.png)
 
-# 8- Clock gating
+# 9- Clock gating
 
 In LPBAM Peripherals work down to STOP2 mode thanks to their own **independent clock request capability**. 
 
@@ -194,19 +165,19 @@ This gives great contribution to achieve best optimization of dynamic clock and 
 ![theory1](./img/16.png)
 
 
-# 9- Clock Distribution in Stop2
+# 10- Clock Distribution in Stop2
 
 ![theory1](./img/18.png)
 
-# 10- Pheriperals supporting LPBAM
+# 11- Pheriperals supporting LPBAM
 
 ![theory1](./img/19.png)
 
-# 11- SRD State transitions
+# 12- SRD State transitions
 
 ![theory1](./img/21.png)
 
-# 12- How to Debug LPBAM Scenario
+# 13- How to Debug LPBAM Scenario
 
 
 ![theory1](./img/25.png)
