@@ -106,8 +106,7 @@ Put the array and size into `main.c` to section ` USER CODE BEGIN PV` like bello
 
 ```c-nc
 /* USER CODE BEGIN PV */
-#define SIZE 64
-uint16_t data[SIZE];
+uint16_t data[64];
 /* USER CODE END PV */
 ```
 
@@ -136,7 +135,7 @@ To start ADC+DMA we can use HAL function `HAL_ADC_Start_DMA`
 We use it like this:
 
 ```c
-  HAL_ADC_Start_DMA(&hadc1, data, SIZE);
+  HAL_ADC_Start_DMA(&hadc1, data, 64);
 ```
 
 we put it into section `USER CODE BEGIN 2` like bellow
