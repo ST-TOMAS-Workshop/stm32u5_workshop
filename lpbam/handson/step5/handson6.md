@@ -4,7 +4,7 @@ Presentation
 
 # Power Measurement
 
-We will now measure power consumption using **STM32L562E-DK** and `STM32 Cube Monitor Power`
+We will now measure power consumption using **STM32L562E-DK** and **STM32 Cube Monitor Power**
 
 
 # 1 Board Switch and jumper config settings
@@ -76,8 +76,8 @@ Open `Cube Monitor Power` and run again the measurement - we should notice that 
 
 
 <ainfo>
-This is truly remarkable: we have changed clock speed by a factor x6 for but power consumption has not changed.
-This happens because SRD is adjusting clock gating so DMA transfer will become more frequent but shorter in time
+This is a very important point: we have changed clock speed by a factor x6 for but power consumption has not changed.
+This happens because ADC will be clocked by a high frequency clock but DMA transfer will happen still at LPTIM frequency
 </ainfo>
 
 <p>

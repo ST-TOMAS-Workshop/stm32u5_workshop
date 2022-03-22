@@ -8,7 +8,7 @@ We now need to compare low power result of LPBAM application vs standard approac
 
 Here below you can see the example of an application which is performing same task without LPBAM.
 
-ADC is set at 1.5Clk cycles sampling and 4MHz MSIK.
+As for the LPBAM example, ADC4 is set at 1.5Clk cycles sampling and 4MHz MSIK.
 LPTIM is still changing frequency between 256Hz and 64Hz and it is powered by LSI
 
 ---
@@ -40,7 +40,7 @@ Once downloaded .bin and file it can be dragged and dropped in NUCLEO-U575 as ma
 
 Follow the steps showed in the previous chapter
 
-1 -Connect STM32L562E-DK 
+1 -Connect **STM32L562E-DK** 
 
 2- Open `STM32 Cube Monitor Power`
 

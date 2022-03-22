@@ -7,7 +7,9 @@ Presentation
 <awarning>
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
 
-In this chapter, we will provide indications on how to debug LPBAM application in low power mode
+In this chapter, we will provide indications on how to debug LPBAM application in low power mode.
+
+Attendees are not required to follow all the steps but the aim is to make you aware of LPBAM Debug strategies in STOP2
 </awarning>
 
 # 1- Debug PINS
@@ -17,7 +19,17 @@ In Cube MX we set CPU Sleep, CPU domain stop and Smart Run Domain Stop Pin to de
 
 ![lpbam config](./img/0405.gif)
 
+<p>
+
+</p>
+
+<ainfo>
 It's important to note that SRD is an active low signal which shows that LPDMA transfer is happening.
+</ainfo>
+
+<p>
+
+</p>
 
 ![lpbam config](./img/0402.png)
 
