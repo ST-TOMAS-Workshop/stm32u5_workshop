@@ -56,13 +56,13 @@ YourNodeName3
 2. In section **2D addressing** set **Destination Address Offset** to `30` (16halfwords = 2*16bytes minus 2bytes)
 
 ```c
-32
+30
 ```
 
 3. In section **2D addressing** set **Block Destination Address Offset** to `-126` (return to benning is 64*2bytes but we want to capture next sample so -1*2bytes)
 
 ```c
--128
+-126
 ```
 
 4. In section **2D addressing** set **Repeat Counter** to `16` (we will transfer 4*2*16=128bytes = 64 samples)
