@@ -52,7 +52,7 @@ This can currently be used only in S&H using capacitor to keep dac value – as 
 
 
 ## Voice Activity Detection with Audio Digital Filter
-We can handle the transfer in stop2 to and from an analog digital filter (ADF),  waking up if we detect noise or voice.
+We can handle the transfer in stop2 to and from an audio digital filter (ADF),  waking up if we detect noise or voice.
 This is another example of peripheral with embedded comparator that can be used to wake up from stop2.
 
 <ainfo>
