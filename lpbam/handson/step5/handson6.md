@@ -142,9 +142,9 @@ To do so you need to reoped .ioc file and go to **LBAM Scenario&Configuration**
 ![lpbam config](./img/0511.gif)
 
 
-in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was changed the following function from `PWR_SRD_DOMAIN_STOP` to PWR_SRD_DOMAIN_RUN :
+In our code inside `lpbam_lpbamap1_config.c` located in `MX_SystemPower_Config` the following function was changed from `PWR_SRD_DOMAIN_STOP` to ``PWR_SRD_DOMAIN_RUN :
 
-```nc
+```c-nc
 /* Smart Run Domain Config*/
 HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
 ```

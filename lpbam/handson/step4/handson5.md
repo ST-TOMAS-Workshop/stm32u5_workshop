@@ -2,7 +2,7 @@
 Presentation
 ----!
 
-# 0- Debug
+# Debug
 
 <awarning>
 Debugging LPBAM application is not a trivial task if we really want to see low power consumption from MCU.
