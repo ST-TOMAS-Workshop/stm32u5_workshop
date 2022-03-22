@@ -149,6 +149,13 @@ HAL_PWREx_EnableVddA();
 ```
 ---
 
+in function `MX_ADC_Q_DMA_TC_Callback` in `USER CODE BEGIN ADC_DMA_TC_Callback ` add:
+
+```c
+HAL_LPTIM_PWM_Stop(&hlptim1, LPBAM_LPTIM_CHANNEL_1);
+```
+---
+
 # 4- Linker
 
 Linker file should be modified as follows.

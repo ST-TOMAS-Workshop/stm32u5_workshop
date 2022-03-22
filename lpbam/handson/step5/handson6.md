@@ -149,7 +149,7 @@ in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was chan
 HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
 ```
 
-We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~50uA** range
+We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~25uA** range
 
 ![lpbam config](./img/0513.gif)
 
