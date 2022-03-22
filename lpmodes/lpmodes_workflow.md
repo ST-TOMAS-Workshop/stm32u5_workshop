@@ -47,7 +47,7 @@ DataSheet values for LP modes are Static consumption only
 - Keep STM32U5 in ULP mode without any activity is not efficient
 
 <awarning> 
-Device selection must follow **Application demand** and NOT DataSheet comparison.
+Device selection must follow **Application demand** and NOT DataSheet comparison
 </awarning>
 <p> </p>
 
@@ -55,7 +55,7 @@ Device selection must follow **Application demand** and NOT DataSheet comparison
 ![image2](./img/ADC_consumption_profile.png) 
 
 # System Architecture
-Two digital domains CPU domain (CD) and Smart run domain (SRD)
+Two digital domains **CPU domain (CD)** and **Smart run domain (SRD)**
 
 CD & SRD contains full feature set
 
@@ -67,9 +67,9 @@ SRD contains only reduced peripheries (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, 
 
 **Stop 0 and Stop 1**
 
-- CD partialy powered & SRD fully powered => peripherals (expect high perfomance) are functional, thanks to GPDMA1 and LPDMA1
+- CD partialy powered & SRD fully powered => peripherals (except high perfomance one) are functional, thanks to GPDMA1 and LPDMA1
 
-**In STOP2**
+**In Stop 2**
 
 - CD in “retention” (lower leakage mode) => no dynamic activity possible
 
@@ -97,7 +97,7 @@ Core stops
 
 High speed clocks runs only on peripheral’s demand
 
-Full retention of SRAM and peripherals registers, with capability to individually **power down** SRAM pages in Stop 0,1,2,3:
+Full retention of SRAM and peripherals registers, with capability to individually **power down** SRAM pages in **Stop 0,1,2,3**:
 
 - SRAM1 : 3 x 64KB-pages
 
@@ -113,7 +113,9 @@ Wakeup clock is HSI16 or MSI up to 24 MHz (range 4 only)
 
 Set ULPMEN to reduce consumption 
 
-- Caution: high VDD falling min slew rate
+- PDR operating in sampling mode
+
+- Caution: min. VDD falling slew rate must be respected
 
 ## Stop modes summary
 ![image](./img/stop.png)
@@ -184,15 +186,7 @@ Wires can be optionally twisted to reduce noise.
 
 ![image2](./img/wiring.png) 
 
-## Measuring feature of L562 DK
-- **Tap on Measurements** icon on LCD 
-
-- No other task is needed for external power measuring
-
-<awarning>
-In some cases this step is not needed. Also ignore displayed **Warning** or **Error** message on LCD. This Warning is aplicatable only for consumption measuring of onboard L562 device.
-</awarning> 
-<p> </p>
+- or **Connect A-meter** to Pin 1 & 2 of JP5
 
 ## Connect L562-DK board
 - [Install](https://www.st.com/en/development-tools/stm32cubemonpwr.html) and launch **STM32CubeMonitor-Power**
@@ -202,6 +196,27 @@ In some cases this step is not needed. Also ignore displayed **Warning** or **Er
 - Press **Take Control**.
 
 ![gif1](./img/CubeMX_PwrMon_SelectBoard.gif)
+
+## Measuring feature of L562 DK
+<awarning>
+In most cases this step is not needed. Also ignore displayed **Warning** or **Error** message on LCD. This Warning is aplicatable only for consumption measuring of onboard L562 device.
+</awarning> 
+<p> </p>
+
+Only if Virtual Comport is not visible
+
+- **Tap on Measurements** icon on LCD 
+
+- No other task is needed for external power measuring
+
+## Calibrate 
+It's required to calibrate Power measuring feature (Offset,..)
+
+- Keep Power source unloaded.
+
+- Press **Calibrate**.
+
+![gif1](./img/calibration.gif)
 
 ## Configuration
 In Configuration window many parameters can be adjusted. For hands-on purpose let select:
@@ -247,7 +262,9 @@ LP Stop mode is entered by ` WFI()` instruction. For this reason:
 ![gif6](./img/XM_generation.gif)
 
 # CubeIDE
-## Flash linker script
+- Open **CubeIDE** and related LP_mode project
+
+# Flash linker script
 In hands-on we disable Flash Bank 2 and disable data retention in almost all SRAMs. To avoid any HardFault error a correct setup in *linker script STM32U575ZITX_FLASH.ld* is needed.
 
 - Define RAM memory region only for `SRAM4`. Also reduce ROM region to `Flash Bank 1`.
@@ -260,19 +277,22 @@ MEMORY
   FLASH	(rx)	: ORIGIN = 0x08000000,	LENGTH = 1024K
 }
 ```
-## Comment part of code
+# Comment part of code
 In a first part of hands on we don't need GPIO and RTC unit to be activated.
-- Commnet following lines:
+
+- Commnet following lines in `Initialize all configured peripherals` section:
 
 ```c
-//MX_GPIO_Init();
-//MX_RTC_Init();
+  /* Initialize all configured peripherals */
+ // MX_GPIO_Init();
+  MX_ICACHE_Init();
+ // MX_RTC_Init();
 ```
 
-## Vcore range
-<ainfo>
+# Vcore range
+<awarning>
 This step is done by CubeMX generator. Proper Vcore level is set dependetly on System clock.
-</ainfo>
+</awarning>
 <p> </p>
 Use adequate voltage scaling vs. System clock frequency. Vcore Range 4 replaces STM32L4/L5 Low-power run mode. (<24MHz)
 
@@ -282,53 +302,63 @@ Use adequate voltage scaling vs. System clock frequency. Vcore Range 4 replaces 
 (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE4)
 ```
 
-**Measure consumption given by Vcore range in LDO mode**
+# All Steps done in combo
+- **SMPS Vcore supply**
 
-- Consumption is reduced to aprrox. 470 uA.
+- **Power Down Flash Bank 2**
 
-
-## SMPS Vcore supply  
-- The SMPS regulator supplies the Vcore Power Domains. Copy paste following code in *Begin 2* user section.
-
-```c
-/*The SMPS regulator supplies the Vcore Power Domains.*/
-HAL_PWREx_ConfigSupply(PWR_SMPS_SUPPLY);
-```
-
-**Measure consumption given by SMPS Vcore supply**
-
-- Consumption is reduced to aprrox. 250 uA.
-
-## Power Down Flash Bank 2
-- Enable the Power-down Mode for Flash Bank 2. Copy paste following code in `Begin 2` user section.
-
-```c
-/* Enable the Power-down Mode for Flash Banks*/
-HAL_FLASHEx_EnablePowerDown(FLASH_BANK_2);
-```
-
-**Measure consumption given by Power Down Flash Bank 2**
-
-- Consumption is reduced to aprrox. 175 uA.
-
-
-## STOP2 mode
 To be able observe impact of each further steps let put mcu in Stop 2 mode
-- Enter Stop2 mode.
 
-Copy paste following code in `While(1)` user section.
+- **Enter Stop2 mode**
 
 ```c
-/* Enter Stop 2 Mode */
-HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+  /* USER CODE BEGIN 2 */
+  HAL_Delay(2000);
+  /* The SMPS regulator supplies the Vcore Power Domains */
+  HAL_PWREx_ConfigSupply(PWR_SMPS_SUPPLY);
+
+  /* Enable the Power-down Mode for Flash Banks*/
+  HAL_Delay(2000);
+  HAL_FLASHEx_EnablePowerDown(FLASH_BANK_2);
+
+  /* Disable RAM page(s) content lost in Stop mode (Stop 0, 1, 2, 3) */
+  HAL_Delay(2000);
+
+/*  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM1_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM2_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_SRAM3_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_ICACHE_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_DCACHE1_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_DMA2DRAM_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_PERIPHRAM_FULL_STOP_RETENTION);
+  HAL_PWREx_DisableRAMsContentStopRetention(PWR_PKA32RAM_FULL_STOP_RETENTION);
+*/
+
+  /* Enable ultra low power mode */
+  HAL_PWREx_EnableUltraLowPowerMode();
+
+  /* Enter in Stop 2 mode */ 
+  HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+
+  /* USER CODE END 2 */
 ```
+<p> </p>
+Compile code, Flash device and **Terminate debug session**
+<p> </p>
+<awarning> 
+Disable Debug in Low Power modes. Otherwise MCU does no enter in genuine LP modes.
+</awarning>
+<p> </p>
 
-**Measure consumption given by Stop 2 mode**
+![gif](./img/disdebug.gif)
 
-- Consumption is reduced to aprrox. 7.5 uA.
+## Measure consumption
+![image](./img/combo.png)
 
-## SRAM retention
-- Disable RAM page(s) and caches retention. A content is lost in Stop mode (Stop 0, 1, 2, 3). Copy paste following code in `Begin 2` user section.
+# SRAMs retention 
+Disable RAM page(s) and caches retention. A content is lost in Stop mode (Stop 0, 1, 2, 3). Copy paste following code in `Begin 2` user section.
+
+- **Uncomment part of code**
 
 ```c
 /* Disable RAM page(s) content lost in Stop mode (Stop 0, 1, 2, 3) */
@@ -341,22 +371,13 @@ HAL_PWREx_DisableRAMsContentStopRetention(PWR_DMA2DRAM_FULL_STOP_RETENTION);
 HAL_PWREx_DisableRAMsContentStopRetention(PWR_PERIPHRAM_FULL_STOP_RETENTION);
 HAL_PWREx_DisableRAMsContentStopRetention(PWR_PKA32RAM_FULL_STOP_RETENTION);
 ```
+<p> </p>
+Compile code, Flash device and **Terminate debug session**
 
-**Measure consumption given by Disbale SRAM Retention in Stop 2 mode**
-
+## Measure consumption in Stop 2 mode given by SRAMs retention off
 - Consumption is reduced to aprrox. 4 uA.
 
-## Ultra low power mode
-- Enable ultra low power mode. Copy paste following code in `Begin 2` user section.
-
-```c
-/*Enable ultra low power mode*/
-HAL_PWREx_EnableUltraLowPowerMode();
-```
-
-**Measure consumption given by Ultra low power mode**
-
-- Consumption should be reduced to aprrox. 4 uA.
+![image](./img/stop2.png)
 
 # Clocks
 Standard set of internal and external clock's sources
@@ -439,14 +460,21 @@ All event allow the possibility to wake up the system from Stop 0, 1, 2 modes.
 # Back to Hands on
 ## Uncomment part of code
 In a first part of hands on we don't need GPIO and RTC unit to be activated.
-- Commnet following lines:
+
+**Uncomment** following lines:
 
 ```c
 MX_RTC_Init();
 MX_GPIO_Init();
 ```
+<p> </p>
+**Comment** following line EnterSTOPmode in `Begin 2` user section:
 
-## RTC Autonomous mode
+```c
+//HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+```
+
+# RTC Autonomous mode
 - Enable the Autonomous Mode for the RTC Stop0/1/2. RTC is part of Smart Run Domain and dedicated clock enable bit must be set otherwise RTC would not wakeup device from STOP modes. Now device periodically wakeup from Stop2 mode. Copy paste following code in `Begin 2` user section.
 
 ```c
@@ -454,7 +482,7 @@ MX_GPIO_Init();
 __HAL_RCC_RTCAPB_CLKAM_ENABLE();
 ```
 
-## STOP2 mode with RTC periodic wakeup
+# STOP2 mode with RTC periodic wakeup
 
 - Add Systick delay 3s to be able to measure consumption difference by A-meter
 
@@ -465,14 +493,20 @@ __HAL_RCC_RTCAPB_CLKAM_ENABLE();
 Copy paste following code in `While(1)` user section. 
 
 ```c
-HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
-HAL_Delay(3000);
-HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
-//Set RTC wakeup timer for 3s 
-HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 3, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
-/* Enter Stop 2 Mode */
-HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
+	  HAL_Delay(3000);
+	  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_7);
+	  //Set RTC wakeup timer for 3s
+	  HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 3, RTC_WAKEUPCLOCK_CK_SPRE_16BITS, 0);
+	  /* Enter Stop 2 Mode */
+	  HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+    /* USER CODE END WHILE */
 ```
+<p> </p>
+Compile code, Flash device and **Terminate debug session**
 
 **Measure consumption given by STOP2 mode with RTC periodic wakeup**
 ![gif1](./img/stop_profile.gif)
