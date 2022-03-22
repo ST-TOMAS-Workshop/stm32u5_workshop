@@ -2,27 +2,27 @@
 Presentation
 ----!
 
-# 1-Quick Summary Linked List
+# 1 - Quick Summary Linked List
 
 We saw linked list in previous section so this will be just a quick recap
 
 ![theory1](./img/12.png)
 
-# 2- LPBAM Bases
-An LPBAM task is a seried of elementary DMA node linked between them in a specific order to do a functional operation that can be conditional by trigger signal or peripheral request
+# 2 - LPBAM Bases
+An LPBAM task is a series of elementary DMA nodes linked between them in a specific order to do a functional operation that can be conditioned by trigger signal or peripheral request
 ![theory1](./img/23.png)
 
-# 3- Linked List Mode
+# 3 - Linked List Mode
 
-Each DMA transfer has its own configuration stored in an SRAM area. In case of LPDMA it is SRAM4. Each of this stored configurations is named node.
+Each DMA transfer has its own configuration stored in an SRAM area. In case of LPDMA it is SRAM4(16KB).
+Each of this stored configurations is named node.
 
 - Each node is linked to another node in order to define the next transfer configuration.
 - A set of DMA transfer nodes linked to each other builds a queue.
-When started, the DMA channel fetches the first linked-list node from SRAM (known as head node).
+- When started, the DMA channel fetches the first linked-list node from SRAM (known as head node).
 - After that, the next linked list node is fetched and executed.
 - This operation is repeated until the last queue node (known as tail node) is executed.
-  
-The linked-list queue can also be configured in circular mode, the DMA repeats node execution in an infinite loop (from the first circular nodes to tail node).
+- The linked-list queue can also be configured in circular mode, the DMA repeats node execution in an infinite loop (from the first circular nodes to tail node).
 
 
 ![theory1](./img/24.png)
