@@ -169,11 +169,7 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 2. Mode = **Counts internal clock events**
 3. Channel_1_Active - **no IO used**
 4. in Parametrs Settings, choose **Compare** as Capture-Compare section
-5. Give Period = **128** and Pulse=**64** 
-
-<ainfo>
-Any value for Period and pulse different from zero is ok, it will be overwritten by first function in LPBAM appication
-</ainfo>
+5. Give Period = **127** and Pulse=**63** 
 
  ![lpbam config](./img/07.gif)
  
