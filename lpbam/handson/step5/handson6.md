@@ -105,7 +105,6 @@ and `TIMER queue PWM_3 build` in the following way:
 ```c
   pPWMFull_LPTIM.PeriodValue = 51;
   pPWMFull_LPTIM.PulseValue = 25;
-  pPWMFull_LPTIM.RepetitionValue = 63;
 ```
 We also want to come back to initial setting with MSIK=4Mhz
 
