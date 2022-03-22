@@ -127,9 +127,6 @@ We can assign the following values:
 <ainfo>
 Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
 </ainfo>
-<p>
-
-</p>
 
 <ainfo>
 Trigger configuration reported in the left tab is related to DMA transfer trigger
@@ -171,16 +168,15 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 1. Select **LPTIM1**
 2. Mode = **Counts internal clock events**
 3. Channel_1_Active - **no IO used**
-4. in Prametrs Settings, choose **Compare** as capture-Compare section
-5. Give Period = **128** and Pulse=**64** <!-- need to check the impact that this number has-->
+4. in Parametrs Settings, choose **Compare** as Capture-Compare section
+5. Give Period = **128** and Pulse=**64** 
+
+<ainfo>
+Any value for Period and pulse different from zero is ok, it will be overwritten by first function in LPBAM appication
+</ainfo>
 
  ![lpbam config](./img/07.gif)
  
-
-<ainfo>
-Any value for Period and pulse is ok, it will be overwritten by first function in LPBAM appication
-</ainfo>
-
 ---
 
 # 8- PWR 
