@@ -28,7 +28,7 @@ On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
 
 </p>
-
+![Cubemx start](./img/0803.png)
 ![Cubemx start](./img/080404.png)
 
 
