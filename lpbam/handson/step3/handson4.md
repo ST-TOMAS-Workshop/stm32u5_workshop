@@ -67,12 +67,14 @@ Let's start by including the LPBAM Library header file in `
 **Note** is named after the Scenario, might change if you provided a different name to it
   
 ```c
+/* Entry point for our LPBAM application*/
 #include "lpbam_lpbamap1.h"
 ```
 
 Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */`
 
 ```c
+/* Array containing addresses of LPDMA handlers for the 2 channels*/
 DMA_HandleTypeDef *LPBAM_LpbamAp1_Scenario_DMAHandlers[2];
 ```
 ---
@@ -81,6 +83,7 @@ We also have to place buffer for ADC
 in `/* USER CODE BEGIN 0 */`
 
 ```c
+/* Buffer for ADC4 data */
 uint16_t Data_Sequence[320] = {0U};
 ```
 
@@ -100,7 +103,6 @@ LPBAM_LpbamAp1_Scenario_DMAHandlers[0U] = &handle_LPDMA1_Channel0;
 LPBAM_LpbamAp1_Scenario_DMAHandlers[1U] = &handle_LPDMA1_Channel1;
 /* LPBAM ADC application link */
 MX_LpbamAp1_Scenario_Link(LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
-
 /* LPBAM ADC application start */
 MX_LpbamAp1_Scenario_Start(LPBAM_LpbamAp1_Scenario_DMAHandlers[0U]);
 ```
@@ -112,13 +114,21 @@ Please remeber to stay inside the `/* USER CODE BEGIN 2` and `/* USER CODE END 2
 </ainfo>
 
 ```c
+/* API to disable Debug in STOP mode */
 HAL_DBGMCU_DisableDBGStopMode();
+/* API to enter in STOP2 */
 HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 ```
 
 <ainfo>
  `HAL_DBGMCU_DisableDBGStopMode` is the function contributing the most to low power, it stops clock from being distributed over the debug interface
-</ainfo>
+ </ainfo>
+<p>
+
+</p>
+ <awarning>
+ `HAL_DBGMCU_EnableDBGStopMode` shall be used if you wish to enter Debug Mode
+ </awarning>
 
 ---
 # 3 - LPBAM 
@@ -139,6 +149,13 @@ HAL_PWREx_EnableVddA();
 ```
 ---
 
+in function `MX_ADC_Q_DMA_TC_Callback` in `USER CODE BEGIN ADC_DMA_TC_Callback ` add:
+
+```c
+HAL_LPTIM_PWM_Stop(&hlptim1, LPBAM_LPTIM_CHANNEL_1);
+```
+---
+
 # 4- Linker
 
 Linker file should be modified as follows.
@@ -153,7 +170,8 @@ MEMORY
 }
 ```
 
-`Note` in standard application with wider use of power modes and peripheral you might need to place buffers and DMA handlers in dedicated SRAM4 section by using __attribute__ e.g. `uint16_t buffer_adc[64] __attribute__((section(".sram4")))`;
+`Note` in standard application with wider use of power modes and peripheral you might need to place buffers and DMA handlers in dedicated SRAM4 section by using __attribute__ e.g.
+ `uint16_t buffer_adc[64] __attribute__((section(".sram4")))`;
 
 
 <ainfo>

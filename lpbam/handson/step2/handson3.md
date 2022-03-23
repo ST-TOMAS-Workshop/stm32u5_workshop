@@ -44,7 +44,7 @@ LPBAM Scenario and Configurator is intended to be a tool to configure peripheral
 
 **we will add LPTIM and ADC nodes in LPBAM configuration**
 
-1. Make sure to be on TIMER Queue and not on ADC one
+1. Make sure to be on **TIMER** Queue and not on **ADC** one
 2. Select **LPTIM1** from the list
 3. Click on **START** and note that one function is added to the chart
 4. Click on **PWM** two times note that two new functions will appear in the central tab
@@ -73,13 +73,13 @@ LPBAM Scenario and Configurator is intended to be a tool to configure peripheral
 
    -**Update State**
 
-   We assign the following values:
+We assign the following values:
 
-   -Period=**127**
+-Period=**127**
 
-   -Pulse=**63**
+-Pulse=**63**
 
-   -Repetition Counter = **255** 
+-Repetition Counter = **255** 
 
   <ainfo>
   Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. 
@@ -92,17 +92,23 @@ LPBAM Scenario and Configurator is intended to be a tool to configure peripheral
 
 We can assign the following values:
 
-   -Period=**511**
+-Period=**511**
 
-   -Pulse=**255**
+-Pulse=**255**
 
-   -Repetition Counter = **63** 
+-Repetition Counter = **63** 
    
 ---
 
  <ainfo>
  Idea is to have 64 repetitions of a square wave at 64Hz meaning 1 second
  </ainfo>
+
+<p>
+
+
+</p>
+
 ![lpbam config](./img/04.gif)
 
 ---
@@ -118,23 +124,17 @@ We can assign the following values:
 5. Data Buffer Offset=**0**
 6. Number of Data=**320**
 7. All other settings can be kept with default value
-   <ainfo>
-   Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
-   </ainfo>
-
-
-   ![lpbam config](./img/05.gif)
+<ainfo>
+Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
+</ainfo>
 
 <ainfo>
 Trigger configuration reported in the left tab is related to DMA transfer trigger
 </ainfo>
 
+   ![lpbam config](./img/05.gif)
 
 ---
-
-
-
-
 # 6- ADC4
 
 **In this step we configure the peripherals available in Smart Run Domain**
@@ -144,7 +144,7 @@ Trigger configuration reported in the left tab is related to DMA transfer trigge
 3. Chose **Vrefint channel** 
 4. On Parameter setting tab choose Sequencer= **Sequencer set to not fully configurable**
 5. DMA Continuous Request = **Enabled**
-6. Low Power Auto Wait = **Enable**
+6. Low Power Auto Wait = **Enabled**
 7. SamplingTimeCommon1 = **1.5Cycles** 
 8. NVIC Settings - **Enable ADC4 Global Interrupt**
    
@@ -168,16 +168,11 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 1. Select **LPTIM1**
 2. Mode = **Counts internal clock events**
 3. Channel_1_Active - **no IO used**
-4. in Prametrs Settings, choose **Compare** as capture-Compare section
-5. Give Period = **128** and Pulse=**64** <!-- need to check the impact that this number has-->
+4. in Parametrs Settings, choose **Compare** as Capture-Compare section
+5. Give Period = **127** and Pulse=**63** 
 
  ![lpbam config](./img/07.gif)
  
-
-<ainfo>
-Any value for Period and pulse is ok, it will be overwritten by first function in LPBAM appication
-</ainfo>
-
 ---
 
 # 8- PWR 
