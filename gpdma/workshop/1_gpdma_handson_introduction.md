@@ -1,4 +1,4 @@
-# GPDMA handson copcopysheet 
+# GPDMA handson copysheet 
 
 Our goal is to learn about GPDMA features
 
