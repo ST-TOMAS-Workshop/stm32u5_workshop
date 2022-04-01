@@ -36,3 +36,14 @@ Contain position of nest GPDMA node
 </ainfo>
 
 ![gpdma list](./img/gpdma_list.json)
+
+# The GPDMA will use nodes for those reghisters: 
+
+TR1 - Transfer register 1
+TR2 - Transfer register 2
+BR1 - blck register 1
+SAR - Source address register 
+DAR - Destination address register
+TR3 - Transfer register 3
+BR2 - Block register 2 
+LLR - Linker list register

@@ -26,7 +26,7 @@ YourNodeName3
 
 1. In section **Source Data Settings** set **Source Address Increment After Transfer** to `ENABLE`
 2. In section **Source Data Settings** set Data Width to Half-Word
-3. In section **Source Data Settings** set **Source Address Increment After Transfer** to `ENABLE`
+3. In section **Source Data Settings** set **Destination Address Increment After Transfer** to `ENABLE`
 4. In section **Source Data Settings** set Data Width to Half-Word
 
 ![set src & dest](./img/22_03_14_173.gif)

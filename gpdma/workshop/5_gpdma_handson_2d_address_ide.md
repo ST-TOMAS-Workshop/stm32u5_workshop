@@ -8,15 +8,14 @@ In `main.c`
 Add new buffer to section `/* USER CODE BEGIN PV */`
 
 ```c
-uint16_t data2[SIZE];
+uint16_t data2[64];
 ```
 
 
 ```c-nc
 /* USER CODE BEGIN PV */
-#define SIZE 64
-uint16_t data[SIZE];
-uint16_t data2[SIZE];
+uint16_t data[64];
+uint16_t data2[64];
 
 extern DMA_QListTypeDef YourQueueName;
 /* USER CODE END PV */
@@ -35,7 +34,6 @@ like
 
 ```c-nc
 /* USER CODE BEGIN PM */
-#define SIZE 64
 extern uint16_t data[];
 extern uint16_t data2[];
 /* USER CODE END PM */
