@@ -25,9 +25,14 @@ When DMA finished it automatically reload previous configuration.
 # GPDMA list mode
 
 The GPDMA have different approach
-It have **lists** containing **configuration** which is used by **GPDMA**.
+It have **lists** containing **configuration nodes** which are used by **GPDMA**.
 
-When GPDMA ends it looking for new configuration based on LLR register. If is found it reload own registrs with it also with new LLR.
+When GPDMA ends it looking for new node configuration based on **LLR** register. If is found it reload own registrs with it also with new LLR.
 This configuration is called **NODE**. Multiple nodes are **queue** making list. 
+
+<ainfo>
+LLR is Linked list register
+Contain position of nest GPDMA node
+</ainfo>
 
 ![gpdma list](./img/gpdma_list.json)
