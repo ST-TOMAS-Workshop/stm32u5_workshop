@@ -79,7 +79,8 @@ We assign the following values:
 Frequency = 1/ {(1/LPTIM_CLK) * (PRESCALER_DIV_Value) * (PERIOD_Value + 1)}
 In our case we will set later LPTIM_CLK=LSI=32.768kHZ and PRESCALER_DIV_Value=1
 </ainfo>
-
+ ---
+ 
 -Period Value=**127**
 
 -Pulse Value=**63**
@@ -150,8 +151,8 @@ Trigger configuration reported in the left tab is related to DMA transfer trigge
 4. On Parameter setting tab choose Sequencer= **Sequencer set to not fully configurable**
 5. DMA Continuous Request = **Enabled**
 6. Low Power Auto Wait = **Enabled**
-7. SamplingTimeCommon1 = **1.5Cycles** 
-8. NVIC Settings - **Enable ADC4 Global Interrupt**
+7. SamplingTimeCommon1 = **1.5Cycles** (default settings, no changes needed)
+8. NVIC Settings - **Enable ADC4 (12bits) Global Interrupt**
    
    ![lpbam config](./img/06.gif)
 

@@ -162,10 +162,9 @@ This is one of the key aspects of LPBAM subsystem mechanism which enables remark
 
 # 11 - SRD State transitions
 
-![theory1](./img/2121.png)
+![theory1](./img/21212.png)
 
 # 12 - How to Debug LPBAM Scenario
-
 
 ![theory1](./img/25.png)
 
