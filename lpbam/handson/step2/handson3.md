@@ -64,22 +64,27 @@ LPBAM Scenario and Configurator is intended to be a tool to configure peripheral
 **Queue tab for TIMER remains unchanged**
 
 1. **Make sure to be on TIMER Queue and not on ADC one**
-2. Select **LPTIM1:Start_1** and change Start mode to **continuos Mode**
+2. Select **LPTIM1:Start_1** and change Start mode to **Continuos Mode**
 3. Select **LPTIM1:PWM_2 **and enable the following 
    
-   -**Period** 
+   -**period update state** 
 
-   -**Pulse** 
+   -**pulse update state** 
 
-   -**Update State**
+   -**repetition update state**
 
 We assign the following values:
 
--Period=**127**
+<ainfo>
+Frequency = 1/ {(1/LPTIM_CLK) * (PRESCALER_DIV_Value) * (PERIOD_Value + 1)}
+In our case we will set later LPTIM_CLK=LSI=32.768kHZ and PRESCALER_DIV_Value=1
+</ainfo>
 
--Pulse=**63**
+-Period Value=**127**
 
--Repetition Counter = **255** 
+-Pulse Value=**63**
+
+-Repetition Counter Value = **255** 
 
   <ainfo>
   Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. 
@@ -88,15 +93,15 @@ We assign the following values:
   
   ---
 
-4. Click **LPTIM1:PWM_3** and enable period and pulse update state as done previously. 
+1. Click **LPTIM1:PWM_3** and enable period and pulse update state as done previously. 
 
 We can assign the following values:
 
--Period=**511**
+-Period Value=**511**
 
--Pulse=**255**
+-Pulse Value=**255**
 
--Repetition Counter = **63** 
+-Repetition Counter Value = **63** 
    
 ---
 
