@@ -24,6 +24,8 @@ The below curves are showing full characterization of behaviour of our scenario 
 Based on that we can confirm our initial finding on LPBAM functionality.
 On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
+![Cubemx start](./img/0803.png)
+
 <p>
 
 
