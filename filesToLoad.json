@@ -447,7 +447,7 @@
             },
             {
               "type": "File",
-              "name": "2.Nucleo Board Selection",
+              "name": "2.MCU Selection",
               "path": "lpbam/handson/step1",
               "file": "handson.md"
             },
