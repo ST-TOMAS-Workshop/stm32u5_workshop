@@ -35,5 +35,5 @@ On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
 
 <asuccess>
-## These findigs are totally confirming our measurements and hypotesis ##
+## These findings are totally confirming our measurements and hypotesis ##
 </asuccess>

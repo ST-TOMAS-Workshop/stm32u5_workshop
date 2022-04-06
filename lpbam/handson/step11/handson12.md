@@ -12,7 +12,7 @@
 
 ## [5] Application note STM32U5 Series power optimization using LPBAM [AN5645](https://www.st.com/resource/en/application_note/an5645-stm32u5-series-power-optimization-using-lpbam-stmicroelectronics.pdf)
 
-## [6] [On-demand webinar New STM32CubeMX feature for Low-Power Background Autonomous Mode configuration with STM32U5](https://content.st.com/new-stm32cubemx-feature-for-lpbam-configuration-with-stm32u5-webinar.html)
+## [6] On-demand webinar New STM32CubeMX feature for Low-Power Background Autonomous Mode configuration with STM32U5 [Link](https://content.st.com/new-stm32cubemx-feature-for-lpbam-configuration-with-stm32u5-webinar.html)
 
 ---
 
