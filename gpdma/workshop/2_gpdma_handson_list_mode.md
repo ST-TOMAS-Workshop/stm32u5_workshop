@@ -297,7 +297,7 @@ To section `/* USER CODE BEGIN 2 */` like
 
 # What we created
 
-We have similar application like in handson 1 but now based directly on linked list, where we can more elements
+We have similar application like in Basic GPDMA. But now based directly on linked list, where we can add more elements
 
 
 # Add link to GPDMA
