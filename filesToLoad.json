@@ -147,22 +147,47 @@
       "file": "mx_generate_code.md"
     },
     {
-      "name": "LP modes workflow",
+      "name": "1. Theory Overview",
       "path": "/lpmodes",
-      "file": "lpmodes_workflow.md"
+      "file": "lpmodes_theory.md"
     },
     {
-      "name": "LP modes handson",
+      "name": "1. Hands-on Overview",
       "path": "/lpmodes",
-      "file": "lpmodes_handson.md"
+      "file": "lpmodes_handson_intro.md"
     },
     {
-      "name": "LP modes handson",
+      "name": "2. Start Project",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_project.md"
+    },
+    {
+      "name": "3. CubeMx Configuration",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_cubemx.md"
+    },
+    {
+      "name": "4. CubeIDE Code",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_cubeide.md"
+    },
+    {
+      "name": "5. CubeIDE Debug",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_debug.md"
+    },
+    {
+      "name": "6. Cube Power Monitor",
       "path": "/lpmodes",
       "file": "lpmodes_handson_powmon.md"
     },
     {
-      "name": "LP modes Theory",
+      "name": "7. Power Consumption",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_result.md"
+    },
+    {
+      "name": "ULP modes Theory",
       "path": "/lpmodes",
       "file": "lpmodes_theory.md"
     },
@@ -383,27 +408,59 @@
     },
     {
       "type": "Folder",
-      "name": "4.LP modes",
+      "name": "4.ULP modes",
       "children": [
         {
-          "type": "File",
-          "name": "LP modes workflow",
-          "file": "lpmodes_workflow.md"
+          "type": "Folder",
+          "name": "ULP modes theory",
+          "children": [
+            {
+              "type": "File",
+              "name": "1. Theory Overview",
+              "file": "lpmodes_theory.md"
+            }
+          ]
         },
         {
-          "type": "File",
-          "name": "LP Mode handson",
-          "file": "lpmodes_handson.md"
-        },
-        {
-          "type": "File",
-          "name": "LP modes handson - PowMon",
-          "file": "lpmodes_handson_powmon.md"
-        },
-        {
-          "type": "File",
-          "name": "LP modes Theory",
-          "file": "lpmodes_theory.md"
+          "type": "Folder",
+          "name": "ULP modes hands-on",
+          "children": [
+            {
+              "type": "File",
+              "name": "1. Hands-on Overview",
+              "file": "lpmodes_handson_intro.md"
+            },
+            {
+              "type": "File",
+              "name": "2. Start Project",
+              "file": "lpmodes_handson_project.md"
+            },
+            {
+              "type": "File",
+              "name": "3. CubeMx Configuration",
+              "file": "lpmodes_handson_cubemx.md"
+            },
+            {
+              "type": "File",
+              "name": "4. CubeIDE Code",
+              "file": "lpmodes_handson_cubeide.md"
+            },
+            {
+              "type": "File",
+              "name": "5. CubeIDE Debug",
+              "file": "lpmodes_handson_debug.md"
+            },
+            {
+              "type": "File",
+              "name": "6. Cube Power Monitor",
+              "file": "lpmodes_handson_powmon.md"
+            },
+            {
+              "type": "File",
+              "name": "7. Power Consumption",
+              "file": "lpmodes_handson_result.md"
+            }
+          ]
         }
       ]
     },
