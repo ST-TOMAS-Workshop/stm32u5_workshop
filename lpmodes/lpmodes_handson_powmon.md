@@ -67,7 +67,9 @@ It's required to calibrate Power measuring feature (Offset,..)
 
 ![image2](./img/wiring.png) 
 
-- or **Connect A-meter** to Pin 1 & 2 of JP5
+- or **Connect A-meter** to Pin 1 & 2 of JP5 (following diagram avoiding negative values on screen)
+
+![image3](./img/Ameter.png) 
 
 # Configuration
 In Configuration window many parameters can be adjusted. For hands-on purpose let select:
