@@ -412,7 +412,7 @@
       "children": [
         {
           "type": "Folder",
-          "name": "ULP modes theory",
+          "name": "ULP modes Theory",
           "children": [
             {
               "type": "File",
@@ -423,7 +423,7 @@
         },
         {
           "type": "Folder",
-          "name": "ULP modes hands-on",
+          "name": "ULP modes Hands-on",
           "children": [
             {
               "type": "File",

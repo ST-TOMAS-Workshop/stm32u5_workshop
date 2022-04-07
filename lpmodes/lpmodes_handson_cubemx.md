@@ -2,22 +2,24 @@
 Presentation
 ----!
 
-# CubeMX
-1. Open CubeMx or CubeMX plugin in CubeIDE
-2. **Access to MCU selector**
-3. Select STM32U575ZI
-4. Create New project **without TrustZone activated**
-5. Enable **ICACHE 1-way (direct mapped cache)**
-6. Configure PC7 (Green LED) as Output Push-Pull. Right click on `PC7` and set as `GPIO_Output`
-   
+# Cache
+- Enable **ICACHE 1-way (direct mapped cache)**
+
+![gif3](./img/xxx.gif)
+
+# GPIO
+- Configure PC7 (Green LED) as Output Push-Pull. Right click on `PC7` and set as `GPIO_Output`
+  
 ![gif3](./img/GPIO.gif)
 
-# RTC unit
+# RTC unit 1
 Application periodically wakeups from Stop mode.
 
 - To do that Wakeup counter of RTC unit is enabled. Keep default LSI as clock source.
 
 ![gif4](./img/RTC_1.gif)
+
+# RTC unit 2
 
 LP Stop mode is entered by ` WFI()` instruction. For this reason:
 
