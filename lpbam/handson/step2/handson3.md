@@ -64,22 +64,28 @@ LPBAM Scenario and Configurator is intended to be a tool to configure peripheral
 **Queue tab for TIMER remains unchanged**
 
 1. **Make sure to be on TIMER Queue and not on ADC one**
-2. Select **LPTIM1:Start_1** and change Start mode to **continuos Mode**
+2. Select **LPTIM1:Start_1** and change Start mode to **Continuos Mode**
 3. Select **LPTIM1:PWM_2 **and enable the following 
    
-   -**Period** 
+   -**period update state** 
 
-   -**Pulse** 
+   -**pulse update state** 
 
-   -**Update State**
+   -**repetition update state**
 
 We assign the following values:
 
--Period=**127**
+<ainfo>
+Frequency = 1/ {(1/LPTIM_CLK) * (PRESCALER_DIV_Value) * (PERIOD_Value + 1)}
+In our case we will set later LPTIM_CLK=LSI=32.768kHZ and PRESCALER_DIV_Value=1
+</ainfo>
+ ---
+ 
+-Period Value=**127**
 
--Pulse=**63**
+-Pulse Value=**63**
 
--Repetition Counter = **255** 
+-Repetition Counter Value = **255** 
 
   <ainfo>
   Idea is to have 256 repetitions of a square wave at 256Hz meaning 1 second. 
@@ -88,15 +94,15 @@ We assign the following values:
   
   ---
 
-4. Click **LPTIM1:PWM_3** and enable period and pulse update state as done previously. 
+1. Click **LPTIM1:PWM_3** and enable period and pulse update state as done previously. 
 
 We can assign the following values:
 
--Period=**511**
+-Period Value=**511**
 
--Pulse=**255**
+-Pulse Value=**255**
 
--Repetition Counter = **63** 
+-Repetition Counter Value = **63** 
    
 ---
 
@@ -127,9 +133,6 @@ We can assign the following values:
 <ainfo>
 Number of Data=320 has been chosen to have the whole buffer filled in 2 seconds
 </ainfo>
-<p>
-
-</p>
 
 <ainfo>
 Trigger configuration reported in the left tab is related to DMA transfer trigger
@@ -148,8 +151,8 @@ Trigger configuration reported in the left tab is related to DMA transfer trigge
 4. On Parameter setting tab choose Sequencer= **Sequencer set to not fully configurable**
 5. DMA Continuous Request = **Enabled**
 6. Low Power Auto Wait = **Enabled**
-7. SamplingTimeCommon1 = **1.5Cycles** 
-8. NVIC Settings - **Enable ADC4 Global Interrupt**
+7. SamplingTimeCommon1 = **1.5Cycles** (default settings, no changes needed)
+8. NVIC Settings - **Enable ADC4 (12bits) Global Interrupt**
    
    ![lpbam config](./img/06.gif)
 
@@ -171,16 +174,11 @@ By clicking on Check LPBAM DESIGN button we should get a reminder mentioning tha
 1. Select **LPTIM1**
 2. Mode = **Counts internal clock events**
 3. Channel_1_Active - **no IO used**
-4. in Prametrs Settings, choose **Compare** as capture-Compare section
-5. Give Period = **128** and Pulse=**64** <!-- need to check the impact that this number has-->
+4. in Parametrs Settings, choose **Compare** as Capture-Compare section
+5. Give Period = **127** and Pulse=**63** 
 
  ![lpbam config](./img/07.gif)
  
-
-<ainfo>
-Any value for Period and pulse is ok, it will be overwritten by first function in LPBAM appication
-</ainfo>
-
 ---
 
 # 8- PWR 

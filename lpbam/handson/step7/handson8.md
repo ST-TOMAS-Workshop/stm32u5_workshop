@@ -21,7 +21,10 @@ The below curves are showing full characterization of behaviour of our scenario 
 
 ![Cubemx start](./img/0802.png)
 
-Based on that we can confirm our initial finding on LPBAM functionality
+Based on that we can confirm our initial finding on LPBAM functionality.
+On a wider picture, LPBAM brings the below saving vs Run/Stop mode
+
+![Cubemx start](./img/0803.png)
 
 <p>
 
@@ -30,8 +33,7 @@ Based on that we can confirm our initial finding on LPBAM functionality
 
 ![Cubemx start](./img/080404.png)
 
-On a wider picture, LPBAM brings the below saving vs Run/Stop mode
 
 <asuccess>
-## These findigs are totally confirming our measurements and hypotesis ##
+## These findings are totally confirming our measurements and hypotesis ##
 </asuccess>
