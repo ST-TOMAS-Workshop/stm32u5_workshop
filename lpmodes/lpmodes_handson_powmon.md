@@ -82,4 +82,12 @@ In Configuration window many parameters can be adjusted. For hands-on purpose le
 
 ![gif2](./img/CubeMX_PwrMon_Conf.gif)
 
+# Show report
+- FULL and SELECT FRAME consumption details (Min, Max, Average, Energy)
+- Acqusition must be **stoped**
+- Press **Show Report**
+
+![gif3](./img/showreport.gif)
+
+
 

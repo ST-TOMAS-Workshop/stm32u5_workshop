@@ -5,7 +5,7 @@ Presentation
 # Cache
 - Enable **ICACHE 1-way (direct mapped cache)**
 
-![gif3](./img/xxx.gif)
+![gif3](./img/icache.gif)
 
 # GPIO
 - Configure PC7 (Green LED) as Output Push-Pull. Right click on `PC7` and set as `GPIO_Output`

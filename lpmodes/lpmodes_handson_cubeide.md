@@ -3,9 +3,9 @@ Presentation
 ----!
 
 # CubeIDE
-- Open **CubeIDE** and related LP_mode project
+- Open **CubeIDE** and related `ULP mode` project
 
-![gif3](./img/xxx.gif)
+![gif3](./img/open_project.gif)
 
 # Flash linker script
 In hands-on we disable Flash Bank 2 and disable data retention in almost all SRAMs except 16kB in SRAM4. To avoid any HardFault error or random values founded in variables a correct memory allocation must be defined in *linker script STM32U575ZITX_FLASH.ld*.
