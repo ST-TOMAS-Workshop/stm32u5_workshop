@@ -77,52 +77,98 @@
       "file": "11_gpdma_linked_list.md"
     },
     {
-      "name": "1. Introduction",
       "path": "/gpdma/workshop",
-      "file": "1_gpdma_handson_introduction.md"
+      "file": "8_gpdma_handson_basic_gpdma_intro.md"
     },
     {
-      "name": "2. Basic DMA",
       "path": "/gpdma/workshop",
-      "file": "2_gpdma_handson_basic_gpdma.md"
+      "file": "8_gpdma_handson_basic_gpdma_mx.md"
     },
     {
-      "name": "3. Linked list",
       "path": "/gpdma/workshop",
-      "file": "3_gpdma_handson_list_mode.md"
+      "file": "8_gpdma_handson_basic_gpdma_ide.md"
     },
     {
-      "name": "4. UART node",
       "path": "/gpdma/workshop",
-      "file": "4_gpdma_handson_uart_node.md"
+      "file": "2_gpdma_handson_list_mode_intro.md"
     },
     {
-      "name": "5. TIM trigger",
       "path": "/gpdma/workshop",
-      "file": "5_gpdma_handson_tim_trigger.md"
+      "file": "2_gpdma_handson_list_mode_mx.md"
     },
     {
-      "name": "6. 2D addressing",
       "path": "/gpdma/workshop",
-      "file": "6_gpdma_handson_2d_address.md"
+      "file": "2_gpdma_handson_list_mode_ide.md"
     },
     {
-      "name": "6b. 2D addressing",
       "path": "/gpdma/workshop",
-      "file": "6b_gpdma_handson_2d_address.md"
+      "file": "2_gpdma_handson_list_mode_ide_2.md"
     },
     {
-      "name": "7. Events",
       "path": "/gpdma/workshop",
-      "file": "7_gpdma_handson_events.md"
+      "file": "2_gpdma_handson_list_mode_ide_3.md"
     },
     {
-      "name": "8. Conclusion",
       "path": "/gpdma/workshop",
-      "file": "8_conclusion.md"
+      "file": "3_gpdma_handson_uart_node_intro.md"
     },
     {
-      "name": "9. LPBAM preparation",
+      "path": "/gpdma/workshop",
+      "file": "3_gpdma_handson_uart_node_mx.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "3_gpdma_handson_uart_node_ide.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "4_gpdma_handson_tim_trigger_intro.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "4_gpdma_handson_tim_trigger_mx.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "4_gpdma_handson_tim_trigger_ide.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "5_gpdma_handson_2d_address_intro.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "5_gpdma_handson_2d_address_mx.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "5_gpdma_handson_2d_address_ide.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "5b_gpdma_handson_2d_address.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "6_gpdma_handson_events_intro.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "6_gpdma_handson_events_mx.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "6_gpdma_handson_events_ide.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "7_conclusion.md"
+    },
+    {
+      "path": "/gpdma/workshop",
+      "file": "9_gpdma_theory_link.md"
+    },
+    {
       "path": "/gpdma/workshop",
       "file": "9_preparation_for_lpbam.md"
     },
@@ -147,22 +193,47 @@
       "file": "mx_generate_code.md"
     },
     {
-      "name": "LP modes workflow",
+      "name": "1. Theory Overview",
       "path": "/lpmodes",
-      "file": "lpmodes_workflow.md"
+      "file": "lpmodes_theory.md"
     },
     {
-      "name": "LP modes handson",
+      "name": "1. Hands-on Overview",
       "path": "/lpmodes",
-      "file": "lpmodes_handson.md"
+      "file": "lpmodes_handson_intro.md"
     },
     {
-      "name": "LP modes handson",
+      "name": "2. Start Project",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_project.md"
+    },
+    {
+      "name": "3. CubeMx Configuration",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_cubemx.md"
+    },
+    {
+      "name": "4. CubeIDE Code",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_cubeide.md"
+    },
+    {
+      "name": "5. CubeIDE Debug",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_debug.md"
+    },
+    {
+      "name": "6. Cube Power Monitor",
       "path": "/lpmodes",
       "file": "lpmodes_handson_powmon.md"
     },
     {
-      "name": "LP modes Theory",
+      "name": "7. Power Consumption",
+      "path": "/lpmodes",
+      "file": "lpmodes_handson_result.md"
+    },
+    {
+      "name": "ULP modes Theory",
       "path": "/lpmodes",
       "file": "lpmodes_theory.md"
     },
@@ -245,26 +316,40 @@
       "name": " Exercise",
       "path": "/lpbam/handson/step11",
       "file": "handson12.md"
+    },
+    {
+      "path": "/package",
+      "file": "stm32u5_workshop_package_materials.md"
+    },
+    {
+      "path": "/security",
+      "file": "stm32u5_workshop_security.md"
     }
   ],
   "menuStructure": [
     {
-      "type": "File",
-      "name": "1. Before live sessions",
-      "file": "file_live.md"
-    },
-    {
-      "type": "File",
-      "name": "2. Before on-line sessions",
-      "file": "file_online.md"
+      "type": "Folder",
+      "name": "BEFORE WORKSHOP",
+      "children": [
+        {
+          "type": "File",
+          "name": "Before live sessions",
+          "file": "file_live.md"
+        },
+        {
+          "type": "File",
+          "name": "Before on-line sessions",
+          "file": "file_online.md"
+        }
+      ]
     },
     {
       "type": "Folder",
-      "name": "3. GPDMA",
+      "name": "AT THE WORKSHOP",
       "children": [
         {
           "type": "Folder",
-          "name": "Workshop",
+          "name": "1. GPDMA",
           "children": [
             {
               "name": "1. Introduction",
@@ -272,252 +357,340 @@
               "file": "1_gpdma_handson_introduction.md"
             },
             {
-              "name": "2. Basic DMA",
-              "type": "File",
-              "file": "2_gpdma_handson_basic_gpdma.md"
+              "type": "Folder",
+              "name": "2. Linked list",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "2_gpdma_handson_list_mode_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "2_gpdma_handson_list_mode_mx.md"
+                },
+                {
+                  "name": "CubeIDE 1/2",
+                  "type": "File",
+                  "file": "2_gpdma_handson_list_mode_ide.md"
+                },
+                {
+                  "name": "List config",
+                  "type": "File",
+                  "file": "2_gpdma_handson_list_mode_ide_2.md"
+                },
+                {
+                  "name": "CubeIDE 2/2",
+                  "type": "File",
+                  "file": "2_gpdma_handson_list_mode_ide_3.md"
+                }
+              ]
             },
             {
-              "name": "3. Linked list",
-              "type": "File",
-              "file": "3_gpdma_handson_list_mode.md"
+              "type": "Folder",
+              "name": "3. UART node",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "3_gpdma_handson_uart_node_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "3_gpdma_handson_uart_node_mx.md"
+                },
+                {
+                  "name": "CubeIDE",
+                  "type": "File",
+                  "file": "3_gpdma_handson_uart_node_ide.md"
+                }
+              ]
             },
             {
-              "name": "4. UART node",
-              "type": "File",
-              "file": "4_gpdma_handson_uart_node.md"
+              "type": "Folder",
+              "name": "4. TIM trigger",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "4_gpdma_handson_tim_trigger_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "4_gpdma_handson_tim_trigger_mx.md"
+                },
+                {
+                  "name": "CubeIDE",
+                  "type": "File",
+                  "file": "4_gpdma_handson_tim_trigger_ide.md"
+                }
+              ]
             },
             {
-              "name": "5. TIM trigger",
-              "type": "File",
-              "file": "5_gpdma_handson_tim_trigger.md"
+              "type": "Folder",
+              "name": "5. 2D addressing",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "5_gpdma_handson_2d_address_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "5_gpdma_handson_2d_address_mx.md"
+                },
+                {
+                  "name": "CubeIDE",
+                  "type": "File",
+                  "file": "5_gpdma_handson_2d_address_ide.md"
+                }
+              ]
             },
             {
-              "name": "6. 2D addressing",
-              "type": "File",
-              "file": "6_gpdma_handson_2d_address.md"
+              "type": "Folder",
+              "name": "6. Events",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "6_gpdma_handson_events_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "6_gpdma_handson_events_mx.md"
+                },
+                {
+                  "name": "CubeIDE",
+                  "type": "File",
+                  "file": "6_gpdma_handson_events_ide.md"
+                }
+              ]
             },
             {
-              "name": "6b. 2D addressing",
+              "name": "7. Conclusion",
               "type": "File",
-              "file": "6b_gpdma_handson_2d_address.md"
+              "file": "7_conclusion.md"
             },
             {
-              "name": "7. Events",
-              "type": "File",
-              "file": "7_gpdma_handson_events.md"
+              "type": "Folder",
+              "name": "8. Basic DMA",
+              "children": [
+                {
+                  "name": "Introduction",
+                  "type": "File",
+                  "file": "8_gpdma_handson_basic_gpdma_intro.md"
+                },
+                {
+                  "name": "CubeMX",
+                  "type": "File",
+                  "file": "8_gpdma_handson_basic_gpdma_mx.md"
+                },
+                {
+                  "name": "CubeIDE",
+                  "type": "File",
+                  "file": "8_gpdma_handson_basic_gpdma_ide.md"
+                }
+              ]
             },
             {
-              "name": "8. Conclusion",
               "type": "File",
-              "file": "8_conclusion.md"
-            },
-            {
-              "name": "9. LPBAM preparation",
-              "type": "File",
-              "file": "9_preparation_for_lpbam.md"
+              "name": "9. Theory",
+              "file": "9_gpdma_theory_link.md"
             }
           ]
         },
         {
           "type": "Folder",
-          "name": "Theory",
+          "name": "2. ULP modes",
           "children": [
             {
-              "name": "1. Modes",
-              "type": "File",
-              "file": "1_gpdma_modes.md"
+              "type": "Folder",
+              "name": "ULP modes theory",
+              "children": [
+                {
+                  "type": "File",
+                  "name": "1. Theory Overview",
+                  "file": "lpmodes_theory.md"
+                }
+              ]
             },
             {
-              "name": "2. Circular mode",
-              "type": "File",
-              "file": "2_gpdma_circular.md"
-            },
-            {
-              "name": "3. Requests",
-              "type": "File",
-              "file": "3_gpdma_requests.md"
-            },
-            {
-              "name": "4. Priority",
-              "type": "File",
-              "file": "4_gpdma_priority.md"
-            },
-            {
-              "name": "5. Direction",
-              "type": "File",
-              "file": "5_gpdma_direction.md"
-            },
-            {
-              "name": "6. Src & Dest Config",
-              "type": "File",
-              "file": "6_gpdma_src_dest_configuration.md"
-            },
-            {
-              "name": "7. Data handling",
-              "type": "File",
-              "file": "7_gpdma_data_handling.md"
-            },
-            {
-              "name": "8. Trigger",
-              "type": "File",
-              "file": "8_gpdma_trigger.md"
-            },
-            {
-              "name": "9. Transfer events",
-              "type": "File",
-              "file": "9_gpdma_transfer_events.md"
-            },
-            {
-              "name": "10. 2D addressing",
-              "type": "File",
-              "file": "10_gpdma_2d_addressing.md"
-            },
-            {
-              "name": "11. Linked list",
-              "type": "File",
-              "file": "11_gpdma_linked_list.md"
+              "type": "Folder",
+              "name": "ULP modes hands-on",
+              "children": [
+                {
+                  "type": "File",
+                  "name": "1. Hands-on Overview",
+                  "file": "lpmodes_handson_intro.md"
+                },
+                {
+                  "type": "File",
+                  "name": "2. Start Project",
+                  "file": "lpmodes_handson_project.md"
+                },
+                {
+                  "type": "File",
+                  "name": "3. CubeMx Configuration",
+                  "file": "lpmodes_handson_cubemx.md"
+                },
+                {
+                  "type": "File",
+                  "name": "4. CubeIDE Code",
+                  "file": "lpmodes_handson_cubeide.md"
+                },
+                {
+                  "type": "File",
+                  "name": "5. CubeIDE Debug",
+                  "file": "lpmodes_handson_debug.md"
+                },
+                {
+                  "type": "File",
+                  "name": "6. Cube Power Monitor",
+                  "file": "lpmodes_handson_powmon.md"
+                },
+                {
+                  "type": "File",
+                  "name": "7. Power Consumption",
+                  "file": "lpmodes_handson_result.md"
+                }
+              ]
             }
           ]
+        },
+        {
+          "type": "Folder",
+          "name": "3. LPBAM",
+          "children": [
+            {
+              "type": "Folder",
+              "name": "LPBAM Theory",
+              "children": [
+                {
+                  "type": "File",
+                  "name": "Overview",
+                  "path": "lpbam/theory",
+                  "file": "theory.md"
+                },
+                {
+                  "type": "File",
+                  "name": "Linked list summary",
+                  "path": "lpbam/theory",
+                  "file": "linked list.md"
+                },
+                {
+                  "type": "File",
+                  "name": " EEMBC ULPMark",
+                  "path": "lpbam/theory",
+                  "file": "ulpmark.md"
+                }
+              ]
+            },
+            {
+              "type": "Folder",
+              "name": "LPBAM Handson",
+              "children": [
+                {
+                  "type": "File",
+                  "name": "1.Hands-on Overview",
+                  "path": "lpbam/handson/step1",
+                  "file": "handson0.md"
+                },
+                {
+                  "type": "File",
+                  "name": "2.Nucleo Board Selection",
+                  "path": "lpbam/handson/step1",
+                  "file": "handson.md"
+                },
+                {
+                  "type": "File",
+                  "name": "3.Peripherals configuration CubeMx",
+                  "path": "lpbam/handson/step1",
+                  "file": "handson2.md"
+                },
+                {
+                  "type": "File",
+                  "name": "4.LPBAM Scenario & Configuration",
+                  "path": "lpbam/handson/step2",
+                  "file": "handson3.md"
+                },
+                {
+                  "type": "File",
+                  "name": "5.Cube IDE",
+                  "path": "lpbam/handson/step3",
+                  "file": "handson4.md"
+                },
+                {
+                  "type": "File",
+                  "name": "6.Debug",
+                  "path": "lpbam/handson/step4",
+                  "file": "handson5.md"
+                },
+                {
+                  "type": "File",
+                  "name": "7.Generated code",
+                  "path": "lpbam/handson/step9",
+                  "file": "handson10.md"
+                },
+                {
+                  "type": "File",
+                  "name": "8.Power consumption",
+                  "path": "lpbam/handson/step5",
+                  "file": "handson6.md"
+                },
+                {
+                  "type": "File",
+                  "name": "9.Benchmark",
+                  "path": "lpbam/handson/step6",
+                  "file": "handson7.md"
+                },
+                {
+                  "type": "File",
+                  "name": "10.Results discussion",
+                  "path": "lpbam/handson/step7",
+                  "file": "handson8.md"
+                },
+                {
+                  "type": "File",
+                  "name": "11.Wrap up",
+                  "path": "lpbam/handson/step8",
+                  "file": "handson9.md"
+                },
+                {
+                  "type": "File",
+                  "name": "12.FAQ",
+                  "path": "lpbam/handson/step10",
+                  "file": "handson11.md"
+                },
+                {
+                  "type": "File",
+                  "name": "13.References",
+                  "path": "lpbam/handson/step11",
+                  "file": "handson12.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "File",
+          "name": "WORKSHOP PACKAGE MATERIALS",
+          "file": "stm32u5_workshop_package_materials.md"
         }
       ]
     },
     {
       "type": "Folder",
-      "name": "4.LP modes",
+      "name": "AFTER WORKSHOP",
       "children": [
         {
           "type": "File",
-          "name": "LP modes workflow",
-          "file": "lpmodes_workflow.md"
-        },
-        {
-          "type": "File",
-          "name": "LP Mode handson",
-          "file": "lpmodes_handson.md"
-        },
-        {
-          "type": "File",
-          "name": "LP modes handson - PowMon",
-          "file": "lpmodes_handson_powmon.md"
-        },
-        {
-          "type": "File",
-          "name": "LP modes Theory",
-          "file": "lpmodes_theory.md"
-        }
-      ]
-    },
-    {
-      "type": "Folder",
-      "name": "5. LPBAM",
-      "children": [
-        {
-          "type": "Folder",
-          "name": "LPBAM Theory",
-          "children": [
-            {
-              "type": "File",
-              "name": "Overview",
-              "path": "lpbam/theory",
-              "file": "theory.md"
-            },
-            {
-              "type": "File",
-              "name": "Linked list summary",
-              "path": "lpbam/theory",
-              "file": "linked list.md"
-            },
-            {
-              "type": "File",
-              "name": " EEMBC ULPMark",
-              "path": "lpbam/theory",
-              "file": "ulpmark.md"
-            }
-          ]
-        },
-        {
-          "type": "Folder",
-          "name": "LPBAM Handson",
-          "children": [
-            {
-              "type": "File",
-              "name": "1.Hands-on Overview",
-              "path": "lpbam/handson/step1",
-              "file": "handson0.md"
-            },
-            {
-              "type": "File",
-              "name": "2.Nucleo Board Selection",
-              "path": "lpbam/handson/step1",
-              "file": "handson.md"
-            },
-            {
-              "type": "File",
-              "name": "3.Peripherals configuration CubeMx",
-              "path": "lpbam/handson/step1",
-              "file": "handson2.md"
-            },
-            {
-              "type": "File",
-              "name": "4.LPBAM Scenario & Configuration",
-              "path": "lpbam/handson/step2",
-              "file": "handson3.md"
-            },
-            {
-              "type": "File",
-              "name": "5.Cube IDE",
-              "path": "lpbam/handson/step3",
-              "file": "handson4.md"
-            },
-            {
-              "type": "File",
-              "name": "6.Debug",
-              "path": "lpbam/handson/step4",
-              "file": "handson5.md"
-            },
-            {
-              "type": "File",
-              "name": "7.Generated code",
-              "path": "lpbam/handson/step9",
-              "file": "handson10.md"
-            },
-            {
-              "type": "File",
-              "name": "8.Power consumption",
-              "path": "lpbam/handson/step5",
-              "file": "handson6.md"
-            },
-            {
-              "type": "File",
-              "name": "9.Benchmark",
-              "path": "lpbam/handson/step6",
-              "file": "handson7.md"
-            },
-            {
-              "type": "File",
-              "name": "10.Results discussion",
-              "path": "lpbam/handson/step7",
-              "file": "handson8.md"
-            },
-            {
-              "type": "File",
-              "name": "11.Wrap up",
-              "path": "lpbam/handson/step8",
-              "file": "handson9.md"
-            },
-            {
-              "type": "File",
-              "name": "12.FAQ",
-              "path": "lpbam/handson/step10",
-              "file": "handson11.md"
-            },
-            {
-              "type": "File",
-              "name": "13.References",
-              "path": "lpbam/handson/step11",
-              "file": "handson12.md"
-            }
-          ]
+          "name": "Security",
+          "file": "stm32u5_workshop_security.md"
         }
       ]
     }

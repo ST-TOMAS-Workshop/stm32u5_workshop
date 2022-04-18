@@ -1,6 +1,6 @@
-# GPDMA handson copcopysheet 
+# GPDMA handson copysheet 
 
-Our goal si to learn about GPDMA features
+Our goal is to learn about GPDMA features
 
 * **Basic functionality**
 * **Lists**
