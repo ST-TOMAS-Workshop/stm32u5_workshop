@@ -41,7 +41,7 @@ We will anyway use .bin to be quicker
 Once downloaded .bin and file it can be dragged and dropped in NUCLEO-U575 as mass storage:
 
 
-![Cubemx start](./img/0701.gif)
+![Cubemx start](./img/070101.gif)
 
 # 3- Power Measurement
 
