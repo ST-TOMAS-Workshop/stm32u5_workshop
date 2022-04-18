@@ -47,7 +47,7 @@ On a similar approach, we can change value of DAC.
 This can currently be used only in S&H mode using capacitor to keep dac value – as we have a capacitor, DAC value should be periodically reloaded.
 
 
-![theory1](./img/040404.png)
+![theory1](./img/040405.png)
 
 
 ## Voice Activity Detection with Audio Digital Filter
