@@ -28,7 +28,7 @@ We will extend the applicabilty of our findings in next chaper on results discus
 Source code of this benchmark application can be downloaded at the below link
 We will anyway use .bin to be quicker
 
-[sourcecode](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2Fttt%5Fworkshop%5Finterrupt%5Fexample%2Ezip&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
+[sourcecode](https://github.com/RRISTM/stm32u5_workshop/blob/pre_release/lpbam/handson/STM32U5_workshop_interrupt_example.zip)
 
 ---
 ![Cubemx start](./img/0700.png)
@@ -36,12 +36,12 @@ We will anyway use .bin to be quicker
 
 # 2- Cube IDE Project Build
 
-## .bin of Application used for benchmark can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2FINTERRUPT%5FADC%5FSamplingFrequencyUpdate%2Ebin&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
+## .bin of Application used for benchmark can be found here on [github](https://github.com/RRISTM/stm32u5_workshop/blob/pre_release/lpbam/handson/LPBAM_Benchmark_Interrupt_example.bin)
 
 Once downloaded .bin and file it can be dragged and dropped in NUCLEO-U575 as mass storage:
 
 
-![Cubemx start](./img/0701.gif)
+![Cubemx start](./img/070101.gif)
 
 # 3- Power Measurement
 
