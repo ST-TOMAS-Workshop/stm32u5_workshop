@@ -20,6 +20,43 @@ To `USER CODE BEGIN Includes` section
 /* USER CODE END Includes */
 ```
 
+# Create buffer where to store ADC values
+
+We create array `data` of 16bit elements with size 64 elements
+
+Like this
+
+```c
+uint16_t data[64];
+```
+
+Put the array and size into `main.c` to section ` USER CODE BEGIN PV` like bellow
+
+```c-nc
+/* USER CODE BEGIN PV */
+uint16_t data[64];
+/* USER CODE END PV */
+```
+
+# Enable VDDA
+
+To save more power the VDDA is disabled on U5 by default. 
+We must enable it by adding 
+
+```c
+  __HAL_RCC_PWR_CLK_ENABLE();
+  HAL_PWREx_EnableVddA();
+```
+
+to `/* USER CODE BEGIN SysInit */` section in `main.c`
+
+```c-nc
+  /* USER CODE BEGIN SysInit */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  HAL_PWREx_EnableVddA();
+  /* USER CODE END SysInit */
+```
+
 # Add Queue handle to main
 
 Add `YourQueueName` extern variable to our `main.c`

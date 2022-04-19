@@ -90,6 +90,10 @@
     },
     {
       "path": "/gpdma/workshop",
+      "file": "1_gpdma_handson_introduction.md"
+    },
+    {
+      "path": "/gpdma/workshop",
       "file": "2_gpdma_handson_list_mode_intro.md"
     },
     {

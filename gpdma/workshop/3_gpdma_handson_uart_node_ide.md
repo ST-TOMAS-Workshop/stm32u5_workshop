@@ -21,6 +21,7 @@ like
   /* USER CODE BEGIN 2 */
   MX_YourQueueName_Config();
   HAL_DMAEx_List_LinkQ(&handle_GPDMA1_Channel15, &YourQueueName);
+
   HAL_DMAEx_List_Start(&handle_GPDMA1_Channel15);
   
   ATOMIC_SET_BIT(huart1.Instance->CR3, USART_CR3_DMAT);
@@ -139,14 +140,11 @@ We added uart and use GPDMA to aquire data from ADC and send them over UART
 
 DMA_HandleTypeDef handle_GPDMA1_Channel15;
 
-TIM_HandleTypeDef htim8;
-
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-uint8_t buffer[]={"Homework exercise\n"};
-#define SIZE 64
-uint16_t data[SIZE];
+uint16_t data[64];
+
 extern DMA_QListTypeDef YourQueueName;
 /* USER CODE END PV */
 
@@ -154,9 +152,8 @@ extern DMA_QListTypeDef YourQueueName;
 void SystemClock_Config(void);
 static void SystemPower_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART1_UART_Init(void);
 static void MX_GPDMA1_Init(void);
-static void MX_TIM8_Init(void);
+static void MX_USART1_UART_Init(void);
 static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -199,17 +196,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
   MX_GPDMA1_Init();
-  MX_TIM8_Init();
+  MX_USART1_UART_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-//  HAL_UART_Transmit(&huart1, buffer, 18, 200);
-//  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
-//  HAL_ADC_Start_DMA(&hadc1, data, SIZE);
-
   MX_YourQueueName_Config();
+
   HAL_DMAEx_List_LinkQ(&handle_GPDMA1_Channel15, &YourQueueName);
+
   HAL_DMAEx_List_Start(&handle_GPDMA1_Channel15);
 
   ATOMIC_SET_BIT(huart1.Instance->CR3, USART_CR3_DMAT);
@@ -347,6 +341,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_2;
   sConfig.Rank = ADC_REGULAR_RANK_2;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
@@ -355,6 +350,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_3;
   sConfig.Rank = ADC_REGULAR_RANK_3;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
@@ -363,6 +359,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
+  sConfig.Channel = ADC_CHANNEL_4;
   sConfig.Rank = ADC_REGULAR_RANK_4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
   {
@@ -389,10 +386,6 @@ static void MX_GPDMA1_Init(void)
   /* Peripheral clock enable */
   __HAL_RCC_GPDMA1_CLK_ENABLE();
 
-  /* GPDMA1 interrupt Init */
-    HAL_NVIC_SetPriority(GPDMA1_Channel15_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(GPDMA1_Channel15_IRQn);
-
   /* USER CODE BEGIN GPDMA1_Init 1 */
 
   /* USER CODE END GPDMA1_Init 1 */
@@ -413,78 +406,6 @@ static void MX_GPDMA1_Init(void)
   /* USER CODE BEGIN GPDMA1_Init 2 */
 
   /* USER CODE END GPDMA1_Init 2 */
-
-}
-
-/**
-  * @brief TIM8 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM8_Init(void)
-{
-
-  /* USER CODE BEGIN TIM8_Init 0 */
-
-  /* USER CODE END TIM8_Init 0 */
-
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-  TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
-
-  /* USER CODE BEGIN TIM8_Init 1 */
-
-  /* USER CODE END TIM8_Init 1 */
-  htim8.Instance = TIM8;
-  htim8.Init.Prescaler = 3999;
-  htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim8.Init.Period = 1999;
-  htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim8.Init.RepetitionCounter = 0;
-  htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_PWM_Init(&htim8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim8, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 1000;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
-  sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
-  if (HAL_TIM_PWM_ConfigChannel(&htim8, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
-  sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
-  sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
-  sBreakDeadTimeConfig.DeadTime = 0;
-  sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
-  sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
-  sBreakDeadTimeConfig.BreakFilter = 0;
-  sBreakDeadTimeConfig.BreakAFMode = TIM_BREAK_AFMODE_INPUT;
-  sBreakDeadTimeConfig.Break2State = TIM_BREAK2_DISABLE;
-  sBreakDeadTimeConfig.Break2Polarity = TIM_BREAK2POLARITY_HIGH;
-  sBreakDeadTimeConfig.Break2Filter = 0;
-  sBreakDeadTimeConfig.Break2AFMode = TIM_BREAK_AFMODE_INPUT;
-  sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
-  if (HAL_TIMEx_ConfigBreakDeadTime(&htim8, &sBreakDeadTimeConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM8_Init 2 */
-
-  /* USER CODE END TIM8_Init 2 */
-  HAL_TIM_MspPostInit(&htim8);
 
 }
 
@@ -650,9 +571,9 @@ HAL_StatusTypeDef MX_YourQueueName_Config(void)
 
   /* Set node configuration ################################################*/
   pNodeConfig.NodeType = DMA_GPDMA_2D_NODE;
-  pNodeConfig.Init.Request = GPDMA1_REQUEST_ADC1;
+  pNodeConfig.Init.Request = DMA_REQUEST_SW;
   pNodeConfig.Init.BlkHWRequest = DMA_BREQ_SINGLE_BURST;
-  pNodeConfig.Init.Direction = DMA_PERIPH_TO_MEMORY;
+  pNodeConfig.Init.Direction = DMA_MEMORY_TO_MEMORY;
   pNodeConfig.Init.SrcInc = DMA_SINC_FIXED;
   pNodeConfig.Init.DestInc = DMA_DINC_INCREMENTED;
   pNodeConfig.Init.SrcDataWidth = DMA_SRC_DATAWIDTH_HALFWORD;

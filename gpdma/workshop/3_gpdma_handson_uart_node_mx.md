@@ -16,7 +16,7 @@ we should have this from our homework
 
 ![select uart1](./img/22_03_09_131.png)
 
-1. Keep default **baudrate** `115200`
+5. Keep default **baudrate** `115200`
 
 # Select LINKEDLIST
 

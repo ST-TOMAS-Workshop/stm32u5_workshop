@@ -2,14 +2,14 @@
 
 Our goal is to learn about GPDMA features
 
-* **Basic functionality**
 * **Lists**
+* **Basic functionality** (optional)
 
 Overview of advanced features (extention of our handson)
 
 * Tiggers
-* Events
-* 2D addresing
+* Events (optional)
+* 2D addresing (optional)
 
 And we will create application like this:
 
