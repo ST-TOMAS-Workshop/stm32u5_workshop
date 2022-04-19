@@ -4,7 +4,7 @@ Presentation
 
 # No more EXTI
 <ainfo>
-Almost all EXTI lines are not needed for peripheries to generate interrupt for wake up event.BEST in 
+Almost all EXTI lines are not needed for peripheries to generate interrupt for wake up event.
 </ainfo>
 <p> </p>
 
