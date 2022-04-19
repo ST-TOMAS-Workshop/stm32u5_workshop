@@ -193,9 +193,19 @@
       "file": "mx_generate_code.md"
     },
     {
-      "name": "1. Theory Overview",
+      "name": "1. ULP modes",
       "path": "/lpmodes",
-      "file": "lpmodes_theory.md"
+      "file": "lpmodes_theory_lpmodes.md"
+    },
+    {
+      "name": "2. Clocks",
+      "path": "/lpmodes",
+      "file": "lpmodes_theory_clock.md"
+    },
+    {
+      "name": "3. ULP modes",
+      "path": "/lpmodes",
+      "file": "lpmodes_theory_exti.md"
     },
     {
       "name": "1. Hands-on Overview",
@@ -231,11 +241,6 @@
       "name": "7. Power Consumption",
       "path": "/lpmodes",
       "file": "lpmodes_handson_result.md"
-    },
-    {
-      "name": "ULP modes Theory",
-      "path": "/lpmodes",
-      "file": "lpmodes_theory.md"
     },
     {
       "name": "Theory",
@@ -514,8 +519,18 @@
               "children": [
                 {
                   "type": "File",
-                  "name": "1. Theory Overview",
-                  "file": "lpmodes_theory.md"
+                  "name": "1. ULP modes",
+                  "file": "lpmodes_theory_lpmodes.md"
+                },
+                {
+                  "type": "File",
+                  "name": "2. Clocks",
+                  "file": "lpmodes_theory_clock.md"
+                },
+                {
+                  "type": "File",
+                  "name": "3. EXTI",
+                  "file": "lpmodes_theory_exti.md"
                 }
               ]
             },

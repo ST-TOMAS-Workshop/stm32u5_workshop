@@ -14,7 +14,7 @@ A small modification of L562 Discovery is needed to be able to measure external 
 - Connect USB Micro cable to connector below LCD display.
 
 <ainfo>
-**All** other jumpers setting are irrelevaent for consumption measurement feature.
+**All** other jumpers setting are irrelevant for consumption measurement feature.
 LCD is active only for JP2 **On** and JP3 **3V3 position selected**
 </ainfo> 
 <p> </p>
@@ -54,7 +54,7 @@ Only if Virtual Comport is not visible
 # Calibrate 
 It's required to calibrate Power measuring feature (Offset,..)
 
-- Keep **Wires floating** during during calibration.
+- Keep **wires floating (unloaded)** during during calibration.
 
 - Press **Calibrate**.
 
