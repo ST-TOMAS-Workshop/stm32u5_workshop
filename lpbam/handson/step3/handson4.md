@@ -62,7 +62,7 @@ void MX_LpbamAp1_Scenario_Stop(DMA_HandleTypeDef *hdma);
 # 2 - main.c
 
 Let's start by including the LPBAM Library header file in `
- `/* USER CODE BEGIN Includes */ `
+ `/* USER CODE BEGIN Includes */ ` at ~line#26
 
 **Note** is named after the Scenario, might change if you provided a different name to it
   
@@ -71,25 +71,20 @@ Let's start by including the LPBAM Library header file in `
 #include "lpbam_lpbamap1.h"
 ```
 
-Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */`
+Let's also add the array containing adresses for the two DMA handlers in `/* USER CODE BEGIN PV */` at ~line#54
 
 ```c
 /* Array containing addresses of LPDMA handlers for the 2 channels*/
 DMA_HandleTypeDef *LPBAM_LpbamAp1_Scenario_DMAHandlers[2];
-```
----
 
-We also have to place buffer for ADC
-in `/* USER CODE BEGIN 0 */`
-
-```c
 /* Buffer for ADC4 data */
 uint16_t Data_Sequence[320] = {0U};
 ```
+---
 
 ---
 
-Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start. Reference section is `/* USER CODE BEGIN 2 */ `  
+Now we copy the function which are part of `lpbam_adc.h` to initialize LPBAM, build the scenario, link and start. Reference section is `/* USER CODE BEGIN 2 */ ` at ~line#110 
 
 ```c
 /* LPBAM ADC application init */
@@ -134,14 +129,14 @@ HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
 # 3 - LPBAM 
 
 Let's move now to the LPBAM folder
- in `lpbam_lpbamp1_scenario_build` let's add buffer declaration under `/* USER CODE BEGIN EV */`.
+ in `lpbam_lpbamp1_scenario_build.c` let's add buffer declaration under `/* USER CODE BEGIN EV */` at ~line#37.
  
  This will contain the ADC buffer.
 
  ```c
 extern uint8_t Data_Sequence[320];
  ```
-now in `lpbam_lpbamp1_scenario_config`
+now in `lpbam_lpbamp1_scenario_config.c` at ~line#449
 in function `MX_ADC4_MspInit`  in `USER CODE BEGIN ADC4_MspInit 0` please add the below 
 
 ```c
@@ -149,7 +144,7 @@ HAL_PWREx_EnableVddA();
 ```
 ---
 
-in function `MX_ADC_Q_DMA_TC_Callback` in `USER CODE BEGIN ADC_DMA_TC_Callback ` add:
+in function `MX_ADC_Q_DMA_TC_Callback` at ~line#764 in `USER CODE BEGIN ADC_DMA_TC_Callback ` add:
 
 ```c
 HAL_LPTIM_PWM_Stop(&hlptim1, LPBAM_LPTIM_CHANNEL_1);

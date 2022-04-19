@@ -47,7 +47,7 @@ On a similar approach, we can change value of DAC.
 This can currently be used only in S&H mode using capacitor to keep dac value – as we have a capacitor, DAC value should be periodically reloaded.
 
 
-![theory1](./img/04.png)
+![theory1](./img/040409.png)
 
 
 ## Voice Activity Detection with Audio Digital Filter
@@ -108,7 +108,7 @@ During the hands on we will see how LPDMA is configured via CubeMX and LPBAM Sce
 <p>
 
 </p>
-![theory1](./img/17.png)
+![theory1](./img/1701.png)
 
 # 5 - Smart Run Domain(SRD)
 This is a zoom on smartun domain which is a clock domain with 2 masters AHB3 and LPDMA1 and 2 slaves which are APB3 and internal SRAM4.
@@ -140,13 +140,15 @@ Below main differences between **GPDMA** and **LPDMA**:
 
 # 8 - Clock gating
 
-In LPBAM Peripherals work down to STOP2 mode thanks to their own **independent clock request capability**. 
+- In LPBAM Peripherals work down to STOP2 mode thanks to their own **independent clock request capability**. 
 This is one of the key aspects of LPBAM subsystem mechanism which enables remarkable power saving.
-In other MCUs, we would had to wake up at every DMA transfer complete flag, with LPBAM subsystem this does not happen.
-LPDMA HW automatically manages its own **clock gating**, so bus and kernel clocks are requested to RCC only when needed.
-This gives great contribution to achieve best optimization of dynamic clock and results into enormous power saving of the overall system.
 
-![theory1](./img/15.png)
+- In other MCUs, we would had to wake up at every DMA transfer complete flag, with LPBAM subsystem this does not happen.
+  
+- LPDMA HW automatically manages its own **clock gating**, so bus and kernel clocks are requested to RCC only when needed.
+  
+- This gives great contribution to achieve best optimization of dynamic clock and results into enormous power saving of the overall system.
+
 ![theory1](./img/16.png)
 
 
@@ -160,10 +162,9 @@ This gives great contribution to achieve best optimization of dynamic clock and 
 
 # 11 - SRD State transitions
 
-![theory1](./img/21.png)
+![theory1](./img/21212.png)
 
 # 12 - How to Debug LPBAM Scenario
-
 
 ![theory1](./img/25.png)
 
