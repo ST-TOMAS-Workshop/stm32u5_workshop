@@ -2,9 +2,52 @@
 Presentation
 ----!
 
-# Return back to CubeMX
+# Select ADC1 periphery
 
-In MX the ADC configuration will be the same 
+Select `ADC1` in **Analog**
+
+![select ADC](./img/22_01_28_57.gif)
+
+# Enable 4 adc channels
+Enable channels IN1 to IN4
+
+![select 4 channels](./img/22_01_28_59.gif)
+
+# Configure the ADC 1/4
+
+1. Set `Continuous conversion mode` to **Enable**
+
+This optiion run ADC in loops. When ADC finish converting all its channesl it will start again from beginning.
+
+2. Set `Low power wait` to **Enable**
+
+This option will stop ADC until the DATA are read form it. It is good to prevent overrun. And we are sure that we have still correct order of channels.
+
+3. Set `Enable Regular Conversions` to **Enable**
+
+![configure adc 1](./img/22_01_28_61.gif)
+
+# Configure ADC 2/4
+
+1. Set `Conversion Data Management Mode` to **DMA Circular Mode**
+
+After ADC convert value it will create request for DMA. Curcular mode here means that after ADC finish all regular channels it will continue generate DMA request in next run too.
+
+![configure adc 2](./img/22_01_28_81.png)
+# Configure the ADC 3/4
+
+1. Set `number of conversion` to **4**
+
+This will set ADC to do 4 ADC conversion which we can set.
+
+![configure adc 3](./img/22_01_28_69.gif)
+# Configure the ADC 4/4
+
+1. You can set ADC channel for each `Rank`
+
+Each rank will have assing one ADC channel to convert. It is possible to select same chanel each time.
+
+![configure adc 4](./img/22_01_28_65.gif)
 
 # Change GPDMA mode
 
