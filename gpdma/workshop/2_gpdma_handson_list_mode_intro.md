@@ -13,12 +13,12 @@ Presentation
 ## Next Step
 
 * Now we do the same but with **LLI list**.
-* Which allow us later add more lists in later steps
+* Which allows us to later add more lists in later steps
 
 # Classic DMA circular mode
 
-Classical DMA had bit which allow repeat the configuration.
-When DMA finished it automatically reload previous configuration.
+Classical DMA had a bit, which allows repeat the configuration.
+When DMA finished it automatically reload the previous configuration.
 
 ![old circular](./img/old_dma_circular.json)
 

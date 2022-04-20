@@ -61,13 +61,15 @@ like
 
 <aerror>
 There is an bug in linked_list generation for more nodes
-</aerro>
+</aerror>
 
 In file `linked_list.c`
 
-Change the 
+Change the YourNodeName2 to YourNodeName around lines 86 and 89.
 
-```c-nc
+Cahnge from
+
+```c-nc-line86
   ret |= HAL_DMAEx_List_BuildNode(&pNodeConfig, &YourNodeName2);
 
   /* Insert YourNodeName2 to Queue */
@@ -76,7 +78,7 @@ Change the
 
 to
 
-```c
+```c-line86
   ret |= HAL_DMAEx_List_BuildNode(&pNodeConfig, &YourNodeName);
 
   /* Insert YourNodeName2 to Queue */
