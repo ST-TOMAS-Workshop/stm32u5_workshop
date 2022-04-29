@@ -20,6 +20,6 @@ To create our queue.
 
 # What does MX_YourQueueName_Config? 3/3
 
-To put nodes into circular loo we use `HAL_DMAEx_List_SetCircularMode`
+To put nodes into circular loop, we use `HAL_DMAEx_List_SetCircularMode`
 
 ![circular node](./img/set_circular.json)

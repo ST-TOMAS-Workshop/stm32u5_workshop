@@ -35,7 +35,7 @@ See you on STM32U5 Workshop live session
 
 # Prerequisites
 - Hardware:
-  - **PC with MS Windows 10 operating system**
+  - **PC with MS Windows 10 operating system and admin rights granted**
   - **2 micro USB** cables 
   <br>
   ![microUSB cables](./img/uUSB.jpg)  ![microUSB cables](./img/uUSB.jpg)
@@ -104,15 +104,22 @@ In case you would like to know more about this tool and its usage you can have a
 ----
 
 # Verification process
-The purpose of this part is checking whether all software components are installed properly and can run 
+The purpose of this part is checking whether all software components are installed properly.
+<br>
+Additionally prepared test project can be a base for next hands-on parts during the workshop.
 
 ## ** 1 STM32CubeIDE and STM32U5 Cube library**
+<br>
+
+----
+
 <br>
 ## **Task definition**
 <br>
 - Using STM32CubeIDE:
  - Configure system clock (SYSCLK and HCLK) to 4MHz using internal MSI oscillators (default settings)
- - Configure USART1:
+ - Configure ICACHE (in any of available modes)
+ - Select and configure USART1:
    - in asynchronous mode, 
    - using default settings (115200bps, 8D, 1stop bit, no parity) 
    - on PA9/PA10 pins
@@ -133,11 +140,11 @@ The purpose of this part is checking whether all software components are install
   <br>
   ![Workspace_start2](./img/New_prj_start_2.gif)
 <br>
-- select STM32**U575ZI**TxQ MCU
+- select STM32**U575ZI**TxQ MCU (the one present on NUCLEO-U575ZI-Q board)
 - press `Next` button
 - within STM32 Project window:
   - specify project name (i.e. `U5_Basic`)
-  - select option **without TrustZone**
+  - keep **enable TrustZone** option unchecked
   - press `Finish` button
   - on warning pop-up window press `Yes` button
   <br>
@@ -149,6 +156,11 @@ The purpose of this part is checking whether all software components are install
   ![Clock configuration](./img/Clock_conf.gif)
 <br>
 - Peripherals configuration: Pinout&Configuration tab
+- **ICACHE configuration** (System Core group)
+  - select either 1-way or 2-ways (we will not focus on performance within this workshop)
+  <br>
+  ![ICACHE configuration](./img/ICACHE_conf.gif)
+  <br>
 - **USART1 configuration** (Connectivity group)
   - select Asynchronous mode
   - keep default settings in configuration:
@@ -158,7 +170,6 @@ The purpose of this part is checking whether all software components are install
   <br>
     ![USART1 configuration](./img/USART1_conf.gif)
 <br>
-
 - **Project settings**
   - select `Project Manager` tab
   - check project location (.ioc file)
@@ -170,17 +181,44 @@ The purpose of this part is checking whether all software components are install
     - by pressing "gear" icon
     - by select `Project->Generate Code`
     - by pressing **Alt+K**
-  - we will not use ICACHE in this example, thus press `Yes` on `Warning Code Generation` pop-up window
 <br>
   ![Project generation](./img/Prj_gen.gif)
+<br>
+ - In case you see a warning pop-up window concerning SMPS configuration, please OK. This will be explained in next parts of the session.
+
+----
+
+<br>
+## **Step2** - coding part (`main.c` file)
+<br>
+Define the buffer of bytes to be sent over **USART1** (`USER CODE PV` section):
+<br>
+
+```c
+uint8_t buffer[]={"Homework exercise\n"};
+```
+
+<br>
+![Coding1](./img/Code_copy1.gif)
+<br>
+Start transmit of the data over **USART1** using prepared buffer and ***polling*** method (`USER CODE 2` section):
+<br>
+
+```c
+HAL_UART_Transmit(&huart1, buffer, 18, 200);
+```
+
+<br>
+![Coding2](./img/Code_copy2.gif)
 <br>
 
 ----
 
-## **Step 2** - build the project, run the application
+<br>
+## **Step 3** - build the project
 - Build the project using `hammer` button or `Project->Built All` or **Ctrl+B**
 <br>
-![Project build](./img/Prj_build.gif)
+![Project build](./img/Build.gif)
 <br>
 
 <ainfo>
@@ -233,19 +271,53 @@ Please start STM32CubeMonitorPwr and check that you can see similar window as a 
   ![Built-in terminal](./img/IDE_terminal.gif)
 
 # Materials for the session
-- presentations
-  - Introduction
-  - Martketing presentation
-  - Installation and verification (current part)
-  - [General Purpose DMA](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/gpdma/2_gpdma_handson_basic_gpdma.md/0)
-  - [Low power modes](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/LP_mode/lpmodes_workflow.md)
-  - [Low Power DMA](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/lpbam/theory.md)
-  - Summary
-- solutions of the projects [link]
+- Access to tools dedicated web pages:
+  - [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+  - [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)
+  - [STM32U5 Cube library](https://www.st.com/en/embedded-software/stm32cubeu5.html)
+  - [STM32CubeMonitorPower](https://www.st.com/en/development-tools/stm32cubemonpwr.html)
+- [STM32 on-line training resources](https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html)
 - documentation
   - [STM32U575 datasheet](https://www.st.com/resource/en/datasheet/stm32u575zi.pdf)
   - [STM32U575 reference manual](https://www.st.com/resource/en/reference_manual/rm0456-stm32u575585-armbased-32bit-mcus-stmicroelectronics.pdf)
   - [NUCLEO-U575ZI-Q board schematics](https://www.st.com/resource/en/schematic_pack/mb1549-u575ziq-c03_schematic.pdf)
-  <br>
+
 
   Alternatively you can download complete set of offline materials from [this link]()
+
+# Verification process at the begining of the session
+
+  The purpose of this part is checking whether all software components can run with provided hardware boards.
+  <br>
+  **We will reuse the project prepared within homework part.**
+
+- Please start STM32CubeIDE and open the project prepared before the session.
+- Connect board to PC using micro-USB cable. Multicolor LED (right side of USB connector) should be turned on (red color)
+<br>
+![Board connection](./img/Nucleo_connect.gif)
+<br>
+- Start the debug session using `bug` icon or `Run->debug` or by pressing **F11**
+- All the settings should be automatically set based on your compiled project. Press `OK` button
+- At this moment you may see an information window that your STLink firmware is not up-to-date,
+- please accept this message and perform automatic upgrade process
+<br>
+![STLink_upgrade](./img/STLink_upgrade.gif)
+<br>
+- Select `Switch` within `Configure Perspective Switch` dialog which is informing about new (debug one) windows setup within STM32CubeIDE application.
+<br>
+![Project debug](./img/start_debug.gif)
+<br>
+- Start terminal application and run it for virtual COM port number assigned to the NUCLEO board with settings: 115200bps, 8bits data, 1 stop bit, no parity, no HW control. As an alternative you can use STM32CubeIDE built-in terminal (please have a look within Appendix for more details)
+- run the application within debug session. As a result within terminal there should be "Homework exercise" message displayed.
+  <br>
+![Final app](./img/App_run_small.gif)
+<br>.
+
+----
+
+<ainfo>
+ **Congratulations** You have completed varifictation part. Now you are fully prepared for next parts of this workshop session 
+</ainfo>
+
+----
+
