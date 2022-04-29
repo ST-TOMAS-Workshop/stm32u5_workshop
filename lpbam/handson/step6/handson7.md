@@ -60,7 +60,7 @@ Follow the steps showed in the previous chapter
 # 4- Sampling frequency change
 We are going to test how this power consumption value changes when sampling frequency increases by a factor 10x
 
-## .bin of Application used for benchmark can be found here on [sharepoint](https://stmicroelectronics.sharepoint.com/sites/EMEAMCD/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson%2FINTERRUPT%5FADC%5FSamplingFrequencyUpdate%5F10xsampling%2Ebin&parent=%2Fsites%2FEMEAMCD%2FShared%20Documents%2F5%2E%20Promotion%2FWorkshops%2FSTM32U5%5Fworkshop%5F2022%2FMaterial%2FMaterial%5FLPBAM%5Fhandson)
+## .bin of Application used for benchmark can be found here on [github](https://github.com/RRISTM/stm32u5_workshop/blob/pre_release/lpbam/handson/STM32U5_workshop_interrupt_example_10x_sampling.bin)
 
 
 - Drag and drop it into NUCLEO-STM32U575 as seen previously
