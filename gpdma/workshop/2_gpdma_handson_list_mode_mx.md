@@ -17,11 +17,11 @@ Enable channels IN1 to IN4
 
 1. Set `Continuous conversion mode` to **Enable**
 
-This optiion run ADC in loops. When ADC finish converting all its channesl it will start again from beginning.
+This option run ADC in loops. When ADC finish converting all its channels it will start again from beginning.
 
 2. Set `Low power wait` to **Enable**
 
-This option will stop ADC until the DATA are read form it. It is good to prevent overrun. And we are sure that we have still correct order of channels.
+This option will stop ADC until the DATA are read from it. It is good to prevent overrun. And we are sure that we have still correct order of channels.
 
 3. Set `Enable Regular Conversions` to **Enable**
 
@@ -31,21 +31,21 @@ This option will stop ADC until the DATA are read form it. It is good to prevent
 
 1. Set `Conversion Data Management Mode` to **DMA Circular Mode**
 
-After ADC convert value it will create request for DMA. Curcular mode here means that after ADC finish all regular channels it will continue generate DMA request in next run too.
+After ADC converts value, it will create request for DMA. Circular mode here means, that after ADC finishes, all regular channels it will continue to generate DMA request in next run too.
 
 ![configure adc 2](./img/22_01_28_81.png)
 # Configure the ADC 3/4
 
 1. Set `number of conversion` to **4**
 
-This will set ADC to do 4 ADC conversion which we can set.
+This will set ADC to do 4 ADC conversions which we can set.
 
 ![configure adc 3](./img/22_01_28_69.gif)
 # Configure the ADC 4/4
 
 1. You can set ADC channel for each `Rank`
 
-Each rank will have assing one ADC channel to convert. It is possible to select same chanel each time.
+Each rank will have assigned one ADC channel to convert. It is possible to select same channel each time.
 
 ![configure adc 4](./img/22_01_28_65.gif)
 
@@ -75,13 +75,13 @@ Each rank will have assing one ADC channel to convert. It is possible to select 
 
 # Linked List configuration 2/2
 
-2. Add List by click on `Add List` button
+2. Add List by clicking on `Add List` button
 
 ![Add list](./img/22_03_08_111.png)
 
 # Configue List/Queue 1/3
 
-1. Click on Queue to be able configure it. Default name is `YourQueueName`
+1. Click on Queue to be able to configure it. Default name is `YourQueueName`
 
 ![select queue](./img/22_03_08_113.png)
 
@@ -93,7 +93,7 @@ Each rank will have assing one ADC channel to convert. It is possible to select 
 
 # Configue List/Queue 3/3
 
-3. Set first node in loop in our case put `YourNodeName`
+3. Set first node in loop, in our case put `YourNodeName`
 
 ```c
 YourNodeName
@@ -116,13 +116,13 @@ In our case when YourNodeName finishes he will reload same configuration. Becaus
 ![select first node name](./img/22_03_08_119.png)
 
 
-# Set node parameters same as in previous configuration 1/4
+# Set node parameters same as in the previous configuration 1/4
 
 1. In **Request configuration ** set **Request as a patameter** to `GPDMA_REQUEST_ADC1`
    
 ![request](./img/22_03_08_121.gif)
 
-# Set node parameters same as in previous configuration 2/4
+# Set node parameters same as in the previous configuration 2/4
 
 2. In **Destination Data Setting** set **Destination Address Increment After transfer** to `Enabled`
 
@@ -130,13 +130,13 @@ In our case when YourNodeName finishes he will reload same configuration. Becaus
 
 ![destination configuration](./img/22_03_08_123.gif)
 
-# Set node parameters same as in previous configuration 3/4
+# Set node parameters same as in the previous configuration 3/4
 
 4. In **Source Data Setting** set **Data Width** to `Half Word`
 
 ![source configuration](./img/22_03_08_129.gif)
 
-# Set node parameters same as in previous configuration 4/4
+# Set node parameters same as in the previous configuration 4/4
 
 5. In **Runtime configuration** set **Source Address** to `ADC1->DR`
 
