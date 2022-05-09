@@ -1,0 +1,11 @@
+{
+    "interval":1500,
+    "sequence":[
+    {"name":"Picture6.svg"},
+    {"name":"Picture7.svg"},
+    {"name":"Picture8.svg"},
+    {"name":"Picture9.svg"},
+    {"name":"Picture10.svg"},
+    {"name":"Picture11.svg"}
+]
+}

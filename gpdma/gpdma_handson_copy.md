@@ -1,6 +1,0 @@
-----!
-Presentation
-----!
-
-# GPDMA handson copcopysheet 
-

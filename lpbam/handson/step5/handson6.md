@@ -4,7 +4,7 @@ Presentation
 
 # Power Measurement
 
-We will now measure power consumption using STM32L562E-DK and `STM32 Cube Monitor Power`
+We will now measure power consumption using **STM32L562E-DK** and **STM32 Cube Monitor Power**
 
 
 # 1 Board Switch and jumper config settings
@@ -35,11 +35,11 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 
 </p>>
 
-![lpbam config](./img/0504.gif)
+![lpbam config](./img/050504.gif)
 
 # 5 Power sequence
 
-![lpbam config](./img/0505.png)
+![lpbam config](./img/050506.png)
 
 
 # 6 LPBAM Power consumption result
@@ -47,7 +47,7 @@ If Nucleo-U575 is no more connected and does not reset, reconnect jumper to JP5 
 ![lpbam config](./img/0506.png)
 
 <ainfo>
-This power consumption is already remarkable but can be firtherly optimized by disabling UART,LED and Button pins setting as Analog mode
+This power consumption is truly remarkable we will compare it with an application in which LPBAM is not used
 </ainfo>
 
 ---
@@ -76,8 +76,8 @@ Open `Cube Monitor Power` and run again the measurement - we should notice that 
 
 
 <ainfo>
-This is truly remarkable: we have changed clock speed by a factor x6 for but power consumption has not changed.
-This happens because SRD is adjusting clock gating so DMA transfer will become more frequent but shorter in time
+This is a very important point: we have changed clock speed by a factor x6 for but power consumption has not changed.
+This happens because ADC will be clocked by a high frequency clock but DMA transfer will happen still at LPTIM frequency
 </ainfo>
 
 <p>
@@ -105,7 +105,6 @@ and `TIMER queue PWM_3 build` in the following way:
 ```c
   pPWMFull_LPTIM.PeriodValue = 51;
   pPWMFull_LPTIM.PulseValue = 25;
-  pPWMFull_LPTIM.RepetitionValue = 63;
 ```
 We also want to come back to initial setting with MSIK=4Mhz
 
@@ -118,7 +117,7 @@ RCC_OscInitStruct.MSIKClockRange = RCC_MSIKRANGE_4;
 
 Let's now measure power consumptions:
 
-![lpbam config](./img/0510.gif)
+![lpbam config](./img/050510.gif)
 
 <p>
 
@@ -143,18 +142,16 @@ To do so you need to reoped .ioc file and go to **LBAM Scenario&Configuration**
 ![lpbam config](./img/0511.gif)
 
 
-in our code inside `lpbam_lpbamap1_config.c` in `MX_SystemPower_Config` was changed the following function from `PWR_SRD_DOMAIN_STOP` to PWR_SRD_DOMAIN_RUN :
+In our code inside `lpbam_lpbamap1_config.c` located in `MX_SystemPower_Config` the following function was changed from `PWR_SRD_DOMAIN_STOP` to ``PWR_SRD_DOMAIN_RUN :
 
-```nc
-/*
-   * Smart Run Domain Config
-   */
-  HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
+```c-nc
+/* Smart Run Domain Config*/
+HAL_PWREx_ConfigSRDDomain(PWR_SRD_DOMAIN_RUN);
 ```
 
-We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~50uA** range
+We now measure power consumption. We notice that averege power consumption during STOP2 goes into **~25uA** range
 
-![lpbam config](./img/0512.gif)
+![lpbam config](./img/0513.gif)
 
 
 <asuccess>
