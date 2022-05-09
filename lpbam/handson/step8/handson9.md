@@ -14,7 +14,7 @@
 **Main steps to reduce power consumption directly handled by CubeMX are**:
 
 
-![Cubemx start](./img/0900.png)
+![Cubemx start](./img/090000.png)
 
 
 ![Cubemx start](./img/0906.png)
