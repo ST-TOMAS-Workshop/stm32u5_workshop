@@ -2,7 +2,7 @@
 Presentation
 ----!
 
-# Select ADC1 periphery
+# Select ADC1 peripheral
 
 Select `ADC1` in **Analog**
 
@@ -51,13 +51,14 @@ Each rank will have assigned one ADC channel to convert. It is possible to selec
 
 # Change GPDMA mode
 
-1. Change **GPDMA** mode from `Standard Request Mode` to `Linked-List Mode`
+1. Select **GPDMA1** in **System** category
+2. Set mode to `Linked-List Mode`
 
 ![set list mode](./img/22_03_08_103.png)
 
 # Configure CH15 1/2
 
-1. Got to **CH15** Configuration
+1. Go to **CH15** Configuration
 
 ![set list mode](./img/22_03_08_105.png)
 
@@ -69,7 +70,7 @@ Each rank will have assigned one ADC channel to convert. It is possible to selec
 
 # Linked List configuration 1/2
 
-1. Go to `LINKEDLIST` periphery in **Utilities**
+1. Go to `LINKEDLIST` peripheral in **Utilities**
 
 ![LINKEDLIST periphery](./img/22_03_08_109.gif)
 
@@ -87,7 +88,7 @@ Each rank will have assigned one ADC channel to convert. It is possible to selec
 
 # Configue List/Queue 2/3
 
-2. Set **Linear or cicrular LinkedList setting** to `Circular`
+2. Set **Linear or circular LinkedList setting** to `Circular`
 
 ![select circular mode](./img/22_03_08_115.png)
 
@@ -118,7 +119,7 @@ In our case when YourNodeName finishes he will reload same configuration. Becaus
 
 # Set node parameters same as in the previous configuration 1/4
 
-1. In **Request configuration ** set **Request as a patameter** to `GPDMA_REQUEST_ADC1`
+1. In **Request configuration ** set **Request as a parameter** to `GPDMA_REQUEST_ADC1`
    
 ![request](./img/22_03_08_121.gif)
 
