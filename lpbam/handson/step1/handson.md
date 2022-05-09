@@ -5,7 +5,7 @@
 
 1. Open Cube MX (Similar steps for Cube MX version integrated in Cube IDE)
 2. Acess to **MCU Selector**
-3. Select **STM32U575ZIT6Q** Board
+3. Select **STM32U575ZIT6Q** part
 4. Select **Without Trust Zone enabled**
 
 ![Cubemx start](./img/0111.gif)

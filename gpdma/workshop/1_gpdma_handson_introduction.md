@@ -2,8 +2,8 @@
 
 Our goal is to learn about GPDMA features
 
-* **Lists**
-* **Basic functionality** (optional)
+* **New Linked-list feature**
+* **Legacy Standard DMA aproach** (optional)
 
 Overview of advanced features (extention of our handson)
 

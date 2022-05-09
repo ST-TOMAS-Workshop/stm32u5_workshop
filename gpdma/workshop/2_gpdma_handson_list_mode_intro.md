@@ -4,15 +4,14 @@ Presentation
 
 # GPDMA handson adding features
 
-## Current state
+## Our goal
 
-* ADC convert samples
-* ADC generate request for GPDMA
-* GPDMA transfer data to memory
-
-## Next Step
-
-* Now we do the same but with **LLI list**.
+* Setup ADC to 
+  * convert 4 channels in circle
+  * generate DMA requests
+* Set GPDMA with linked list
+  * To get data from ADC
+  * Transfer them to buffer
 * Which allows us to later add more lists in later steps
 
 # Classic DMA circular mode
@@ -37,7 +36,10 @@ Contain position of nest GPDMA node
 
 ![gpdma list](./img/gpdma_list.json)
 
-# The GPDMA will use nodes for those reghisters: 
+# The GPDMA will use nodes for those registers: 
+
+In our case each linked list node will update this GPDMA registers.
+After previous GPDMA node is finished. 
 
 TR1 - Transfer register 1
 TR2 - Transfer register 2
@@ -47,3 +49,5 @@ DAR - Destination address register
 TR3 - Transfer register 3
 BR2 - Block register 2 
 LLR - Linker list register
+
+This is automatically reconfiguring the GPDMA channel. 
