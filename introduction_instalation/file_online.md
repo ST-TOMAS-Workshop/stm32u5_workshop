@@ -34,7 +34,7 @@ In case of any questions / problems please contact us on [link](https://communit
 <br>
 # Prerequisites
 - Hardware:
-  - **PC with MS Windows 10 operating system**
+  - **PC with MS Windows 10 operating system and admin rights granted**
   - **2 micro USB** cables 
   <br>
   ![microUSB cables](./img/uUSB.jpg)  ![microUSB cables](./img/uUSB.jpg)
@@ -110,8 +110,8 @@ In case you would like to know more about this tool and its usage you can have a
 # **STM32CubeIDE** - basic project creation
 <br>
 ## **Application description**
+ - prepare template application which could be a staring point for workshop projects
  - send some data over USART1 (to be monitored by terminal application)
- - control Green LED by channel2 of Timer8 (1 second period blinks)
 <br>
 
 <br>
@@ -119,16 +119,11 @@ In case you would like to know more about this tool and its usage you can have a
 <br>
 - Using STM32CubeIDE:
  - Configure system clock (SYSCLK and HCLK) to 4MHz using internal MSI oscillators (default settings)
- - Configure USART1:
+ - Configure ICACHE (in any of available modes)
+ - Select and configure USART1:
    - in asynchronous mode, 
    - using default settings (115200bps, 8D, 1stop bit, no parity) 
    - on PA9/PA10 pins
- - Configure Timer8:
-   - in master mode (default), 
-   - supplied by internal clock, 
-   - with PWM generation on channel2 (PC7 - green LED (LD1) connection), 
-   - 2 seconds period (combination of prescaler and autoreload value), 
-   - 50% duty cycle (pulse settings for channel2)
 <br>
 
 ----
@@ -146,11 +141,11 @@ In case you would like to know more about this tool and its usage you can have a
   <br>
   ![Workspace_start2](./img/New_prj_start_2.gif)
 <br>
-- select STM32**U575ZI**TxQ MCU
+- select STM32**U575ZI**TxQ MCU (the one present on NUCLEO-U575ZI-Q board)
 - press `Next` button
 - within STM32 Project window:
   - specify project name (i.e. `U5_Basic`)
-  - select option **without TrustZone**
+  - keep **enable TrustZone** option unchecked
   - press `Finish` button
   - on warning pop-up window press `Yes` button
   <br>
@@ -162,6 +157,8 @@ In case you would like to know more about this tool and its usage you can have a
   ![Clock configuration](./img/Clock_conf.gif)
 <br>
 - Peripherals configuration: Pinout&Configuration tab
+<br>
+
 - **USART1 configuration** (Connectivity group)
   - select Asynchronous mode
   - keep default settings in configuration:
@@ -170,15 +167,12 @@ In case you would like to know more about this tool and its usage you can have a
     - no interrupts, no DMA usage
   <br>
     ![USART1 configuration](./img/USART1_conf.gif)
-<br>
-- **Timer8 configuration** (Timers group)
-  - Clock Source: internal clock
-  - Channel2: PWM Generation CH2 (on PC7 pin). In case of different pin assignment, press Ctrl and left button on mouse over this pin, then drag the pin on the highlighted PC7 location and relase mouse button and then Ctrl key
-  - Parameters Settings:
-    - Prescaler and Counter Period to have 2s period (i.e. 3999, 1999)
-    - Pulse to have 50% duty cycle (i.e. 1000)
   <br>
- ![Timer8 configuration](./img/TIM8_conf.gif)
+- **ICACHE configuration** (System Core group)
+  - select either 1-way or 2-ways (we will not focus on performance within this workshop)
+  <br>
+  ![ICACHE configuration](./img/ICACHE_conf.gif)
+  <br>
 <br>
 - **Project settings**
   - select `Project Manager` tab
@@ -195,7 +189,7 @@ In case you would like to know more about this tool and its usage you can have a
 <br>
   ![Project generation](./img/Prj_gen.gif)
 <br>
-
+ - In case you see a warning pop-up window concerning SMPS configuration, please OK. This will be explained in next parts of the session.
 ----
 
 <br>
@@ -205,33 +199,21 @@ Define the buffer of bytes to be sent over **USART1** (`USER CODE PV` section):
 <br>
 
 ```c
-/* USER CODE BEGIN PV */
 uint8_t buffer[]={"Homework exercise\n"};
 ```
 
 <br>
-![Coding1](./img/Coding1.gif)
+![Coding1](./img/Code_copy1.gif)
 <br>
 Start transmit of the data over **USART1** using prepared buffer and ***polling*** method (`USER CODE 2` section):
 <br>
 
 ```c
-/* USER CODE 2 BEGIN */
 HAL_UART_Transmit(&huart1, buffer, 18, 200);
 ```
 
 <br>
-![Coding2](./img/Coding2.gif)
-<br>
-Start **Timer8** in PWM mode on its ***Channel2*** according to its configuration (the same section as above):
-<br>
-
-```c
-HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
-```
-
-<br>
-![Coding3](./img/Coding3.gif)
+![Coding2](./img/Code_copy2.gif)
 <br>
 
 ----
@@ -240,7 +222,7 @@ HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
 ## **Step 3** - build the project, run the application
 - Build the project using `hammer` button or `Project->Built All` or **Ctrl+B**
 <br>
-![Project build](./img/Prj_build.gif)
+![Project build](./img/Build.gif)
 <br>
 - Connect board to PC using micro-USB cable
 <br>
@@ -249,19 +231,23 @@ HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
  - Start the debug session using `bug` icon or `Run->debug` or by pressing **F11**
  - All the settings should be automatically set based on your compiled project. Press `OK` button
  - At this moment you may see an information window that your STLink firmware is not up-to-date,
- - please accept this message and perform autometic upgrade process
+ - please accept this message and perform automatic upgrade process
 <br>
 ![STLink_upgrade](./img/STLink_upgrade.gif)
 <br>
  - Select `Switch` within `Configure Perspective Switch` dialog which is informing about new (debug one) windows setup within STM32CubeIDE application.
 <br>
-![Project debug](./img/Prj_debug.gif)
+![Project debug](./img/Start_debug.gif)
 <br>
  - Start terminal application and run it for virtual COM port number assigned to the NUCLEO board with settings: 115200bps, 8bits data, 1 stop bit, no parity, no HW control. As an alternative you can use STM32CubeIDE built-in terminal (please have a look within Appendix for more details)
- - run the application within debug session. As a result Green LED should toogle each second and within terminal there should be "Homework exercise" message displayed.
+ - run the application within debug session. As a result within terminal there should be "Homework exercise" message displayed.
   <br>
-![Final app](./img/App_run.gif)
-<br>.
+![Final app](./img/App_run_small.gif)
+<br>
+ - click on "terminate" icon to stop the debug session
+<br>
+![Terminate](./img/terminate.gif)
+<br>
 
 ----
 
@@ -292,15 +278,12 @@ HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
 
 
 # Materials for the session
-- presentations
-  - Introduction
-  - Martketing presentation
-  - Installation and verification (current part)
-  - [General Purpose DMA](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/gpdma/2_gpdma_handson_basic_gpdma.md/0)
-  - [Low power modes](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/LP_mode/lpmodes_workflow.md)
-  - [Low Power DMA](https://rristm.github.io/tomas_materials_v2/RRISTM/stm32u5_workshop/lpbam/theory.md)
-  - Summary
-- solutions of the projects [link]
+- Access to tools dedicated web pages:
+  - [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+  - [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)
+  - [STM32U5 Cube library](https://www.st.com/en/embedded-software/stm32cubeu5.html)
+  - [STM32CubeMonitorPower](https://www.st.com/en/development-tools/stm32cubemonpwr.html)
+- [STM32 on-line training resources](https://www.st.com/content/st_com/en/support/learning/stm32-education/stm32-moocs.html)
 - documentation
   - [STM32U575 datasheet](https://www.st.com/resource/en/datasheet/stm32u575zi.pdf)
   - [STM32U575 reference manual](https://www.st.com/resource/en/reference_manual/rm0456-stm32u575585-armbased-32bit-mcus-stmicroelectronics.pdf)
