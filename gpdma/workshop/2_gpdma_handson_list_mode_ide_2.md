@@ -4,7 +4,7 @@ Presentation
 
 # What does MX_YourQueueName_Config? 1/3
 
-The fucntion will create our node configuration from structure by using `HAL_DMAEx_List_BuildNode`
+The function will create our node configuration from structure by using `HAL_DMAEx_List_BuildNode`
 The node is now copy of gpdma registers. 
 But still no link between nodes. 
 
