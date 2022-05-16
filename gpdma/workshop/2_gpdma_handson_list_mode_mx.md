@@ -151,13 +151,13 @@ In our case when YourNodeName finishes he will reload same configuration. Becaus
 data
 ```
 
-7. In **Runtime configuration** set **Data Size** to `SIZE`
+7. In **Runtime configuration** set **Data Size** to `(64*2)`
 
 ```c
 (64*2)
 ```
 
-![Runtime configuration](./img/22_03_08_127.png)
+![Runtime configuration](./img/22_05_16_193.gif)
 
 # Generate code
 
