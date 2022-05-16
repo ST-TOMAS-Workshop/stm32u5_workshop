@@ -73,7 +73,7 @@ We are going to test how this power consumption value changes when sampling freq
 
 </p>
 
-![Cubemx start](./img/0703.png)
+![Cubemx start](./img/070303.png)
 
 <ainfo>
 We now move to result discussion in order to compare LPBAM vs interrupt based approach
