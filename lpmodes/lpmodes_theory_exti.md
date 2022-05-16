@@ -12,7 +12,7 @@ All event allow the possibility to wake up the system from Stop 0, 1, 2 modes.
 
 - Selectable active trigger edge 
 
-**No more “direct” lines from peripherals**
+**Direct link from peripherals to NVIC**
 
 - Peripherals with wakeup capability requests the AHB/APB clock
 - When the system clock is present, the peripheral generates an interrupt if enabled
