@@ -7,7 +7,7 @@ Presentation
 This part is optional. And it is not affecting the GPDMA.
 The purpos it to repove popup about SMPS and I-Cache fore ach code generation
 
-![popup message](.\img\2022-05-16-11_05_19.png)
+![popup message](./img/2022-05-16-11_05_19.png)
 
 # Enable I-Cache
 
