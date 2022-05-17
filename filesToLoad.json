@@ -90,6 +90,10 @@
     },
     {
       "path": "/gpdma/workshop",
+      "file": "0_gpdma_handson_mx_update.md"
+    },
+    {
+      "path": "/gpdma/workshop",
       "file": "1_gpdma_handson_introduction.md"
     },
     {
@@ -372,6 +376,12 @@
           "type": "Folder",
           "name": "1. GPDMA",
           "children": [
+            
+            {
+              "name": "0. MX project update",
+              "type": "File",
+              "file": "0_gpdma_handson_mx_update.md"
+            },
             {
               "name": "1. Introduction",
               "type": "File",

@@ -64,7 +64,7 @@ Additional **xxAMEN** for peripherals mapped in Smart Run Domain (AHB3/APB3)
 - Both xxEN and xxSMEN bits of the peripheral are set, plus the xxAMEN to enable the autonomous mode is enabled in Stop 0, Stop 1 and Stop 2
 
 <awarning> 
-If any periphery request clock -> Once HSI16/MSI is ready it’s propagated to all enabled peripherals configured by these control bits – must be well controlled by user to reach best power consumption
+If any periphery requests clock -> Once HSI16/MSI is ready it’s propagated to **all enabled peripherals** configured by these control bits – must be well controlled by user to reach best power consumption.
 </awarning>
 <p> </p>
 
