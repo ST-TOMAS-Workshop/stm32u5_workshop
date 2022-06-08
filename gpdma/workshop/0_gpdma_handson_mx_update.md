@@ -2,10 +2,9 @@
 Presentation
 ----!
 
-# MX pupup remove
+# MX get rid of the pop-up message
 
-This part is optional. And it is not affecting the GPDMA.
-The purpos it to repove popup about SMPS and I-Cache fore ach code generation
+This part is optional. It's not affecting the GPDMA. The purpose is to remove the pop-up message about SMPS and I-Cache for each code generation.
 
 ![popup message](./img/2022-05-16-11_05_19.png)
 
