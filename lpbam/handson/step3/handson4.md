@@ -134,7 +134,7 @@ Let's move now to the LPBAM folder
  This will contain the ADC buffer.
 
  ```c
-extern uint8_t Data_Sequence[320];
+extern uint16_t Data_Sequence[320];
  ```
 now in `lpbam_lpbamp1_scenario_config.c` at ~line#449
 in function `MX_ADC4_MspInit`  in `USER CODE BEGIN ADC4_MspInit 0` please add the below 
