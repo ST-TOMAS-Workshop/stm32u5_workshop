@@ -38,15 +38,15 @@ BEST in ULP Class! Twice less dynamic consumption vs. L4/L4+ (3x less vs. L5)
 <p> </p>
 STM32U5 is designed to perform dynamic scenario in **Autonomous mode(LPBAM)**
 
-- Off load Core domain and thus reduce wakeup sequences
-- Sensor data transfer, ADC acquisition, DAC generation,…
+- Off-load the CPU and thus reduce the number of wake-up sequences
+- Typical use cases are sensor data acquisition, ADC acquisition, DAC generation…
 
-DataSheet values for LP modes are Static consumption only
+Datasheet values for LP modes are static consumption only
 
-- No tasks are performed
+- No tasks performed
 
 <awarning> 
-Device selection must follow **Application demand** and NOT DataSheet comparison (U5 vs. L4/L4+/L5).
+Device selection must follow **Application demand** and NOT Datasheet comparison (U5 vs. L4/L4+/L5).
 </awarning>
 <p> </p>
 
@@ -54,26 +54,26 @@ Device selection must follow **Application demand** and NOT DataSheet comparison
 ![image2](./img/ADC_consumption_profile.png) 
 
 # System Architecture
-Two digital domains CPU domain (CD) and Smart run domain (SRD)
+Two digital domains - CPU Domain (CD) and Smart Run Domain (SRD)
 
-CD & SRD contains full feature set
+CD & SRD contain full feature set
 
-SRD contains only reduced peripheries (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, SRAM4,…)
+SRD contains selected peripherals (ADC4, DAC, UART, I2C ,SPI, UART, LPGPIO, SRAM4…)
 
-**In Run, Sleep, Stop 0 and Stop 1**
+**In RUN, SLEEP, STOP0 and STOP1**
 
-- CD & SRD fully powered => all peripherals are functional, thanks to GPDMA1 and LPDMA1
+- Both domains (CD & SRD) fully powered => all peripherals functional thanks to GPDMA1 and LPDMA1
 
 **In STOP2**
 
-- CD in “retention” (lower leakage mode) => no dynamic activity possible
-- SRD fully powered => SRD autonomous peripherals are functional thanks to LPDMA1.
+- CD in “retention” (low leakage mode) => no dynamic activity possible
+- SRD fully powered => SRD autonomous peripherals are functional thanks to LPDMA1
 
-## CPU domain (CD) and Smart run domain (SRD) block schema
+## CPU Domain (CD) and Smart Run Domain (SRD) system architecture
 
 ![image3](./img/CD_SRD.png)
 
-# Sleep mode
+# SLEEP mode
 Core stops
 
 High speed clocks run
@@ -82,16 +82,16 @@ Sleep Range 4 replaces STM32L4/L5 Low-power sleep mode
 
 ![image4](./img/sleep.png)
 
-# Stop modes
+# STOP modes
 <ainfo>
-Lowest power mode with full retention and peripheral activity (LPBAM).
+The lowest low-power mode with full retention (SRAM & peripheral registers) and possible peripheral activity (LPBAM).
 </ainfo>
 <p> </p>
 Core stops
 
-High speed clocks runs only on peripheral’s demand
+High speed clocks run only on peripheral’s request
 
-Full retention of SRAM and peripherals registers, with capability to individually **power down** SRAM pages in Stop 0,1,2,3:
+Full retention of SRAM and peripherals registers, with capability to individually **power down** SRAM pages in STOP 0,1,2,3:
 
 - SRAM1 : 3 x 64KB-pages
 - SRAM2 : 8KB and 56KB pages
@@ -99,49 +99,49 @@ Full retention of SRAM and peripherals registers, with capability to individuall
 - SRAM4
 - ICACHE, DCACHE1, DMA2D SRAM, FMAC/FDRAM/USB SRAM, PKA SRAM
 
-Wakeup clock is HSI16 or MSI up to 24 MHz (range 4 only)
+Wake-up clock is HSI16 or MSI up to 24 MHz (range 4 only)
 
-Set ULPMEN to reduce consumption 
+Set ULPMEN to further reduce power consumption 
 
-- BOR operates in Sampled mode 
+- BOR operates in sampled mode 
 - Caution: min. VDD falling slew rate must be respected
 
-## Stop modes summary
+## STOP modes summary
 ![image](./img/stop.png)
 
-Functional peripherals in Stop 2 mode – **SRD domain**
+Functional peripherals in STOP2 mode – **SRD domain**
 - LPDMA, SRAM4, LPUART1, SPI3, I2C3, LPTIM1/2/4, ADF1, DAC1, ADC1, COMP, VREFBUFF, RTC, LPGPIO
 
-New **Low power GPIOs** control dynamically in down to Stop 2 mode thanks to LPDMA
+New **Low power GPIOs** control dynamically in down to STOP2 mode thanks to LPDMA
 
 
-# Stanby - Shutdown - Vbat
+# STANDBY - SHUTDOWN - VBAT
 Backup domain active
 
-- RTC, LSE, LSI (not in Shutdown)
+- RTC, LSE, LSI (not in SHUTDOWN)
 - TAMP event (extra Supply and Temperature monitoring for TAMP)
 - Backup Register
-- CSS on LSE
+- Clock Security System (CSS) on LSE (32.768 kHz oscillator)
 
-**LSE clock security** system connected to tamper with down to Vbat mode
+**LSE clock security** system connected to tamper with down to VBAT mode
 
-- Clock missing detection & Over-frequency detection (2MHz)
-- Glitch filtering (2MHz)
+- Clock missing detection & Over-frequency detection (2 MHz)
+- Glitch filtering (2 MHz)
 
 **TAMP**
 
 - Temperature and backup domain voltage monitoring connected to tamper (more details in TN1333 under NDA)
-- A tamper detection can erase the backup registers, backup SRAM, SRAM2, caches and cryptographic peripherals.
+- A tamper detection can erase the backup registers, backup SRAM, SRAM2, caches and cryptographic peripherals
 
-**Vbat Brownout reset** (1.58V) ensures defined reset state for RTC domain when Vbat voltage drops below threshold (this is not the case for legacy device)
+**VBAT Brown-out reset** (1.58V) ensures defined reset state for RTC domain when the VBAT voltage drops below a defined threshold (this is not the case for legacy devices)
 
-Extra **SRAM2 retention** in Standby
+Extra **SRAM2 retention** in STANDBY
 
 **2KB BKPSRAM** can be retained (optionally protected by tamper)
 
 ![image](./img/standby.png)
 
 # Tips and tricks
-Tips how to reduce power consumption in Run, Sleep, Stop modes.
+Tips how to reduce power consumption in RUN, SLEEP, STOP modes.
 
 ![image](./img/tips.png)
