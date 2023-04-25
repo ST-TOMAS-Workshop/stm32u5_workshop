@@ -57,10 +57,10 @@ See you on STM32U5 Workshop live session
   ![Multimeter](./img/Multimeter.jpg)
   <br>
 - Software (PC with **MS Windows 10** operating system):
-  - **[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)** in version 6.5.0
-  - **[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)** in version 1.9.0
-  - **[STM32U5 Cube library](https://www.st.com/en/embedded-software/stm32cubeu5.html)** in version 1.1.0
-  - **[STM32Cube Monitor Power](https://www.st.com/en/development-tools/stm32cubemonpwr.html)** in version 1.1.1
+  - **[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)** in version 6.8.0
+  - **[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)** in version 1.12.0
+  - **[STM32U5 Cube library](https://www.st.com/en/embedded-software/stm32cubeu5.html)** in version 1.2.0
+  - **[STM32Cube Monitor Power](https://www.st.com/en/development-tools/stm32cubemonpwr.html)** in version 1.2.0
   - **[Virtual COM port drivers](https://www.st.com/en/development-tools/stsw-stm32102.html)**
   - `[optionally]` any **terminal** application (can be used the one from STM32CubeIDE)
 <br>
